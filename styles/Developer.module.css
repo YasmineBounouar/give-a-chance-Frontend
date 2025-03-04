@@ -1,0 +1,59 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    height:350px ;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 12px;
+    overflow: hidden;
+
+
+}
+.cardImage{
+    position: relative;
+    height: 25%;
+    width: 100%;
+   
+}
+.iconpartage{
+    position: absolute;
+    top: 10%;
+    left: 9%;
+   
+
+}
+.iconlike{
+    position: absolute;
+    top: 10%;
+    right: 9%;
+
+
+}
+
+.cardDescription{
+    height: 65%;
+    width: 100%;
+    padding-inline: 20px;
+    
+
+}
+.name{
+    text-align: center;
+    
+
+}
+.specialities{
+    text-align: center;
+
+}
+
+.locationcard{
+    text-align: center;
+}
+
+.cardRating{
+    height: 10%;
+    width: 100%;
+    background-color: burlywood;
+
+}
