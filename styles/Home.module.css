@@ -85,3 +85,19 @@
   background-color: #e1e7ed;
 
 }
+
+.faqcontainer {
+  padding: 20px;
+  background-color: #c4a0a0;
+}
+
+.faqtitle {
+  font-size: large;
+
+}
+
+.faqdescription {
+  font-size: medium;
+  color: #ba5757;
+
+}
