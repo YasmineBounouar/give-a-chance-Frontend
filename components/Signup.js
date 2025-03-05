@@ -12,6 +12,9 @@ const [password, setPassword] = useState('');
 const [selectedOption, setSelectedOption] = useState('Developer');
 const [error, setError] = useState(false);
 
+const [errorEmail, setErrorEmail] = useState(false);
+const [detectdoublon,setDetectdoublon]=useState(false)
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const handleSubmit = (e) => {
 e.preventDefault();
@@ -21,6 +24,14 @@ if(Username===''|| firstname==='' || lastname==='' || email==='' || password==='
  setError(true);
  return
 }
+
+if(emailRegex.test(email)===false){
+    setErrorEmail(true)
+    return
+  }
+  
+    
+ 
 
 
 if(selectedOption==='Developer'){
@@ -44,12 +55,27 @@ password: password
 
 })
 .then((response) => response.json())
-.then((data) => {
-console.log(data.Infos);
+.then((data) =>{ //celui tourne si on a reussi a faire le fetch
+    console.log(data.Infos);
+    if(data.result===true){
+
+
+setUsername('');
+setFirstname('');//pour vider les champs
+setLastname('');
+setEmail('');
+setPassword('');
+}
+else if(data.result===false){
+      setDetectdoublon(true)}
+      //l'etat a etait créer pour detecter les doublons d'email et declencher un msg d'erreur encas de doublon
+
+
 
 })
 .catch((error) => {
 console.error('Error:', error);
+
 })
 
 
@@ -72,16 +98,24 @@ console.error('Error:', error);
             })
             .then((response) => response.json())
             .then((data) => {
-                console.log(selectedOption);
-                
-            console.log(data.Infos);
+                //console.log(selectedOption);
+                console.log(data.Infos);
+                if(data.result){
+            setUsername('');
+            setFirstname('');
+            setLastname('');
+            setEmail('');
+            setPassword('');}
+               else if(data.result===false){
+                setDetectdoublon(true)}
             
             })
+            
             .catch((error) => {
             console.error('Error:', error);
+            
             })
     }
-
 
 
 
@@ -103,7 +137,7 @@ console.error('Error:', error);
    
     <input onChange={(e)=>{setLastname(e.target.value)}} value={lastname} type="text" name="lastname" placeholder='lastname' required/>
 
-
+    {errorEmail && <p style={{color:'red'}}>Veuillez mettre un email valide</p>}
     <input onChange={(e)=>{setEmail(e.target.value)}} value={email} type="email" name="email" placeholder='Email' required/>
 
     <input onChange={(e)=>{setPassword(e.target.value)}} value={password} type="password" name="password" placeholder='Password'required/>
@@ -115,6 +149,7 @@ console.error('Error:', error);
 </select>
     {error && <p style={{color:'red'}}>Veuillez remplir tous les champs</p>}
     <button onClick={(e)=>{handleSubmit(e)}} type="submit">Valider</button>
+    {detectdoublon && <p style={{color:'red'}}>User already exist</p>}
 
 </form>
 
