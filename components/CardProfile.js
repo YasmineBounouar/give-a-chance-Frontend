@@ -2,7 +2,7 @@ import Image from 'next/Image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // j'ai rajouter
 import { faHeart, faStar,faShareNodes,faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
-// j'ai arjouter 
+
 import styles from '../styles/Developer.module.css'
 import  Link from 'next/Link';
 
