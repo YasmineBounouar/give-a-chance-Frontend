@@ -1,8 +1,8 @@
 import Home from '../components/Home';
-import CardProfile from '../components/CardProfile';
+import Onbording from './Onbording';
 
 function Index() {
-  return <Home />;
+  return <Onbording />;
 }
 
 export default Index;
