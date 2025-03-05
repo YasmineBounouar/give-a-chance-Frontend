@@ -1,59 +1,104 @@
 .card {
+
     display: flex;
     flex-direction: column;
-    height:350px ;
+    height: 350px;
     width: 250px;
-    border: 1px solid black;
-    border-radius: 12px;
+    border-radius: 8px;
     overflow: hidden;
-
-
+    /* j'ai supprimer la bordure pour none + ajouter un shadow pour le style des card */
+    border: none;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    background-color: rgb(196, 201, 207);
 }
-.cardImage{
+
+.cardImage {
     position: relative;
     height: 25%;
     width: 100%;
-   
 }
-.iconpartage{
+
+.iconpartage {
     position: absolute;
     top: 10%;
     left: 9%;
-   
-
-}
-.iconlike{
-    position: absolute;
-    top: 10%;
-    right: 9%;
-
-
 }
 
-.cardDescription{
+.cardDescription {
     height: 65%;
     width: 100%;
     padding-inline: 20px;
+    justify-content: space-between;
+}
+
+.iconlike {
+    position: absolute;
+    top: 10%;
+    right: 9%;
+}
+
+.description {
+    font-size: 15px;
+    text-align: center;
+    /* j'ai ajouter un text align center pour centrer le text */
+}
+
+.name {
+    text-align: center;
+    font-weight: 800;
+
+}
+
+.specialities {
+    text-align: center;
+    font-size: 13px;
+
+
+}
+
+.locationname {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.locationcard {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
     
 
 }
-.name{
-    text-align: center;
-    
 
-}
-.specialities{
-    text-align: center;
-
-}
-
-.locationcard{
-    text-align: center;
-}
-
-.cardRating{
+.cardRating {
+    position: relative;
     height: 10%;
     width: 100%;
-    background-color: burlywood;
+    background-color: rgb(100, 100, 100);
+    font-size: 15px;
 
+
+
+}
+
+.starsIconStyle {
+    color: rgb(255, 255, 255);
+    margin-left: 15px;
+    margin-top: 10px;
+
+}
+
+.stylecounter {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.heartIconStyle {
+    color: rgb(229, 46, 46);
+}
+
+.shareIconStyle {
+    color: rgb(43, 0, 255);
 }

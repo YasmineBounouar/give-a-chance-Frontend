@@ -63,3 +63,25 @@
   font-size: 1.5rem;
   margin: 1rem 0;
 }
+
+.commentCaMarche {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 60%;
+  background-color: #e1e7ed;
+  flex-direction: column;
+}
+
+.commentCaMarcheContainer {
+  display: flex;
+  justify-content: space-around;
+  gap: 15rem;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 60%;
+  background-color: #e1e7ed;
+
+}
