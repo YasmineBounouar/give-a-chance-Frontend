@@ -12,7 +12,9 @@ function connexion() {
   
 
   let SigninText=<p className={styles.SigninText}>Don't you have an account ?<span className={styles.connexiontype}onClick={()=>{setConnexiontype(!connexiontype)}}>Create an account.</span> </p>
-  let signuptext=<p className={styles.signuptext}>Do you already have an account ? <span className={styles.connexiontype2} onClick={()=>{setConnexiontype(!connexiontype)}}>Sign in</span> </p>
+  let signuptext=<p className={styles.signuptext}>Do you already have an account ? <span className={styles.connexiontype2} onClick={()=>{setConnexiontype(!connexiontype)}}>Sign in</span>
+  
+   </p>
 
   return (
     <div className={styles.mainconnexion}> 
