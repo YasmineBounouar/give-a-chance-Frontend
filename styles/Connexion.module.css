@@ -1,0 +1,186 @@
+.mainconnexion{
+    width: 100vw;
+    height: 100vh;
+    background-color: #353a3f;
+    
+    
+}
+.SigninText{
+    color:white;
+    text-align: center ;
+}
+.headerconnexion{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    padding: 1rem 0;
+    background-color:#353a3f;
+    font-size: medium;
+    color: white;
+    border-bottom: 2px solid #ffffff;
+}
+.logoheader{
+    
+    height: 58px;
+    margin-inline-start: 20px;
+    
+}
+
+.formsignin {
+    
+    max-width: 400px; /* La largeur maximale du formulaire est de 400px */
+    margin: 0 auto; /* Centrage du formulaire horizontalement */
+    padding: 2rem; /* Espacement interne de 2rem autour du contenu */
+    background-color: #fff; /* Fond du formulaire en blanc */
+    border-radius: 8px; /* Coins arrondis pour un effet plus doux */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère autour du formulaire */
+    font-family: Arial, sans-serif; /* Police d'écriture de type sans-serif */
+    display: flex; /* Utiliser Flexbox pour gérer l'alignement */
+    flex-direction: column; /* Aligner les éléments verticalement */
+    align-items: center; /* Aligner tous les éléments au centre horizontalement */
+    margin-top: 100px;
+  }
+  
+
+  .titlesignin {
+    text-align: center; /* Centrer le titre horizontalement */
+    font-size: 2rem; /* Taille du texte du titre */
+    margin-bottom: 1.5rem; /* Espacement sous le titre */
+    color: #333; /* Couleur du texte en gris foncé */
+  }
+
+  .inputemail {
+    width: 100%; /* Les champs prennent toute la largeur de leur conteneur */
+    padding: 0.8rem; /* Un peu de remplissage à l'intérieur des champs */
+    margin-bottom: 0.5rem; /* Espacement sous chaque champ */
+    border: 1px solid #ddd; /* Bordure grise claire autour des champs */
+    border-radius: 5px; /* Coins arrondis pour les champs */
+    font-size: 1rem; /* Taille de la police dans les champs */
+    outline: none; /* Retirer l'effet de contour par défaut lorsqu'un champ est sélectionné */
+    transition: border-color 0.3s ease; /* Animation douce pour la couleur de la bordure au focus */
+  }
+  .inputpassword {
+    width: 100%; /* Les champs prennent toute la largeur de leur conteneur */
+    padding: 0.8rem; /* Un peu de remplissage à l'intérieur des champs */
+    margin-bottom: 0.5rem; /* Espacement sous chaque champ */
+    border: 1px solid #ddd; /* Bordure grise claire autour des champs */
+    border-radius: 5px; /* Coins arrondis pour les champs */
+    font-size: 1rem; /* Taille de la police dans les champs */
+    outline: none; /* Retirer l'effet de contour par défaut lorsqu'un champ est sélectionné */
+    transition: border-color 0.3s ease; /* Animation douce pour la couleur de la bordure au focus */
+  }
+  .buttonSubmmit {
+    width: 140px;
+    background-color: #8e7949;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 28px;
+    size: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  .buttongoogle{
+    height: 40px;
+    width: 280px;
+    background-color: #8e7949;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 28px;
+    size: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-inline-end: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .formsignup{
+    max-width: 400px; 
+    margin: 0 auto; 
+    padding: 2rem; 
+    background-color: #fff; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    font-family: Arial, sans-serif; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    margin-top: 50px;
+
+  }
+  .button{
+    width: 140px;
+    background-color: #8e7949;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 28px;
+    size: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+  }
+  .username,.firstname,.lastname,.email,.password{
+    width: 100%; 
+    padding: 0.8rem; 
+    margin-bottom: 0.5rem; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    font-size: 1rem; 
+    outline: none; 
+    transition: border-color 0.3s ease; 
+
+  }
+
+  .signuptext
+    {
+        color:white;
+        text-align: center ;
+
+  }
+  
+    .listederoulante {
+        width: 200px; /* Largeur de la liste déroulante */
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color: white;
+        cursor: pointer;
+        
+        
+      }
+      .deroulante{
+        width: 100%;
+        display:flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .type{
+        color:  #ddd; 
+      }
+  
+      
