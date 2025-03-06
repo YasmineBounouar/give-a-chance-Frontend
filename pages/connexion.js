@@ -18,9 +18,11 @@ function connexion() {
   let signuptext = <p>Vous avez déjà un compte ? <span onClick={() => { setConnexiontype(!connexiontype) }}>connectez-vous</span> </p>
 
   return (
-    <div> 
-      {/* Affichage conditionnel du texte selon l'état de connexiontype */}
-      {connexiontype ? SigninText : signuptext} 
+    <div className={styles.mainconnexion}> 
+      <header className={styles.headerconnexion}>
+        <Image className={styles.logoheader} src='/unnamed.jpg'height={80} width={80}></Image>
+        <button  type="submit" className={styles.buttongoogle}>SIGN WITH GOOGLE <Image src='/icon.svg' height={20} width={30}></Image></button>
+      </header>
       
       {/* Affichage conditionnel du formulaire de connexion ou d'inscription en fonction de connexiontype */}
       {connexiontype ? <Singin /> : <Signup />}
