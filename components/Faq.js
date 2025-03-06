@@ -2,11 +2,9 @@ import React from 'react'
 import styles from '../styles/Faq.module.css';
 import {useState} from 'react'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // j'ai rajouter
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
-
-
-
-// Définition du composant principal Faq
 const Faq = () => {
 
   // Création d'un état local "open" qui stocke l'index de la question actuellement ouverte
@@ -16,13 +14,12 @@ const Faq = () => {
   function FaqElement(props) {
   
     return (
-      <div>
-          {/* Affichage de la question avec un bouton pour l'ouvrir/fermer */}
-          <h4> {props.question} <span onClick={()=>{ setOpen(props.position)}}>X</span> </h4>
-
-          {/* Affichage de la réponse uniquement si la question est ouverte */}
+      <section id='FAQ'>
+      <div >
+          <h4> {props.question} <span onClick={()=>{ setOpen(props.position)}}><span ><FontAwesomeIcon icon={faPlus} className={styles.addIconPlus}/></span></span> </h4>
           {open === props.position ? <p> {props.reponse}</p> : null}
       </div>
+      </section>
     )
   }
   
@@ -51,7 +48,7 @@ const Faq = () => {
     // Mapping du tableau faqData pour générer une liste de composants FaqElement dynamiques
     const myFaq= faqData.map((data, i)=>{
 
-      return <FaqElement key={i} question={data.question} reponse={data.answer}  index={data.index}/>
+        return <FaqElement key={i} question={data.question} reponse={data.answer}  index={data.index}/>
 
     })
 
