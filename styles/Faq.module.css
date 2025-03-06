@@ -1,11 +1,3 @@
-/* .FaqElement {
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #74be6d;
-    border-radius: 5px;
-    background-color: #74be6d;
-} */
-
 .title {
     margin: 0;
     font-size: 18px;
@@ -17,12 +9,11 @@
     font-size: 16px;
 }
 
-
 .addIconPlus{
     margin-left: 10px;
     font-size: 20px;
     color: #fbfafa;
-    background-color: rgb(17, 102, 177);
+    background-color: #8e7949;
     border-radius: 50%;
-
+    padding: 2px;
 }

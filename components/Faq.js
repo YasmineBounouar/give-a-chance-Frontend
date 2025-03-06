@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../styles/Faq.module.css';
-import FaqElement from './FaqElement';
+
 import {useState} from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // j'ai rajouter
@@ -14,14 +14,14 @@ const Faq = () => {
   
     return (
       <section id='FAQ'>
-      <div >
+      <div >  
           <h4> {props.question} <span onClick={()=>{ setOpen(props.position)}}><span ><FontAwesomeIcon icon={faPlus} className={styles.addIconPlus}/></span></span> </h4>
           {open === props.position ? <p> {props.reponse}</p> : null}
       </div>
       </section>
     )
   }
-  
+
     const faqData = [
       {
         question: 'Comment créer un wrap pour une section de questions-réponses ?',

@@ -15,30 +15,16 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  width: 90vw;
+  width: 80vw;
   margin: 0 auto;
-  overflow: hidden;
+  gap: 3rem;
 }
-
-/* Header Section */
-.header {
+.titleemain{
+  font-size: 50px;
+  text-align: center;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  height: 80px;
-  padding: 1rem 0;
-  background-color: aliceblue;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.IconQuestion {
-  margin-left: 10px;
-  color: #fbfafa;
-  background-color: rgb(60, 62, 64);
-  border-radius: 50%;
-  font-size: 30px;
-}
+  justify-content: center;
+} 
 
 /* Main Content Section */
 .maincontent {
@@ -52,7 +38,8 @@
   background-color: #353a3f;
   color: aliceblue;
   border-radius: 10px;
-
+  margin-top: 40px;
+  
 }
 
 /* Text Presentation Section */
@@ -60,13 +47,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
-  height: 50%;
+  text-align: center;
+  width: 80%;
+  margin-bottom: 80px;
+  font-size: 24px;
+
 }
 
 .title {
   line-height: 1.15;
   font-size: 4rem;
+  margin-top: 80px; 
 }
 
 .title a {
@@ -90,7 +81,7 @@
   height: 100%;
   margin: 0 auto;
   padding: 2rem;
-  background-color: #f5f5f5;
+  background-color: rgba(240, 248, 255, 0.558);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -101,9 +92,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 60vh;
-  width: 90%;
-  background-color: #e1e7ed;
+  width: 100%;
+  background-color: rgba(240, 248, 255, 0.558);
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -118,52 +108,76 @@
   height: 100%;
   margin: 0 auto;
   padding: 2rem;
-  background-color: #f5f5f5;
+  background-color: rgba(240, 248, 255, 0.558);
   border-radius: 10px;
+  
 }
 
 .commentCaMarcheContainer {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 80%;
   height: 100%;
-  margin: 0 auto;
   padding: 2rem;
-  gap: 20rem;
+  background-color: #8e7949;
+  color: aliceblue;
+  border-radius: 10px;
+  margin-top: 50px;
+  gap: 10rem;
 }
 
 .commentCaMarcheCardONE,
 .commentCaMarcheCardTWO,
-.commentCaMarcheCardTHREE {
+.commentCaMarcheCardThree {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  width: 100px;
+  height: 100px;
+  text-align: center;
 }
 
 /* Card Profile Section */
-.cardprofil {
+.cardcontainer {
   display: flex;
-  align-items: center;
+  align-items: center;  
   justify-content: center;
-  width: 100%;
-  height: 100%;
-  padding: 2rem;
+  flex-direction: column;
+  width: 60vw;
+  height: 60vh;
+  padding: 2%;
   gap: 2rem;
-  background-color: #f5f5f5;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Section footer */
-.footer {
+.card{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 80px;
-  padding: 1rem 0;
-  background-color: aliceblue;
+  justify-content: space-evenly;
+  gap: 3rem;
+}
+
+.btncardprofil {
+  background-color: #8e7949;
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 14px 28px;
+  size: bold;
+  text-align: center;
+  text-decoration: none;  
+  border-radius: 8px;
+  display: inline-block;
+  font-size: 18px;    
+  cursor: pointer;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  gap: 10rem;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.linkcommentCaMarche{
+  color: #353a3f;
+  text-decoration: underline;
+  font-size: 20px; 
+
+  
 }
