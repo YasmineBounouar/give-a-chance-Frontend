@@ -5,21 +5,24 @@ import { useState } from 'react';
 
 function connexion() {
   
-  const [connexiontype, setConnexiontype] = useState(true);
+  // Déclaration de l'état pour basculer entre les deux formulaires (connexion et inscription)
+  const [connexiontype, setConnexiontype] = useState(true); // true pour 'connexion', false pour 'inscription'
   
-
-  let SigninText=<p>Vous n’avez pas de compte ? <span onClick={()=>{setConnexiontype(!connexiontype)}}>créer un compte</span> </p>
-  let signuptext=<p>Vous avez déjà un compte ? <span onClick={()=>{setConnexiontype(!connexiontype)}}>connectez-vous</span> </p>
+  // Texte pour lier à la page d'inscription si l'utilisateur est sur la page de connexion
+  let SigninText = <p>Vous n’avez pas de compte ? <span onClick={() => { setConnexiontype(!connexiontype) }}>créer un compte</span> </p>
+  
+  // Texte pour lier à la page de connexion si l'utilisateur est sur la page d'inscription
+  let signuptext = <p>Vous avez déjà un compte ? <span onClick={() => { setConnexiontype(!connexiontype) }}>connectez-vous</span> </p>
 
   return (
     <div> 
-
-{/* affichage conditionnel */}
-{connexiontype? SigninText : signuptext} 
-{connexiontype ? <Singin/> : <Signup/>}
-
+      {/* Affichage conditionnel du texte selon l'état de connexiontype */}
+      {connexiontype ? SigninText : signuptext} 
+      
+      {/* Affichage conditionnel du formulaire de connexion ou d'inscription en fonction de connexiontype */}
+      {connexiontype ? <Singin /> : <Signup />}
     </div>
-
   )
 }
+
 export default connexion;

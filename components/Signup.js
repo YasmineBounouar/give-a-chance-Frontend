@@ -4,125 +4,102 @@ import { useState } from 'react';
 
 function SingUP() {
 
-const [Username, setUsername] = useState('');
-const [firstname, setFirstname] = useState('');
-const [lastname, setLastname] = useState('');
-const [email, setEmail] = useState('');
-const [password, setPassword] = useState('');
-const [selectedOption, setSelectedOption] = useState('Developer');
-const [error, setError] = useState(false);
-
-const [errorEmail, setErrorEmail] = useState(false);
-const [detectdoublon,setDetectdoublon]=useState(false)
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-const handleSubmit = (e) => {
-e.preventDefault();
-console.log(e);
-
-if(Username===''|| firstname==='' || lastname==='' || email==='' || password===''){
- setError(true);
- return
-}
-
-if(emailRegex.test(email)===false){
-    setErrorEmail(true)
-    return
-  }
+    // Déclaration des états locaux pour gérer les valeurs des champs du formulaire
+    const [Username, setUsername] = useState('');
+    const [firstname, setFirstname] = useState('');
+    const [lastname, setLastname] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [selectedOption, setSelectedOption] = useState('Developer');
+    const [error, setError] = useState(false);  // Erreur pour les champs vides
+    const [errorEmail, setErrorEmail] = useState(false);  // Erreur pour l'email invalide
+    const [detectdoublon, setDetectdoublon] = useState(false);  // Erreur si l'email existe déjà dans la base de données
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;  // Expression régulière pour valider l'email
   
-    
- 
-
-
-if(selectedOption==='Developer'){
-
-console.log(selectedOption);
-
-//fetch type post
-
-fetch('http://localhost:3000/create/signup/dev',{   
-method: 'POST', 
-headers: {
-'Content-Type': 'application/json'
-},
-body: JSON.stringify({  
-username: Username,
-firstname: firstname,
-lastname: lastname,
-email: email,
-password: password
-})
-
-})
-.then((response) => response.json())
-.then((data) =>{ //celui tourne si on a reussi a faire le fetch
-    console.log(data.Infos);
-    if(data.result===true){
-
-
-setUsername('');
-setFirstname('');//pour vider les champs
-setLastname('');
-setEmail('');
-setPassword('');
-}
-else if(data.result===false){
-      setDetectdoublon(true)}
-      //l'etat a etait créer pour detecter les doublons d'email et declencher un msg d'erreur encas de doublon
-
-
-
-})
-.catch((error) => {
-console.error('Error:', error);
-
-})
-
-
-}
-
-    else{
-        fetch('http://localhost:3000/create/signup/recruteur',{   
-            method: 'POST', 
-            headers: {
+    // Fonction appelée lors de la soumission du formulaire
+    const handleSubmit = (e) => {
+      e.preventDefault();  // Empêche le rechargement de la page par défaut, lié à l'envoi du formulaire
+  
+      // Vérification si tous les champs sont remplis
+      if (Username === '' || firstname === '' || lastname === '' || email === '' || password === '') {
+        setError(true);  // Si un champ est vide, afficher une erreur générale
+        return;  // Stoppe l'exécution si une erreur est trouvée
+      }
+  
+      // Vérification si l'email est valide
+      if (emailRegex.test(email) === false) {
+        setErrorEmail(true);  // Si l'email est invalide, afficher une erreur pour l'email
+        return;  // Stoppe l'exécution si l'email n'est pas valide
+      }
+  
+      // Si tout est valide, on passe à la soumission des données
+      if (selectedOption === 'Developer') {
+        fetch('http://localhost:3000/create/signup/dev', {  // Envoi des données à l'API pour un développeur
+          method: 'POST',
+          headers: {
             'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({  
+          },
+          body: JSON.stringify({
             username: Username,
             firstname: firstname,
             lastname: lastname,
             email: email,
             password: password
-            })
-            
-            })
-            .then((response) => response.json())
-            .then((data) => {
-                //console.log(selectedOption);
-                console.log(data.Infos);
-                if(data.result){
+          })
+        })
+        .then((response) => response.json())  // Attente de la réponse de l'API
+        .then((data) => {
+          if (data.result === true) {
+            // Si l'inscription réussit, réinitialiser les champs du formulaire
             setUsername('');
             setFirstname('');
             setLastname('');
             setEmail('');
-            setPassword('');}
-               else if(data.result===false){
-                setDetectdoublon(true)}
-            
-            })
-            
-            .catch((error) => {
-            console.error('Error:', error);
-            
-            })
+            setPassword('');
+          } else if (data.result === false) {
+            // Si l'utilisateur existe déjà, on active l'état detectdoublon à true
+            setDetectdoublon(true);  // Ce message sera affiché si l'email existe déjà dans la base de données
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);  // Affiche une erreur dans la console si l'API échoue
+        });
+      } else {
+        // Même logique, mais pour un recruteur
+        fetch('http://localhost:3000/create/signup/recruteur', {  // Envoi des données à l'API pour un recruteur
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            username: Username,
+            firstname: firstname,
+            lastname: lastname,
+            email: email,
+            password: password
+          })
+        })
+        .then((response) => response.json())  // Attente de la réponse de l'API
+        .then((data) => {
+          if (data.result) {
+            // Si l'inscription réussit pour un recruteur, réinitialiser les champs
+            setUsername('');
+            setFirstname('');
+            setLastname('');
+            setEmail('');
+            setPassword('');
+          } else if (data.result === false) {
+            // Si l'utilisateur existe déjà, on active l'état detectdoublon à true
+            setDetectdoublon(true);  // Comme pour le cas "Developer", cette erreur sera affichée si l'email est déjà pris
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);  // Affiche une erreur dans la console si l'API échoue
+        });
+      }
     }
+  
 
-
-
-
-
-
-}
   return (
     <div>
 
