@@ -10,6 +10,7 @@ function Footer() {
     <footer className={styles}>
       <Image src="/GIVE A CHANCE.png" width={60} height={60} alt="logo"></Image>
       <Link href="">
+      
         <span className={styles.cgv}>Conditions générales</span>
       </Link>
       <Link href="">

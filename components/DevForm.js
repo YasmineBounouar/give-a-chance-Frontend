@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import styles from '../styles/DevForm.module.css'
 
-
 function DevForm() {
-    const [presentation, setPresentation] = useState('')
+    // Déclaration des états pour stocker les valeurs des champs du formulaire
+    const [presentation, setPresentation] = useState('');
     const [softskills, setSoftskills] = useState('');
     const [hardskillstechnologies, setHardskillstechnologies] = useState('');
     const [qualification, setQualification] = useState('');
@@ -16,105 +16,112 @@ function DevForm() {
     const [twitter, setTwitter] = useState('');
     const [error, setError] = useState(false);
 
+    // Fonction exécutée lors de la soumission du formulaire
     const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(e);
+        e.preventDefault(); // Empêche le rechargement de la page
 
+        // Vérification que tous les champs obligatoires sont remplis
         if (presentation === '' || softskills === '' || hardskillstechnologies === '' || qualification === '' || disponibilities === '' || typecontrat === '' || Location === '' || Speciality === '') {
             setError(true);
-            return
+            return;
         }
 
+        // Envoi des données au backend via une requête PUT
         fetch('http://localhost:3000/update/Dev/:id', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                presentation: presentation,
-                softskills: softskills,
-                hardskillstechnologies: hardskillstechnologies,
-                qualification: qualification,
-                disponibilities: disponibilities,
-                typecontrat: typecontrat,
-                Location: Location,
-                Speciality: Speciality,
-                linkedin: linkedin,
-                github: github,
-                twitter: twitter
+                presentation,
+                softskills,
+                hardskillstechnologies,
+                qualification,
+                disponibilities,
+                typecontrat,
+                Location,
+                Speciality,
+                linkedin,
+                github,
+                twitter
             })
-
         })
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data.updatedProfil);
-
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            })
-
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data.updatedProfil); // Affiche la réponse du serveur dans la console
+        })
+        .catch((error) => {
+            console.error('Error:', error); // Capture les erreurs en cas de problème
+        });
     }
+
     return (
-        <form className={styles.form}>
-            <h5>Onbording</h5>
+        <form className={styles.form}>  {/* Début du formulaire */}
+            <h5>Onboarding</h5>
 
-
-            <div className={styles.presentation} >
-                <label className={styles.text}>presentation</label>
-                <input className={styles.input} onChange={(e) => { setPresentation(e.target.value) }} value={presentation} type='text' name='presentation' placeholder='presentation' required></input>
+            {/* Champ de saisie pour la présentation */}
+            <div className={styles.presentation}>
+                <label className={styles.text}>Présentation</label>
+                <input className={styles.input} onChange={(e) => setPresentation(e.target.value)} value={presentation} type='text' name='presentation' placeholder='Présentation' required />
             </div>
 
+            {/* Champ de saisie pour les soft skills */}
             <div className={styles.softskills}>
-                <label className={styles.text2}>softskills</label>
-                <input className={styles.input2} onChange={(e) => { setSoftskills(e.target.value) }} value={softskills} type='text' name='softskills' placeholder='softskills' required></input>
+                <label className={styles.text2}>Soft Skills</label>
+                <input className={styles.input2} onChange={(e) => setSoftskills(e.target.value)} value={softskills} type='text' name='softskills' placeholder='Soft Skills' required />
             </div>
 
+            {/* Champ de saisie pour les hard skills et technologies */}
             <div className={styles.hardskillstechnologies}>
-                <label>hardskillstechnologies</label>
-                <input onChange={(e) => { setHardskillstechnologies(e.target.value) }} value={hardskillstechnologies} type='text' name='hardskillstechnologies' placeholder='hardskillstechnologies' required></input>
+                <label>Hard Skills / Technologies</label>
+                <input onChange={(e) => setHardskillstechnologies(e.target.value)} value={hardskillstechnologies} type='text' name='hardskillstechnologies' placeholder='Hard Skills / Technologies' required />
             </div>
 
+            {/* Champ de saisie pour la qualification */}
             <div className={styles.qualification}>
-                <label>qualification</label>
-                <input onChange={(e) => { setQualification(e.target.value) }} value={qualification} type='text' name='qualification' placeholder='qualification' required></input>
+                <label>Qualification</label>
+                <input onChange={(e) => setQualification(e.target.value)} value={qualification} type='text' name='qualification' placeholder='Qualification' required />
             </div>
 
+            {/* Champ de saisie pour les disponibilités */}
             <div className={styles.disponibilities}>
-                <label>disponibilities</label>
-                <input onChange={(e) => { setDisponibilities(e.target.value) }} value={disponibilities} type='text' name='disponibilities' placeholder='disponibilities' required></input>
+                <label>Disponibilités</label>
+                <input onChange={(e) => setDisponibilities(e.target.value)} value={disponibilities} type='text' name='disponibilities' placeholder='Disponibilités' required />
             </div>
 
+            {/* Champ de saisie pour la localisation */}
             <div className={styles.Location}>
-                <label>Location</label>
-                <input onChange={(e) => { setLocation(e.target.value) }} value={Location} type='text' name='location' placeholder='Location' required></input>
+                <label>Localisation</label>
+                <input onChange={(e) => setLocation(e.target.value)} value={Location} type='text' name='location' placeholder='Localisation' required />
             </div>
 
+            {/* Champ de saisie pour le type de contrat souhaité */}
             <div className={styles.typecontrat}>
-                <label>typecontrat</label>
-                <input onChange={(e) => { setTypecontrat(e.target.value) }} value={typecontrat} type='text' name='typecontrat' placeholder='typecontrat' required></input>
+                <label>Type de Contrat</label>
+                <input onChange={(e) => setTypecontrat(e.target.value)} value={typecontrat} type='text' name='typecontrat' placeholder='Type de Contrat' required />
             </div>
 
+            {/* Champ de saisie pour la spécialité */}
             <div className={styles.Speciality}>
-                <label>Speciality</label>
-                <input onChange={(e) => { setSpeciality(e.target.value) }} value={Speciality} type='text' name='speciality' placeholder='Speciality' required></input>
+                <label>Spécialité</label>
+                <input onChange={(e) => setSpeciality(e.target.value)} value={Speciality} type='text' name='speciality' placeholder='Spécialité' required />
             </div>
 
+            {/* Champs pour les liens vers les réseaux sociaux */}
             <div className={styles.reseaux}>
-                <label>reseaux</label>
-
-                <input onChange={(e) => { setLinkedin(e.target.value) }} value={linkedin} type='text' name='linkedin' placeholder='linkedin url' required></input>
-                <input onChange={(e) => { setGithub(e.target.value) }} value={github} type='text' name='github' placeholder='github url' required></input>
-                <input onChange={(e) => { setTwitter(e.target.value) }} value={twitter} type='text' name='twitter' placeholder='twitter url' required></input>
+                <label>Réseaux Sociaux</label>
+                <input onChange={(e) => setLinkedin(e.target.value)} value={linkedin} type='text' name='linkedin' placeholder='LinkedIn URL' />
+                <input onChange={(e) => setGithub(e.target.value)} value={github} type='text' name='github' placeholder='GitHub URL' />
+                <input onChange={(e) => setTwitter(e.target.value)} value={twitter} type='text' name='twitter' placeholder='Twitter URL' />
             </div>
 
+            {/* Message d'erreur si un champ est manquant */}
             {error && <p style={{ color: 'red' }}>Veuillez remplir tous les champs</p>}
-            <button onClick={(e) => { handleSubmit(e) }} type='Save'>Save</button>
-
+            
+            {/* Bouton de soumission du formulaire */}
+            <button onClick={(e) => handleSubmit(e)} type='button'>Enregistrer</button>
         </form>
-
-
     )
 }
 
-export default DevForm
+export default DevForm;

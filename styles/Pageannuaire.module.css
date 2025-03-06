@@ -1,0 +1,131 @@
+.mainAnnuaire {
+    width: 100vw;
+    height: 100vh;
+    background-color: #353a3f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.headerAnnuaire {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    padding: 1rem 0;
+    background-color: #353a3f;
+    font-size: medium;
+    color: white;
+    border-bottom: 2px solid #ffffff;
+}
+
+.logoheader {
+    height: 58px;
+    margin-inline-start: 20px;
+}
+
+.customIcon {
+    color: white;
+    font-size: 1.5rem;
+    margin-inline-end: 20px;
+    cursor: pointer;
+}
+
+.colonne {
+    position: fixed;
+    left: 0;
+    top: 80px;
+    width: 250px;
+    height: calc(100vh - 80px);
+    background-color: #2a2e32;
+    border-right: 1px solid #ffffff33;
+}
+
+.buttonAnnuaire {
+    width: 180px;
+    background-color: #8e7949;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 28px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    align-self: flex-end;
+    margin-right: 50px;
+}
+
+.titleAnnuaire {
+    color: white;
+    font-size: 2rem;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    align-self: flex-start;
+    margin-left: 280px;
+}
+
+.boxInitial {
+    margin-top: 20px;
+    width: 60%;
+    margin-left: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f41a1a;
+}
+
+.boxSearch {
+    background-color: #9df41a;
+
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.filterPhrase {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.box2 {
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    right: 280px;
+}
+
+.inputSearch {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #f5f5f5;
+    color: #333;
+    outline: none;
+}
+
+.Fontawesome{
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+
+
+
+
