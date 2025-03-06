@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from '../styles/DevForm.module.css'
+import styles from '../styles/Onbording.module.css'
 
 function DevForm() {
     // Déclaration des états pour stocker les valeurs des champs du formulaire
@@ -57,69 +57,79 @@ function DevForm() {
 
     return (
         <form className={styles.form}>  {/* Début du formulaire */}
-            <h5>Onboarding</h5>
+            <h2 className={styles.Title}>Complétez votre profil</h2>  
 
             {/* Champ de saisie pour la présentation */}
             <div className={styles.presentation}>
-                <label className={styles.text}>Présentation</label>
-                <input className={styles.input} onChange={(e) => setPresentation(e.target.value)} value={presentation} type='text' name='presentation' placeholder='Présentation' required />
+                <label className={styles.textPresentation}>Présentation:</label>
+                <textarea 
+  className={styles.inputPresentation} 
+  onChange={(e) => setPresentation(e.target.value)} 
+  value={presentation} 
+  name='presentation' 
+  placeholder='Présentation' 
+  required 
+  cols="20" 
+  rows="10"
+/>
+
             </div>
 
             {/* Champ de saisie pour les soft skills */}
             <div className={styles.softskills}>
-                <label className={styles.text2}>Soft Skills</label>
-                <input className={styles.input2} onChange={(e) => setSoftskills(e.target.value)} value={softskills} type='text' name='softskills' placeholder='Soft Skills' required />
+                <label className={styles.textSoftskills}>Soft Skills:</label>
+                <input className={styles.inputSoftskills} onChange={(e) => setSoftskills(e.target.value)} value={softskills} type='text' name='softskills' placeholder='Soft Skills' required />
             </div>
 
             {/* Champ de saisie pour les hard skills et technologies */}
             <div className={styles.hardskillstechnologies}>
-                <label>Hard Skills / Technologies</label>
-                <input onChange={(e) => setHardskillstechnologies(e.target.value)} value={hardskillstechnologies} type='text' name='hardskillstechnologies' placeholder='Hard Skills / Technologies' required />
+                <label className={styles.textHardskillstechnologies}>Hard Skills / Technologies:</label>
+                <input className={styles.inputHardskillstechnologies} onChange={(e) => setHardskillstechnologies(e.target.value)} value={hardskillstechnologies} type='text' name='hardskillstechnologies' placeholder='Hard Skills / Technologies' required />
             </div>
 
             {/* Champ de saisie pour la qualification */}
             <div className={styles.qualification}>
-                <label>Qualification</label>
-                <input onChange={(e) => setQualification(e.target.value)} value={qualification} type='text' name='qualification' placeholder='Qualification' required />
+                <label className={styles.textQualification}>Qualification:</label>
+                <input className={styles.inputQualification} onChange={(e) => setQualification(e.target.value)} value={qualification} type='text' name='qualification' placeholder='Qualification' required />
             </div>
 
             {/* Champ de saisie pour les disponibilités */}
             <div className={styles.disponibilities}>
-                <label>Disponibilités</label>
-                <input onChange={(e) => setDisponibilities(e.target.value)} value={disponibilities} type='text' name='disponibilities' placeholder='Disponibilités' required />
+                <label className={styles.textDisponibilities}>Disponibilités:</label>
+                <input className={styles.inputDisponibilities} onChange={(e) => setDisponibilities(e.target.value)} value={disponibilities} type='text' name='disponibilities' placeholder='Disponibilités' required />
             </div>
 
             {/* Champ de saisie pour la localisation */}
             <div className={styles.Location}>
-                <label>Localisation</label>
-                <input onChange={(e) => setLocation(e.target.value)} value={Location} type='text' name='location' placeholder='Localisation' required />
+                <label className={styles.textLocation} >Localisation:</label>
+                <input className={styles.inputLocation} onChange={(e) => setLocation(e.target.value)} value={Location} type='text' name='location' placeholder='Localisation' required />
             </div>
 
             {/* Champ de saisie pour le type de contrat souhaité */}
             <div className={styles.typecontrat}>
-                <label>Type de Contrat</label>
-                <input onChange={(e) => setTypecontrat(e.target.value)} value={typecontrat} type='text' name='typecontrat' placeholder='Type de Contrat' required />
+                <label className={styles.textTypecontrat} >Type de Contrat:</label>
+                <input  className={styles.inputTypecontrat} onChange={(e) => setTypecontrat(e.target.value)} value={typecontrat} type='text' name='typecontrat' placeholder='Type de Contrat' required />
             </div>
 
             {/* Champ de saisie pour la spécialité */}
             <div className={styles.Speciality}>
-                <label>Spécialité</label>
-                <input onChange={(e) => setSpeciality(e.target.value)} value={Speciality} type='text' name='speciality' placeholder='Spécialité' required />
+                <label className={styles.textSpeciality} >Spécialité:</label>
+                <input className={styles.inputSpeciality} onChange={(e) => setSpeciality(e.target.value)} value={Speciality} type='text' name='speciality' placeholder='Spécialité' required />
             </div>
 
             {/* Champs pour les liens vers les réseaux sociaux */}
             <div className={styles.reseaux}>
-                <label>Réseaux Sociaux</label>
-                <input onChange={(e) => setLinkedin(e.target.value)} value={linkedin} type='text' name='linkedin' placeholder='LinkedIn URL' />
-                <input onChange={(e) => setGithub(e.target.value)} value={github} type='text' name='github' placeholder='GitHub URL' />
-                <input onChange={(e) => setTwitter(e.target.value)} value={twitter} type='text' name='twitter' placeholder='Twitter URL' />
+                <label className={styles.textReseaux} >Réseaux Sociaux:</label>
+                <input className={styles.inputLinkedin} onChange={(e) => setLinkedin(e.target.value)} value={linkedin} type='text' name='linkedin' placeholder='LinkedIn URL' />
+                <input className={styles.inputGithub} onChange={(e) => setGithub(e.target.value)} value={github} type='text' name='github' placeholder='GitHub URL' />
+                <input className={styles.inputTwitter} onChange={(e) => setTwitter(e.target.value)} value={twitter} type='text' name='twitter' placeholder='Twitter URL' />
             </div>
 
             {/* Message d'erreur si un champ est manquant */}
             {error && <p style={{ color: 'red' }}>Veuillez remplir tous les champs</p>}
             
             {/* Bouton de soumission du formulaire */}
-            <button onClick={(e) => handleSubmit(e)} type='button'>Enregistrer</button>
+            <button  className={styles.button} onClick={(e) => handleSubmit(e)} type='button'>Enregistrer</button>
         </form>
     )
 }
