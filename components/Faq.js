@@ -3,6 +3,9 @@ import styles from '../styles/Faq.module.css';
 import FaqElement from './FaqElement';
 import {useState} from 'react'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // j'ai rajouter
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+
 const Faq = () => {
 
   const [open, setOpen] = useState(null)
@@ -10,10 +13,12 @@ const Faq = () => {
   function FaqElement(props) {
   
     return (
-      <div>
-          <h4> {props.question} <span onClick={()=>{ setOpen(props.position)}}>X</span> </h4>
+      <section id='FAQ'>
+      <div >
+          <h4> {props.question} <span onClick={()=>{ setOpen(props.position)}}><span ><FontAwesomeIcon icon={faPlus} className={styles.addIconPlus}/></span></span> </h4>
           {open === props.position ? <p> {props.reponse}</p> : null}
       </div>
+      </section>
     )
   }
   
@@ -37,7 +42,7 @@ const Faq = () => {
 
       const myFaq= faqData.map((data, i)=>{
 
-        return <FaqElement key={i} question={data.question} reponse={data.answer}  position={i}/>
+        return <FaqElement key={i} question={data.question} reponse={data.answer}  index={data.index}/>
 
         })
 

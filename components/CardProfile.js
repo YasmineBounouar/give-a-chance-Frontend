@@ -8,7 +8,8 @@ import  Link from 'next/Link';
 
 function Cardprofile() {
   return (
-     <div className={styles.card}>
+
+     <section className={styles.card}>
 
         <div className={styles.cardImage}>
            <Image src='/profildev.jpg' alt='profil' height={87.5} width={250}></Image>
@@ -40,7 +41,7 @@ function Cardprofile() {
             {/* quand on arrive pas a dissocier entre un titre ou un paragraphe , et pour l'icone */}
         </div>
 
-     </div>
+     </section>
   )
 }
 

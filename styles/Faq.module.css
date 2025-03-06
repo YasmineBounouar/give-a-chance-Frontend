@@ -16,3 +16,13 @@
     margin: 10px 0 0;
     font-size: 16px;
 }
+
+
+.addIconPlus{
+    margin-left: 10px;
+    font-size: 20px;
+    color: #fbfafa;
+    background-color: rgb(17, 102, 177);
+    border-radius: 50%;
+
+}
