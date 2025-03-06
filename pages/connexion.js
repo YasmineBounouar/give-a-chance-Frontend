@@ -8,24 +8,29 @@ import Image from 'next/Image';
 
 function connexion() {
   
-  // Déclaration de l'état pour basculer entre les deux formulaires (connexion et inscription)
-  const [connexiontype, setConnexiontype] = useState(true); // true pour 'connexion', false pour 'inscription'
+  const [connexiontype, setConnexiontype] = useState(true);
   
-  // Texte pour lier à la page d'inscription si l'utilisateur est sur la page de connexion
-  let SigninText = <p>Vous n’avez pas de compte ? <span onClick={() => { setConnexiontype(!connexiontype) }}>créer un compte</span> </p>
-  
-  // Texte pour lier à la page de connexion si l'utilisateur est sur la page d'inscription
-  let signuptext = <p>Vous avez déjà un compte ? <span onClick={() => { setConnexiontype(!connexiontype) }}>connectez-vous</span> </p>
+
+  let SigninText=<p className={styles.SigninText}>Don't you have an account ?<span className={styles.connexiontype}onClick={()=>{setConnexiontype(!connexiontype)}}>Create an account.</span> </p>
+  let signuptext=<p className={styles.signuptext}>Do you already have an account ? <span className={styles.connexiontype2} onClick={()=>{setConnexiontype(!connexiontype)}}>Sign in</span> </p>
 
   return (
-    <div> 
-      {/* Affichage conditionnel du texte selon l'état de connexiontype */}
-      {connexiontype ? SigninText : signuptext} 
+    <div className={styles.mainconnexion}> 
+      <header className={styles.headerconnexion}>
+        <Image className={styles.logoheader} src='/unnamed.jpg'height={80} width={80}></Image>
+        <button  type="submit" className={styles.buttongoogle}>SIGN WITH GOOGLE <Image src='/icon.svg' height={20} width={30}></Image></button>
+      </header>
       
-      {/* Affichage conditionnel du formulaire de connexion ou d'inscription en fonction de connexiontype */}
-      {connexiontype ? <Singin /> : <Signup />}
+
+{/* affichage conditionnel */}
+{connexiontype ? <Singin/> : <Signup/>}
+{connexiontype? SigninText : signuptext} 
+
+    <footer>
+
+    </footer>
     </div>
+
   )
 }
-
 export default connexion;
