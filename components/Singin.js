@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../styles/signin.module.css'
+import styles from '../styles/Connexion.module.css'
 import { useState } from 'react';
 
 function SingIN() {
@@ -70,21 +70,21 @@ function SingIN() {
 
     <form className={styles.formsignin}>
 
-    <h3>SignIN</h3>
+    <h3 className={styles.titlesignin}>Sign in</h3>
 
    
     
-    <input onChange={(e)=>{setEmail(e.target.value)}} value={email} type="email" name="mdp" placeholder='email'/>
-   {errorEmail && <p style={{color:'red'}}>Veuillez mettre un email valide</p>}
+    <input onChange={(e)=>{setEmail(e.target.value)}} value={email} type="email" name="mdp" placeholder='email' className={styles.inputemail}/>
+   {errorEmail && <p style={{color:'red'}}>Please enter a valid email.</p>}
 
-    <input onChange={(e)=>{setPassword(e.target.value)}} value={password} type="password" name="password" placeholder='password'/>
+    <input onChange={(e)=>{setPassword(e.target.value)}} value={password} type="password" name="password" placeholder='password' className={styles.inputpassword}/>
 
     {usernotfound && <p style={{color:'red'}}>Utilisateur not found</p>}
 
     
-    {error && <p style={{color:'red'}}>Veuillez remplir tous les champs</p>}
+    {error && <p style={{color:'red'}}>Please fill in all the fields.</p>}
   
-   <button onClick={(e)=>{handleClick(e)}} type="submit">Submit</button>
+   <button onClick={(e)=>{handleClick(e)}} type="submit" className={styles.buttonSubmmit}>Submit</button>
     
     
 

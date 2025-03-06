@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../styles/Faq.module.css';
-import FaqElement from './FaqElement';
+
 import {useState} from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // j'ai rajouter

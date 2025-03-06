@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from '../styles/signin.module.css'
 import { useState } from 'react';
+import styles from '../styles/Connexion.module.css';
 
 function SingUP() {
 
@@ -128,27 +128,27 @@ console.error('Error:', error);
 
 <form className={styles.formsignup}>
 
-<h3>SignUP</h3>
+<h3 className={styles.titlesignin}>Sign up</h3>
 
 
-<input  onChange={(e)=>{setUsername(e.target.value)}} value={Username} type="text" name="username" placeholder='userName' required/>
+<input  onChange={(e)=>{setUsername(e.target.value)}} value={Username} type="text" name="username" placeholder='Username' required className={styles.username}/>
 
-    <input onChange={(e)=>{setFirstname(e.target.value)}} value={firstname} type="text" name="firstname" placeholder='firstname' required/>
+    <input onChange={(e)=>{setFirstname(e.target.value)}} value={firstname} type="text" name="first name" placeholder='First name' required className={styles.firstname}/>
    
-    <input onChange={(e)=>{setLastname(e.target.value)}} value={lastname} type="text" name="lastname" placeholder='lastname' required/>
+    <input onChange={(e)=>{setLastname(e.target.value)}} value={lastname} type="text" name="last name" placeholder='Last name' required className={styles.lastname}/>
 
-    {errorEmail && <p style={{color:'red'}}>Veuillez mettre un email valide</p>}
-    <input onChange={(e)=>{setEmail(e.target.value)}} value={email} type="email" name="email" placeholder='Email' required/>
+    {errorEmail && <p style={{color:'red'}}>Please enter a valid email.</p>}
+    <input onChange={(e)=>{setEmail(e.target.value)}} value={email} type="email" name="email" placeholder='Email' required className={styles.email}/>
 
-    <input onChange={(e)=>{setPassword(e.target.value)}} value={password} type="password" name="password" placeholder='Password'required/>
+    <input onChange={(e)=>{setPassword(e.target.value)}} value={password} type="password" name="password" placeholder='Password'required className={styles.password}/>
 
-    
-<select value={selectedOption} onChange={(e)=>{setSelectedOption(e.target.value)}} >
-        <option value="Developer">Developer</option>
-        <option value="Recruter">Recruteur</option>
-</select>
-    {error && <p style={{color:'red'}}>Veuillez remplir tous les champs</p>}
-    <button onClick={(e)=>{handleSubmit(e)}} type="submit">Valider</button>
+   <div className={styles.deroulante}><select value={selectedOption} onChange={(e)=>{setSelectedOption(e.target.value)}} className={styles.listederoulante}>
+        <option value="Developer" className={styles.type}>Developer</option>
+        <option value="Recruter"className={styles.type}>Recruteur</option>
+</select></div> 
+
+    {error && <p style={{color:'red'}}>Please fill in all the fields.</p>}
+    <button onClick={(e)=>{handleSubmit(e)}} type="submit" className={styles.button}>Submit</button>
     {detectdoublon && <p style={{color:'red'}}>User already exist</p>}
 
 </form>
