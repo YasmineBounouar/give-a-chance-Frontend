@@ -19,7 +19,6 @@ function connexion() {
       <header className={styles.headerconnexion}>
         <Image className={styles.logoheader} src='/unnamed.jpg'height={80} width={80}></Image>
         <button  type="submit" className={styles.buttongoogle}>SIGN WITH GOOGLE <Image src='/icon.svg' height={20} width={30}></Image></button>
-       
       </header>
       
 
