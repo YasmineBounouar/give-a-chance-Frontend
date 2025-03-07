@@ -1,3 +1,11 @@
+:root {
+  --bordercolor: 1px solid #ffffff;
+  --maintitle: 18px;
+  --secondaryTitle:14px
+}
+
+
+
 body {
   padding: 0;
   margin: 0;
@@ -8,4 +16,7 @@ body {
 * {
   box-sizing: border-box;
 }
+
+
+/* variable que l'ont peut réutiliser pour toute les pages   */
 

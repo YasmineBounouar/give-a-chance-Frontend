@@ -11,16 +11,17 @@ function pageannuaire() {
         <header className={styles.headerAnnuaire}>
         <Image className={styles.logoheader} src='/unnamed.jpg'height={80} width={80}></Image>
         <FontAwesomeIcon icon={ faUser} className={styles.customIcon}/>
+      
         </header>
 
-
+        <h4 className={styles.titleAnnuaire}>Hire developers </h4>
 
         <aside className={styles.colonne}></aside>
 
 
 
-        <button  className={styles.buttonAnnuaire}>More profiles</button>
-        <h4 className={styles.titleAnnuaire}>Hire developers </h4>
+        
+        
 
 
         <div className={styles.boxInitial}>
@@ -35,12 +36,11 @@ function pageannuaire() {
         <input className={styles.inputSearch} type="text" name="Search" placeholder='Search' ></input>
         <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.Fontawesome}/>
         </div>
-       
+        <button  className={styles.buttonAnnuaire}>More profiles</button>
         </div>
        </div>
        
-      
-
+     
   )
 }
 

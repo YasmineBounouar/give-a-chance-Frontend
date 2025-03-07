@@ -8,7 +8,7 @@ import Faq from "./Faq.js";
 import ContactForm from "./ContactForm.js";
 import styles from "../styles/Home.module.css";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // j'ai rajouter
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
 import { fa1, fa2, fa3 } from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
