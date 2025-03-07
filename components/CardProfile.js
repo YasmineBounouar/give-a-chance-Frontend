@@ -1,4 +1,4 @@
-import Image from "next/Image";
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // j'ai rajouter
 import {
   faHeart,
@@ -7,17 +7,16 @@ import {
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "../styles/Developer.module.css";
-import Link from "next/Link";
+import Link from "next/link";
 
 function Cardprofile() {
   return (
-    
     <section className={styles.card}>
       <div className={styles.cardImage}>
         <Image
           src="/profildev.jpg"
           alt="profil"
-          height={120}
+          height={87.5}
           width={250}
         ></Image>
         <Link href="/">
@@ -73,9 +72,7 @@ function Cardprofile() {
         <span className={styles.stylecounter}>(count)</span>
         {/* quand on arrive pas a dissocier entre un titre ou un paragraphe , et pour l'icone */}
       </div>
-    
     </section>
-   
   );
 }
 

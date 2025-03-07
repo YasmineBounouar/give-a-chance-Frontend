@@ -8,8 +8,13 @@ import { faQuestion } from "@fortawesome/free-solid-svg-icons";
 function Header() {
   return (
     <header className={styles.header}>
-      <Image src="/GIVE A CHANCE.png" width={80} height={50} alt="logo"></Image>
-      <Link href="">
+      <Image
+        src="/GIVE A CHANCE.png"
+        width={150}
+        height={75}
+        alt="logo"
+      ></Image>
+      <Link href="#Home">
         <span className={styles.profil}>Profil</span>
       </Link>
       <Link href="#COMMENT CA MARCHE">
