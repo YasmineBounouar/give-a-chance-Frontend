@@ -78,7 +78,7 @@ function SingIN() {
     
     {error && <p style={{color:'red'}}>Please fill in all the fields.</p>}
   
-   <button onClick={(e)=>{handleClick(e)}} type="submit" className={styles.buttonSubmmit}>Submit</button>
+   <button onClick={(e)=>{handleClick(e)}} type="submit" className={styles.buttonSubmmit} >Submit</button>
     
     
 

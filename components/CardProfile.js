@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/Image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // j'ai rajouter
 import {
   faHeart,
@@ -7,7 +7,7 @@ import {
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "../styles/Developer.module.css";
-import Link from "next/link";
+import Link from "next/Link";
 
 function Cardprofile() {
   return (
@@ -16,7 +16,7 @@ function Cardprofile() {
         <Image
           src="/profildev.jpg"
           alt="profil"
-          height={87.5}
+          height={120}
           width={250}
         ></Image>
         <Link href="/">

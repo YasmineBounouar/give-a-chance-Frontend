@@ -39,6 +39,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
   }
   .profil{
     display: flex;
@@ -54,3 +55,66 @@
     height: 100%;
     padding: 1rem 0;
   }
+
+
+
+
+  .navLinks{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    gap: 10px;
+  }
+
+
+
+  .IconBars{
+    display: none;
+  }
+
+
+
+
+/* Styles for screens between 900px and 1200px */
+@media (max-width: 1200px) {
+  .button {
+    font-size: 16px; /* Adjust font size for medium screens */
+  }
+}
+
+/* Styles for screens between 600px and 900px */
+@media (max-width: 900px) {
+  .button {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+}
+
+/* Styles for screens smaller than 600px (Mobile) */
+@media (max-width: 600px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    padding: 1rem 0;
+    background-color:#f00b89;
+    font-size: medium;
+    color: white;
+    border-bottom: 1px solid #8e7949;
+    font-size: 23px;
+    padding-inline: 28px;
+  }
+
+  .IconQuestion{
+    display: block;
+  }
+  .navLinks{
+display: none;
+  }
+
+
+  .IconBars{
+    display: block;
+  }
+}

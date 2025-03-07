@@ -7,15 +7,7 @@ function ContactForm() {
       <h2 className={styles.contactformtitle}>Contactez-nous</h2>
       <form className={styles.form}>
         <div className={styles.inputContainer}>
-          <div className={styles.message}>
-            <label for="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Message"
-              className={styles.textarea}
-            ></textarea>
-          </div>
+          
           <div className={styles.inputform}>
             <label for="name">Lastname</label>
             <input
@@ -40,6 +32,16 @@ function ContactForm() {
               name="email"
               placeholder="Email"
             ></input>
+          </div>
+
+          <div className={styles.message}>
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Got a question? Drop us a message!"
+              className={styles.textarea}
+            ></textarea>
           </div>
         </div>
 

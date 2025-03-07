@@ -1,9 +1,9 @@
 import React from "react";
-import Link from "next/Link";
-import Image from "next/Image";
+import Link from "next/link";
+import Image from "next/image";
 import styles from "../styles/Header.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // j'ai rajouter
-import { faQuestion } from "@fortawesome/free-solid-svg-icons";
+import { faQuestion, faBars } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
   return (
@@ -13,26 +13,44 @@ function Header() {
         width={150}
         height={75}
         alt="logo"
+        className={styles.logo}
+  
       ></Image>
-      <Link href="#Home">
+    
+      
+      
+
+<div className={styles.navLinks}>
+<Link href="/">
         <span className={styles.profil}>Profil</span>
       </Link>
-      <Link href="#COMMENT CA MARCHE">
+      <Link href="#COMMENT">
         <span className={styles.commentcamarche}>Comment ça marche</span>
       </Link>
       <Link href="#CONTACT">
         <span className={styles.contact}>Contact</span>
       </Link>
 
-      <Link href="/connexion">
+      <Link  href="/Connexion">
         <button className={styles.btnconnexion}>CONNEXION</button>
       </Link>
 
-      <Link a href="#FAQ">
+      <Link  href="#FAQ">
         <span className={styles.IconQuestion}>
-          <FontAwesomeIcon icon={faQuestion} />
+          <FontAwesomeIcon icon={faBars} />
         </span>
       </Link>
+
+</div>
+ 
+
+        <span  className={styles.IconBars}>
+          <FontAwesomeIcon icon={faBars} />
+        </span>
+      
+
+
+
     </header>
   );
 }

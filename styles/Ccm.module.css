@@ -1,0 +1,64 @@
+.commentCaMarcheContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    flex-direction: row;
+    width: 100%;
+   background-color: blueviolet;
+   gap: 50px;
+
+  }
+.commentCaMarcheCardONE,
+.commentCaMarcheCardTWO,
+.commentCaMarcheCardThree {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+ 
+ 
+}
+.linkcommentCaMarche{
+    color: #353a3f;
+    text-decoration: underline;
+    font-size: 20px; 
+   
+  
+    
+  }
+  .fa{ 
+    background-color: red;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+   
+    
+
+  }
+ .ccm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+ .linkcommentCaMarche{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+ }
+
+  @media (max-width: 600px) {
+    .commentCaMarcheContainer{
+     flex-direction: column;
+    }
+
+
+    
+  }

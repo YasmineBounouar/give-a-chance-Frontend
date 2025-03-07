@@ -1,12 +1,8 @@
 import React from "react";
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faLinkedin,
-  faSquareFacebook,
-} from "@fortawesome/free-solid-svg-icons"; // Changer l'importation ici
+import Link from "next/Link";
+
 import styles from "../styles/Footer.module.css";
-import Image from "next/image";
+import Image from "next/Image";
 
 function Footer() {
   return (
@@ -29,22 +25,27 @@ function Footer() {
       <section className={styles.socialnetwork}>
         <Link href="/">
           <span>
-            <FontAwesomeIcon
-              icon={faSquareFacebook}
-              className={styles.IconfaSquareFacebook}
-            />
-            facebook
+            <Image src={'/facebook.svg'} width={20} height={20}></Image>
+            
+           
           </span>
         </Link>
         <Link href="/">
           <span>
-            <FontAwesomeIcon
-              icon={faLinkedin}
-              className={styles.IconfaLinkedin}
-            />
-            Linkedin
+          <Image src={'/linkedin.svg'} width={20} height={20} ></Image>
+           
           </span>
         </Link>
+
+
+        <Link href="/">
+          <span>
+          <Image src={'/twitter.svg'} width={20} height={20} ></Image>
+           
+          </span>
+        </Link>
+
+
       </section>
     </footer>
   );

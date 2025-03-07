@@ -1,8 +1,6 @@
 import React from 'react'
 import styles from '../styles/Faq.module.css';
-
 import {useState} from 'react'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // j'ai rajouter
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
@@ -17,8 +15,8 @@ const Faq = () => {
     return (
       <section id='FAQ'>
       <div >  
-          <h4> {props.question} <span onClick={()=>{ setOpen(props.position)}}><span ><FontAwesomeIcon icon={faPlus} className={styles.addIconPlus}/></span></span> </h4>
-          {open === props.position ? <p> {props.reponse}</p> : null}
+          <h4> {props.question} <span onClick={()=>{ setOpen(props.index)}}><span ><FontAwesomeIcon icon={faPlus} className={styles.addIconPlus}/></span></span> </h4>
+          {open === props.index && <p> {props.reponse}</p> }
       </div>
       </section>
     )
