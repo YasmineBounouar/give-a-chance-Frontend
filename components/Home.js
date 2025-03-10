@@ -10,8 +10,6 @@ import Ccm from "./Ccm.js"
 
 
 
-
-
 function Home() {
   return (
     <div className={styles.container}>

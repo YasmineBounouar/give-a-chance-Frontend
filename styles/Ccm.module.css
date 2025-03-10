@@ -4,9 +4,7 @@
   align-items: center;
     flex-direction: row;
     width: 100%;
-   background-color: blueviolet;
    gap: 50px;
-
   }
 .commentCaMarcheCardONE,
 .commentCaMarcheCardTWO,
@@ -31,7 +29,7 @@
     
   }
   .fa{ 
-    background-color: red;
+    background-color: rgb(91, 86, 86);
     border-radius: 50%;
     height: 80px;
     width: 80px;

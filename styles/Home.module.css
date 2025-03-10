@@ -109,7 +109,6 @@
   padding: 2rem;
   background-color: rgba(240, 248, 255, 0.558);
   border-radius: 10px;
-  
 }
 
 .commentCaMarcheContainer {
@@ -124,7 +123,6 @@
   border-radius: 10px;
   margin-top: 50px;
   gap: 10rem;
- 
 }
 
 
@@ -137,7 +135,6 @@
   width: 100%;
   padding: 2%;
   gap: 2rem;
-
 }
 
 .card{
@@ -145,6 +142,7 @@
   justify-content: space-evenly;
   gap: 3rem;
   flex-wrap: wrap;
+
 }
 
 .btncardprofil {
@@ -168,21 +166,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 .logo {
   width: 150px;
   height: 75px;
-  
 }
-
 
 
 @media (max-width: 600px) {
   .main {
 
     width: 100vw;
-    background-color: #0eca73;
 
   }
  
@@ -211,6 +205,10 @@
     width: 150px;
     height: 75px;
   }
+  .textpresentation{
+    width: 100%;
+
+  }
 
 }
 
@@ -224,6 +222,10 @@
     background-color: #fff;
 
   }
+  .textpresentation{
+    width: 100%;
+
+  }
  
 }
 
@@ -233,7 +235,7 @@
   .main {
 
     width: 100vw;
-    background-color: #a01818;
+    background-color: #353a3f;;
 
   }
 }
