@@ -1,7 +1,9 @@
 .mainconnexion{
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
     background-color: #353a3f;
+
     
     
 }
@@ -15,7 +17,6 @@
     align-items: center;
     width: 100%;
     height: 80px;
-    padding: 1rem 0;
     background-color:#353a3f;
     font-size: medium;
     color: white;
@@ -32,7 +33,7 @@
     
     max-width: 400px; /* La largeur maximale du formulaire est de 400px */
     margin: 0 auto; /* Centrage du formulaire horizontalement */
-    padding: 2rem; /* Espacement interne de 2rem autour du contenu */
+    padding: 1rem; /* Espacement interne de 2rem autour du contenu */
     background-color: #fff; /* Fond du formulaire en blanc */
     border-radius: 8px; /* Coins arrondis pour un effet plus doux */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère autour du formulaire */
@@ -40,7 +41,7 @@
     display: flex; /* Utiliser Flexbox pour gérer l'alignement */
     flex-direction: column; /* Aligner les éléments verticalement */
     align-items: center; /* Aligner tous les éléments au centre horizontalement */
-    margin-top: 100px;
+ 
   }
   
 
@@ -103,7 +104,7 @@
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    margin-inline-end: 20px;
+    /* margin-inline-end: 20px; */
     display: flex;
     justify-content: center;
     align-items: center;

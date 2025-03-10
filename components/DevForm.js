@@ -49,6 +49,10 @@ function DevForm() {
         .then((response) => response.json())
         .then((data) => {
             console.log(data.updatedProfil); // Affiche la réponse du serveur dans la console
+
+
+
+            
         })
         .catch((error) => {
             console.error('Error:', error); // Capture les erreurs en cas de problème
