@@ -31,7 +31,6 @@ function Onbording() {
                 </div>
            
             </div>
-            <DashboardDev/>
 
         </div>
     )
