@@ -12,7 +12,7 @@ function Footer() {
         width={250}
         height={150}
         alt="logo"
-      ></Image>
+      />
       <Link href="#Home">
         <span className={styles.cgv}>Conditions générales</span>
       </Link>

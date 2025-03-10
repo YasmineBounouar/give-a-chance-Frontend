@@ -2,7 +2,7 @@ import Home from '../components/Home';
 import Onbording from './Onboarding';
 
 function Index() {
-  return <Onbording />;
+  return <Home />;
 }
 
 export default Index;
