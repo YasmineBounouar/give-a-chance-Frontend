@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from '../styles/Onbording.module.css'
+import styles from '../styles/Onboarding.module.css'
 
 function DevForm() {
     // Déclaration des états pour stocker les valeurs des champs du formulaire
