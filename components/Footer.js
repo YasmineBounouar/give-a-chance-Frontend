@@ -1,8 +1,8 @@
 import React from "react";
-import Link from "next/link";
+import Link from "next/Link";
 
 import styles from "../styles/Footer.module.css";
-import Image from "next/image";
+import Image from "next/Image";
 
 function Footer() {
   return (
