@@ -31,7 +31,7 @@ function Header() {
         <span className={styles.contact}>Contact</span>
       </Link>
 
-      <Link  href="/Connexion">
+      <Link   href="/Connexion">
         <button className={styles.btnconnexion}>CONNEXION</button>
       </Link>
 

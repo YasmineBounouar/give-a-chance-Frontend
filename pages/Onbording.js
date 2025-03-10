@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import style from '../styles/Onbording.module.css';
 import DevForm from '../components/DevForm';
 
+
 function Onbording() {
     return (
         <div className={style.container}>
@@ -30,6 +31,7 @@ function Onbording() {
                 </div>
            
             </div>
+            <DashboardDev/>
 
         </div>
     )

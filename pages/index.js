@@ -1,8 +1,8 @@
 import Home from '../components/Home';
-import Onbording from './Onbording';
+import DashboardDev from '../components/DashboardDev';
 
 function Index() {
-  return <Home />;
+  return <DashboardDev />;
 }
 
 export default Index;
