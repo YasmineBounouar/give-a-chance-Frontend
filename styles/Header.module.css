@@ -1,16 +1,17 @@
 /* Header Section */
 .header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 80%;
     height: 80px;
     padding: 1rem 0;
-    background-color:#353a3f;
+ 
     font-size: medium;
     color: white;
     border-bottom: 1px solid #8e7949;
     font-size: 23px;
+   
   }
   .btnconnexion{
     background-color: #8e7949;
@@ -18,7 +19,7 @@
     color: rgb(255, 255, 255);
     padding: 10px 28px;
     size: bold;
-    text-align: center;
+    text-align: center;   
     text-decoration: none;  
     border-radius: 8px;
     display: inline-block;
@@ -39,7 +40,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    display: none;
   }
   .profil{
     display: flex;
@@ -57,36 +57,44 @@
   }
 
 
-
-
   .navLinks{
     display: flex;
     width: 100%;
-    justify-content: space-evenly;
-    gap: 10px;
+    justify-content: flex-end;
+    gap: 10%;
+   
+    
   }
-
-
 
   .IconBars{
     display: none;
   }
 
 
+  .navLinksForMobile{
+background-color: #ffde59;
+position: absolute;
+top: 80px;
+left:0px;
+display:flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 20px;
+height: 50%;
+width: 100%;
+color: black;
+  }
 
 
 /* Styles for screens between 900px and 1200px */
 @media (max-width: 1200px) {
-  .button {
-    font-size: 16px; /* Adjust font size for medium screens */
-  }
+
 }
 
 /* Styles for screens between 600px and 900px */
 @media (max-width: 900px) {
-  .button {
-    font-size: 14px; /* Adjust font size for smaller screens */
-  }
+
 }
 
 /* Styles for screens smaller than 600px (Mobile) */
@@ -98,7 +106,6 @@
     width: 100%;
     height: 80px;
     padding: 1rem 0;
-    background-color:#f00b89;
     font-size: medium;
     color: white;
     border-bottom: 1px solid #8e7949;
@@ -113,8 +120,9 @@
 display: none;
   }
 
-
   .IconBars{
     display: block;
+    z-index: 10px;
   }
+
 }
