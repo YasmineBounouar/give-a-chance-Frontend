@@ -33,7 +33,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    size: 3rem;
   }
   .headercontainer{
     display: flex;
@@ -48,7 +47,7 @@
   .navLinks{
     display: flex;
     width: 100%;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 10%;
    
     

@@ -1,7 +1,9 @@
 :root {
   --bordercolor: 1px solid #ffffff;
   --maintitle: 18px;
-  --secondaryTitle:14px
+  --secondaryTitle:14px;
+  --maincolor:#353a3f
+
 }
 
 

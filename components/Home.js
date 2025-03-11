@@ -50,6 +50,9 @@ function Home() {
 
           <div className={styles.cardcontainer}>
             <div className={styles.card}>
+
+
+              
               <CardProfile />
             </div>
 
