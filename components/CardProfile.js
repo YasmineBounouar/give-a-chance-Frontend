@@ -13,12 +13,10 @@ import { useSelector } from "react-redux";
 
 function Cardprofile() {
 
-
   const profil  = useSelector((state) => state.profil.value);
 
-useEffect(() => {
+useEffect(() => { 
   
-    
         // Envoi des données au backend via une requête get
         fetch('http://localhost:3000/profils/:'
           
@@ -28,22 +26,13 @@ useEffect(() => {
  
       }))
       
-      
+    
       .catch((error) => {
           console.error('Error:', error);  // Affiche une erreur dans la console si l'API échoue
       });
   
 
-
-
-
 }, [])
-
-
-
-
-
-
 
 
 
