@@ -5,9 +5,17 @@ import styles from "../styles/Header.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // j'ai rajouter
 import { faQuestion, faBars } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { logout } from "../reducers/user";
 
 function DashboardHeader() {
   const [navmobile, Setnavmobile] = useState(false);
+
+  const dispatch = useDispatch();
+
+  function handleLogOut() {
+    dispatch(logout());
+  }
 
   return (
     <header className={styles.header}>
@@ -23,16 +31,19 @@ function DashboardHeader() {
         <Link href="/CardProfile">
           <span className={styles.profil}>Profil</span>
         </Link>
-        
+
         <Link href="Pageannuaire">
           <span className={styles.profil}>Contact</span>
         </Link>
 
-        <Link href="/">
+        <Link
+          href="/"
+          onClick={() => {
+            handleLogOut();
+          }}
+        >
           <button className={styles.btnconnexion}>LOGOUT</button>
         </Link>
-
-        
       </div>
 
       {navmobile && (
@@ -40,7 +51,7 @@ function DashboardHeader() {
           <Link href="/CardProfile">
             <span className={styles.profil}>Profil</span>
           </Link>
-         
+
           <Link href="#CONTACT">
             <span className={styles.contact}>Contact</span>
           </Link>
