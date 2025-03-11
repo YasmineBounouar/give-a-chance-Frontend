@@ -1,6 +1,6 @@
 
 
-import CardProfile from "./CardProfile.js";
+import CardProfile from "./CardDev.js";
 import Header from "./Header.js";
 import Footer from "./Footer.js";
 import Faq from "./Faq.js";

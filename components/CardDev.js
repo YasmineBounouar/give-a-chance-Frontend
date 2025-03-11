@@ -6,7 +6,7 @@ import {
   faShareNodes,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
-import styles from "../styles/Developer.module.css";
+import styles from "../styles/CardDev.module.css";
 import Link from "next/Link";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
@@ -102,4 +102,4 @@ useEffect(() => {
   );
 }
 
-export default Cardprofile;
+export default CardDev;
