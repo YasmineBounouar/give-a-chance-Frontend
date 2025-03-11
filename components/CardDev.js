@@ -6,52 +6,15 @@ import {
   faShareNodes,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
-import styles from "../styles/Developer.module.css";
+import styles from "../styles/CardDev.module.css";
 import Link from "next/Link";
-import { useEffect,useState } from "react";
-import { useSelector } from "react-redux";
-
-
-function Cardprofile() {
-
-
-  const user = useSelector((state) => state.token.value);
-
-console.log(token);
-
-
-useEffect(() => {
-  
-    
-        // Envoi des données au backend via une requête get
-        fetch('http://localhost:3000/profils/:'
-          
-      .then((response) => response.json())
-      .then((data) => {
-          console.log(data.updatedProfil); // Affiche la réponse du serveur dans la console
- 
-      }))
-      
-      
-      .catch((error) => {
-          console.error('Error:', error);  // Affiche une erreur dans la console si l'API échoue
-      });
-  
 
 
 
-
-}, [])
-
+function CardDev() {
 
 
-
-
-
-
-
-
-  return (
+return (
     <section className={styles.card}>
       <div className={styles.cardImage}>
         <Image
@@ -117,4 +80,4 @@ useEffect(() => {
   );
 }
 
-export default Cardprofile;
+export default CardDev;
