@@ -10,7 +10,6 @@ import likes from '../reducers/likes';
 import cardprofils from '../reducers/cardprofils';
 
 
-
 const reducers = combineReducers({ user,likes,cardprofils });
 const persistConfig = { key: 'giveachance', storage };
 
@@ -25,6 +24,8 @@ const store = configureStore({
 
 
 function App({ Component, pageProps }) {
+
+
  
   return (
     <Provider store={store}>
