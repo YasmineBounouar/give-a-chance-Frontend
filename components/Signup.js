@@ -66,8 +66,6 @@ function SingUP() {
         .then((data) => {
           console.log(data);
 
-
-          
           if (data.result === true) {
             // Si l'inscription réussit, réinitialiser les champs du formulaire
             setUsername("");
