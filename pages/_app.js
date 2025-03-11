@@ -7,10 +7,10 @@ import { configureStore } from '@reduxjs/toolkit';
 import Head from 'next/head';
 import user from '../reducers/user'
 import likes from '../reducers/likes';
-import cardprofils from '../reducers/cardprofils';
+import profils from '../reducers/profils';
 
 
-const reducers = combineReducers({ user,likes,cardprofils });
+const reducers = combineReducers({ user,likes,profils });
 const persistConfig = { key: 'giveachance', storage };
 
 

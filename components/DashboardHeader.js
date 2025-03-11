@@ -25,7 +25,7 @@ function DashboardHeader() {
         </Link>
         
         <Link href="Pageannuaire">
-          <span className={styles.contact}>Contact</span>
+          <span className={styles.profil}>Contact</span>
         </Link>
 
         <Link href="/">

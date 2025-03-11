@@ -7,10 +7,21 @@ import Faq from "./Faq.js";
 import ContactForm from "./ContactForm.js";
 import styles from "../styles/Home.module.css";
 import Ccm from "./Ccm.js"
+import { useEffect } from "react";
 
 
 
 function Home() {
+
+
+
+
+
+  
+
+
+
+
   return (
     <div className={styles.container}>
       <div className={styles.main}>
@@ -31,6 +42,9 @@ function Home() {
 
           <div className={styles.cardcontainer}>
             <div className={styles.card}>
+
+
+              
               <CardProfile />
               <CardProfile />
               <CardProfile />

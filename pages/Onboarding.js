@@ -22,8 +22,9 @@ function Onboarding() {
                         <DevForm />
                     </div>
                 </div>
+                <Footer/>
             </div>
-            <Footer/>
+          
         </div>
     );
 }

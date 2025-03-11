@@ -5,8 +5,8 @@ const initialState = {
   value: [], 
 };
 
-export const cardprofilsSlice = createSlice({
-  name: "cardprofils",
+export const profilsSlice = createSlice({
+  name: "profils",
   initialState,
   reducers: {
           getprofils:(state,action)=>{
@@ -16,5 +16,5 @@ export const cardprofilsSlice = createSlice({
   },
 });
 
-export const {getprofils } = cardprofilsSlice.actions;
-export default cardprofilsSlice.reducer;
+export const {getprofils } = profilsSlice.actions;
+export default profilsSlice.reducer;
