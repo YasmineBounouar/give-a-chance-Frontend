@@ -1,6 +1,9 @@
 import React from 'react'
 import styles from '../styles/Connexion.module.css'
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import {login} from '../reducers/user'
+import {useRouter} from 'next/router'
 
 function SingIN() {
   // Déclaration des états locaux pour gérer les valeurs du formulaire et les erreurs
@@ -10,7 +13,8 @@ function SingIN() {
   const [errorEmail, setErrorEmail] = useState(false);  // Erreur pour un email invalide
   const [usernotfound, setUsernotfound] = useState(false);  // Erreur si l'utilisateur n'est pas trouvé
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;  // Expression régulière pour valider l'email
-
+   const router=useRouter()
+  const dispatch = useDispatch();
   // Fonction appelée lors du clic sur le bouton de soumission
   const handleClick = (e) => {
     e.preventDefault();  // Empêche le rechargement de la page par défaut lié à l'envoi du formulaire
@@ -41,16 +45,29 @@ function SingIN() {
     })
     .then((response) => response.json())  // Attente de la réponse de l'API
     .then((data) => {
-      console.log(data.user, data.role);  // Affichage des informations utilisateur et rôle dans la console
-
+      console.log(data);  // Affichage des informations utilisateur et rôle dans la console
+      console.log(data)
       // Si l'authentification est réussie, réinitialiser les champs
       if (data.result === true) {
         setPassword('');
         setEmail('');
-      } else if (data.result === false) {
+         dispatch(login({role:data.role, email:data.user.email,token:data.user.token,username:data.user.username}))//qu'est ce que je doit renvoyer a mon store
+
+
+if(data.user.role==='developer'){
+  router.push('/Onboarding')
+
+
+}else{router.push('/Pageannuaire')}
+
+        
+      } 
+      
+      else if (data.result === false) {
         // Si l'utilisateur n'est pas trouvé, afficher une erreur spécifique
         setUsernotfound(true);  // Cette erreur sera affichée si l'utilisateur n'existe pas dans la base de données
       }
+   
     })
     .catch((error) => {
       console.error('Error:', error);  // Affiche une erreur dans la console si l'API échoue
