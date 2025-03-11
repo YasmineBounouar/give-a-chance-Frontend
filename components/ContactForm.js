@@ -1,17 +1,52 @@
 import React from "react";
 import styles from "../styles/ContactForm.module.css";
 import { useState } from "react";
-
 function ContactForm() {
-  const [lastname, setLastname] = useState("");
-  const [firstname, setFirstname] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [error, setError] = useState(false);
 
-  // Fonction exécutée lors de la soumission du formulaire
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Empêche le rechargement de la page
+
+const [lastname, setLastname] = useState('');
+const [firstname, setFirstname] = useState('');
+const [email, setEmail] = useState('');
+const [message, setMessage] = useState('');
+const [error, setError] = useState(false);
+
+
+// Fonction exécutée lors de la soumission du formulaire
+const handleSubmit = (e) => {
+  e.preventDefault(); // Empêche le rechargement de la page
+
+
+
+ // Vérification que tous les champs obligatoires sont remplis
+ if (lastname === '' || firstname === '' || email === '' || message === '') {
+  setError(true);
+  return;
+}
+
+// Envoi des données au backend via une requête PUT
+fetch('http://localhost:3000/update/Dev/:id', {
+  method: 'POST',
+  headers: {
+      'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+      lastname,
+      firstname,
+      email,
+      message
+  })
+})
+.then((response) => response.json())
+.then((data) => {
+  console.log(data.updatedProfil); // Affiche la réponse du serveur dans la console
+
+ 
+  
+})
+.catch((error) => {
+  console.error('Error:', error); // Capture les erreurs en cas de problème
+});
+}
 
     // Vérification que tous les champs obligatoires sont remplis
     if (lastname === "" || firstname === "" || email === "" || message === "") {

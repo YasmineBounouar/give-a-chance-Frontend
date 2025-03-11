@@ -11,28 +11,28 @@ function Profil() {
     console.log(token);
     
     
-    useEffect(() => {
+    // useEffect(() => {
       
         
-            // Envoi des données au backend via une requête get
-            fetch('http://localhost:3000/profils/:'
+    //         // Envoi des données au backend via une requête get
+    //         fetch('http://localhost:3000/profils/:'
               
-          .then((response) => response.json())
-          .then((data) => {
-              console.log(data.updatedProfil); // Affiche la réponse du serveur dans la console
+    //       .then((response) => response.json())
+    //       .then((data) => {
+    //           console.log(data.updatedProfil); // Affiche la réponse du serveur dans la console
      
-          }))
+    //       }))
           
           
-          .catch((error) => {
-              console.error('Error:', error);  // Affiche une erreur dans la console si l'API échoue
-          });
+    //       .catch((error) => {
+    //           console.error('Error:', error);  // Affiche une erreur dans la console si l'API échoue
+    //       });
       
     
     
     
     
-    }, [])
+    // }, [])
     
     
     
