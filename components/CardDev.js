@@ -11,31 +11,7 @@ import Link from "next/Link";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
-function Cardprofile() {
-
-  const profil  = useSelector((state) => state.profil.value);
-
-useEffect(() => { 
-  
-        // Envoi des données au backend via une requête get
-        fetch('http://localhost:3000/profils/:'
-          
-      .then((response) => response.json())
-      .then((data) => {
-          console.log(data.updatedProfil); // Affiche la réponse du serveur dans la console
- 
-      }))
-      
-    
-      .catch((error) => {
-          console.error('Error:', error);  // Affiche une erreur dans la console si l'API échoue
-      });
-  
-
-}, [])
-
-
-
+function CardDev(props) {
   return (
     <section className={styles.card}>
       <div className={styles.cardImage}>
@@ -60,12 +36,9 @@ useEffect(() => {
       </div>
 
       <div className={styles.cardDescription}>
-        <h5 className={styles.name}>NAME</h5>
-        <h6 className={styles.specialities}>SPECIALITY</h6>
-        <p className={styles.description}>
-          lorem ipsum lorem ipsum lorem ipsum lore ipsum lorem ipsum lorem ipsum
-          lorem ipsum lorem ipsum
-        </p>
+        <h5 className={styles.name}>{props.firstname}</h5>
+        <h6 className={styles.specialities}>{props.hardskillstechnologies}</h6>
+        <p className={styles.description}>{props.presentation}</p>
 
         <div className={styles.locationcard}>
           <span>
@@ -74,7 +47,7 @@ useEffect(() => {
               className={styles.LocationIconStyle}
             />
           </span>
-          <span className={styles.locationname}>LOCATION</span>
+          <span className={styles.locationname}>{props.location}</span>
         </div>
       </div>
 
