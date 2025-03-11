@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import styles from '../styles/Onboarding.module.css'
 
+import { useRouter } from 'next/router';
+
+
 function DevForm() {
     // Déclaration des états pour stocker les valeurs des champs du formulaire
     const [presentation, setPresentation] = useState('');
@@ -16,16 +19,22 @@ function DevForm() {
     const [twitter, setTwitter] = useState('');
     const [error, setError] = useState(false);
 
+ 
+
     // Fonction exécutée lors de la soumission du formulaire
     const handleSubmit = (e) => {
         e.preventDefault(); // Empêche le rechargement de la page
 
+        
+        
+        
         // Vérification que tous les champs obligatoires sont remplis
         if (presentation === '' || softskills === '' || hardskillstechnologies === '' || qualification === '' || disponibilities === '' || typecontrat === '' || Location === '' || Speciality === '') {
             setError(true);
             return;
         }
 
+        
         // Envoi des données au backend via une requête PUT
         fetch('http://localhost:3000/update/Dev/:id', {
             method: 'PUT',
@@ -50,8 +59,11 @@ function DevForm() {
         .then((data) => {
             console.log(data.updatedProfil); // Affiche la réponse du serveur dans la console
 
-
-
+            // Redirige l'utilisateur vers la page de profil
+            if({result:true}){
+                
+                router.push('/Onboarding')
+            }
             
         })
         .catch((error) => {
