@@ -10,11 +10,11 @@ import CardDev from '../components/CardDev';
 function Pageannuaire() {
   const [profilDev, setProfilDev] = useState([]);
   //pour initaliser le use state on doit se demander c'est quoi que je veut stocker
-  const [moreprofil,setMoreprofil] =useState (false)
-
   
+  const limit=10
   const handleSubmit = (e) => {
     e.preventDefault();
+    limit +=10
   }
 
   useEffect(() => {
@@ -24,7 +24,7 @@ function Pageannuaire() {
         console.log(data)
         // setProfilDev(data.profils)
         const shuffled = data.profils.sort(() => 0.5 - Math.random());
-        setProfilDev(shuffled.slice(0, 10)); 
+        setProfilDev(shuffled.slice(0, limit)); 
       
         
       })
