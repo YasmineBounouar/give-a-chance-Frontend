@@ -11,17 +11,7 @@ import Link from "next/Link";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
-function CardDev() {
-
-  
-
-
-  
-
-
-
-
-
+function CardDev(props) {
   return (
     <section className={styles.card}>
       <div className={styles.cardImage}>
@@ -46,12 +36,9 @@ function CardDev() {
       </div>
 
       <div className={styles.cardDescription}>
-        <h5 className={styles.name}>NAME</h5>
-        <h6 className={styles.specialities}>SPECIALITY</h6>
-        <p className={styles.description}>
-          lorem ipsum lorem ipsum lorem ipsum lore ipsum lorem ipsum lorem ipsum
-          lorem ipsum lorem ipsum
-        </p>
+        <h5 className={styles.name}>{props.firstname}</h5>
+        <h6 className={styles.specialities}>{props.hardskillstechnologies}</h6>
+        <p className={styles.description}>{props.presentation}</p>
 
         <div className={styles.locationcard}>
           <span>
@@ -60,7 +47,7 @@ function CardDev() {
               className={styles.LocationIconStyle}
             />
           </span>
-          <span className={styles.locationname}>LOCATION</span>
+          <span className={styles.locationname}>{props.location}</span>
         </div>
       </div>
 
