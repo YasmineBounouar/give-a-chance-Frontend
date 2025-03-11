@@ -8,13 +8,17 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "../styles/Developer.module.css";
 import Link from "next/Link";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import { useSelector } from "react-redux";
+
 
 function Cardprofile() {
 
 
-  const profil  = useSelector((state) => state.profil.value);
+  const user = useSelector((state) => state.token.value);
+
+console.log(token);
+
 
 useEffect(() => {
   
