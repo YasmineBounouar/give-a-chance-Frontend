@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../styles/ContactForm.module.css";
-
+import { useState } from "react";
 function ContactForm() {
 
 const [lastname, setLastname] = useState('');
@@ -8,6 +8,7 @@ const [firstname, setFirstname] = useState('');
 const [email, setEmail] = useState('');
 const [message, setMessage] = useState('');
 const [error, setError] = useState(false);
+
 
 // Fonction exécutée lors de la soumission du formulaire
 const handleSubmit = (e) => {

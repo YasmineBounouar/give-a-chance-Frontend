@@ -17,13 +17,7 @@ import Link from 'next/Link';
 function DashboardDev() {
   return (
     <div className={styles.mainDashboard}>
-      <header className={styles.headerDashboard}>
-        <Image className={styles.logoHeader} src="/unnamed.jpg" height={80} width={80} alt="Logo" />
-        <div className={styles.headerIcons}>
-          <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.customIcon} />
-          <FontAwesomeIcon icon={faUser} className={styles.customIcon} />
-        </div>
-      </header>
+     
 
 
       <div className={styles.contentContainer}>

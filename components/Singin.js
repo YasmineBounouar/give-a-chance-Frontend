@@ -51,7 +51,7 @@ function SingIN() {
       if (data.result === true) {
         setPassword('');
         setEmail('');
-         dispatch(login({role:data.role, email:data.user.email,token:data.user.token,username:data.user.username}))//qu'est ce que je doit renvoyer a mon store
+         dispatch(login({role:data.role, email:data.user.email,token:data.user.token,username:data.user.username , id: data.Infos._id,}))//qu'est ce que je doit renvoyer a mon store
 
 
 if(data.user.role==='developer'){

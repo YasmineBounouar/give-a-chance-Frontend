@@ -1,14 +1,12 @@
 import React from 'react';
-
 import style from '../styles/Onboarding.module.css';
-import DevForm from '../components/DevForm';
 import Link from 'next/Link';
 import Footer from '../components/Footer';
 import DashboardHeader from '../components/DashboardHeader';
 import DashboardDev from '../components/DashboardDev';
 
 
-function Onboarding() {
+function dashboardDeveloper() {
     return (
         <div className={style.container}>
             <div className={style.main}>
@@ -20,7 +18,7 @@ function Onboarding() {
                 <div className={style.menuContainer}>
                     
                     <div className={style.content}>
-                        <DevForm/>
+                        <DashboardDev/>
                     </div>
                 </div>
                 <Footer/>
@@ -30,4 +28,4 @@ function Onboarding() {
     );
 }
 
-export default Onboarding;
+export default dashboardDeveloper;

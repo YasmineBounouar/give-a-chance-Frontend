@@ -65,6 +65,9 @@ function SingUP() {
         .then((response) => response.json()) // Attente de la réponse de l'API
         .then((data) => {
           console.log(data);
+
+
+          
           if (data.result === true) {
             // Si l'inscription réussit, réinitialiser les champs du formulaire
             setUsername("");
@@ -79,6 +82,7 @@ function SingUP() {
                 role: selectedOption,
                 email: data.Infos.email,
                 token: data.Infos.token,
+                id: data.Infos._id,
               })
             ); // element vide à remplir du store.
 
@@ -129,6 +133,7 @@ function SingUP() {
                 role: selectedOption,
                 email: data.Infos.email,
                 token: data.Infos.token,
+                id: data.Infos._id,
               })
               // action.payload du reducers = data.Infos.username,
             ); // element vide à remplir du store.

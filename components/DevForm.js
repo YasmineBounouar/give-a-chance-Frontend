@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from '../styles/Onboarding.module.css'
 
 import { useRouter } from 'next/router';
-
+import { useSelector } from 'react-redux';
 
 function DevForm() {
     // Déclaration des états pour stocker les valeurs des champs du formulaire
@@ -12,31 +12,35 @@ function DevForm() {
     const [qualification, setQualification] = useState('');
     const [disponibilities, setDisponibilities] = useState('');
     const [typecontrat, setTypecontrat] = useState('');
-    const [Location, setLocation] = useState('');
-    const [Speciality, setSpeciality] = useState('');
+    const [location, setLocation] = useState('');
+    const [speciality, setSpeciality] = useState('');
     const [linkedin, setLinkedin] = useState('');
     const [github, setGithub] = useState('');
     const [twitter, setTwitter] = useState('');
     const [error, setError] = useState(false);
 
- 
+const router = useRouter();
+const user = useSelector((state) => state.user.value);
+
 
     // Fonction exécutée lors de la soumission du formulaire
     const handleSubmit = (e) => {
+
+        
         e.preventDefault(); // Empêche le rechargement de la page
 
         
         
         
         // Vérification que tous les champs obligatoires sont remplis
-        if (presentation === '' || softskills === '' || hardskillstechnologies === '' || qualification === '' || disponibilities === '' || typecontrat === '' || Location === '' || Speciality === '') {
+        if (presentation === '' || softskills === '' || hardskillstechnologies === '' || qualification === '' || disponibilities === '' || typecontrat === '' || location === '' || speciality === '') {
             setError(true);
             return;
         }
 
         
         // Envoi des données au backend via une requête PUT
-        fetch('http://localhost:3000/update/Dev/:id', {
+        fetch(`http://localhost:3000/update/Dev/${user.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -48,8 +52,8 @@ function DevForm() {
                 qualification,
                 disponibilities,
                 typecontrat,
-                Location,
-                Speciality,
+                location,
+                speciality,
                 linkedin,
                 github,
                 twitter
@@ -57,12 +61,13 @@ function DevForm() {
         })
         .then((response) => response.json())
         .then((data) => {
-            console.log(data.updatedProfil); // Affiche la réponse du serveur dans la console
+            console.log(data)
+            console.log(user)
 
             // Redirige l'utilisateur vers la page de profil
-            if({result:true}){
+            if(data.result===true){
                 
-                router.push('/Onboarding')
+                router.push('/dashboardDeveloper')
             }
             
         })
@@ -119,7 +124,7 @@ function DevForm() {
             {/* Champ de saisie pour la localisation */}
             <div className={styles.Location}>
                 <label className={styles.textLocation} >Localisation:</label>
-                <input className={styles.inputLocation} onChange={(e) => setLocation(e.target.value)} value={Location} type='text' name='location' placeholder='Localisation' required />
+                <input className={styles.inputLocation} onChange={(e) => setLocation(e.target.value)} value={location} type='text' name='location' placeholder='Localisation' required />
             </div>
 
             {/* Champ de saisie pour le type de contrat souhaité */}
@@ -131,7 +136,7 @@ function DevForm() {
             {/* Champ de saisie pour la spécialité */}
             <div className={styles.Speciality}>
                 <label className={styles.textSpeciality} >Spécialité:</label>
-                <input className={styles.inputSpeciality} onChange={(e) => setSpeciality(e.target.value)} value={Speciality} type='text' name='speciality' placeholder='Spécialité' required />
+                <input className={styles.inputSpeciality} onChange={(e) => setSpeciality(e.target.value)} value={speciality} type='text' name='speciality' placeholder='Spécialité' required />
             </div>
 
             {/* Champs pour les liens vers les réseaux sociaux */}
