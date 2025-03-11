@@ -78,16 +78,17 @@ function DevForm() {
             {/* Champ de saisie pour la présentation */}
             <div className={styles.presentation}>
                 <label className={styles.textPresentation}>Présentation:</label>
+                
                 <textarea 
-  className={styles.inputPresentation} 
-  onChange={(e) => setPresentation(e.target.value)} 
-  value={presentation} 
-  name='presentation' 
-  placeholder='Présentation' 
-  required 
-  cols="20" 
-  rows="10"
-/>
+             className={styles.inputPresentation} 
+             onChange={(e) => setPresentation(e.target.value)} 
+              value={presentation} 
+              name='presentation' 
+              placeholder='Présentation' 
+              required 
+              cols="20" 
+              rows="10"
+                       />
 
             </div>
 

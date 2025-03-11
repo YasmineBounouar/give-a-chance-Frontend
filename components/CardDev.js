@@ -6,19 +6,17 @@ import {
   faShareNodes,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
-import styles from "../styles/Developer.module.css";
+import styles from "../styles/CardDev.module.css";
 import Link from "next/Link";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
 function Cardprofile() {
 
-
   const profil  = useSelector((state) => state.profil.value);
 
-useEffect(() => {
+useEffect(() => { 
   
-    
         // Envoi des données au backend via une requête get
         fetch('http://localhost:3000/profils/:'
           
@@ -28,22 +26,13 @@ useEffect(() => {
  
       }))
       
-      
+    
       .catch((error) => {
           console.error('Error:', error);  // Affiche une erreur dans la console si l'API échoue
       });
   
 
-
-
-
 }, [])
-
-
-
-
-
-
 
 
 
@@ -113,4 +102,4 @@ useEffect(() => {
   );
 }
 
-export default Cardprofile;
+export default CardDev;
