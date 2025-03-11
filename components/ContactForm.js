@@ -17,36 +17,10 @@ const handleSubmit = (e) => {
 
 
 
- // Vérification que tous les champs obligatoires sont remplis
- if (lastname === '' || firstname === '' || email === '' || message === '') {
-  setError(true);
-  return;
-}
 
-// Envoi des données au backend via une requête PUT
-fetch('http://localhost:3000/update/Dev/:id', {
-  method: 'POST',
-  headers: {
-      'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-      lastname,
-      firstname,
-      email,
-      message
-  })
-})
-.then((response) => response.json())
-.then((data) => {
-  console.log(data.updatedProfil); // Affiche la réponse du serveur dans la console
 
- 
-  
-})
-.catch((error) => {
-  console.error('Error:', error); // Capture les erreurs en cas de problème
-});
-}
+
+
 
     // Vérification que tous les champs obligatoires sont remplis
     if (lastname === "" || firstname === "" || email === "" || message === "") {
@@ -127,9 +101,7 @@ fetch('http://localhost:3000/update/Dev/:id', {
         </div>
 
         {/* Message d'erreur si un champ est manquant */}
-        {error && (
-          <p style={{ color: "red" }}>Veuillez remplir tous les champs</p>
-        )}
+        {error && <p style={{ color: "red" }}>Veuillez remplir tous les champs</p>}
 
         <button
           onClick={(e) => handleSubmit(e)}
