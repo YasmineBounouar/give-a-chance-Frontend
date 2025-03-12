@@ -7,47 +7,22 @@ import { useRouter } from "next/router";
 
 
 function Profil() {
-  const dispatch = useDispatch();
+ 
   const router = useRouter();
-  
-  
-  
-   const user = useSelector((state) => state.user.value);
-  
-  
-  
-  const [profil, setProfil] = useState(null);
-  const [errorMessage, setErrorMessage] = useState("");
+
+  // const [profil, setProfil] = useState(null);
+  // const [errorMessage, setErrorMessage] = useState("");
+ 
+ 
+  const user = useSelector((state) => state.user.value);
+  const profils = useSelector((state) => state.profils.value);
 
   useEffect(() => {
     
+    user
+  
     
-    if (!user.token) return; // Vérification supplémentaire (normalement inutile si l’utilisateur est ici)
-
-    fetch(`http://localhost:3000/profil/dev/${user.token}`)
-      .then((response) => response.json())
-      .then((data) => {
-        
-        if (data.result) {
-          // Vérifie si `result` est `true`, ce qui signifie que la requête a réussi
-          setProfil(data.profil);
-         // `data.profils` contient la liste des développeurs renvoyée par le backend
-       
-       
-        } else {
-          
-          setErrorMessage("Votre session a expiré. Veuillez vous reconnecter.");
-          
-          dispatch(logout()); // Déconnecter l'utilisateur
-          
-          router.push("/login"); // Rediriger vers la page de connexion
-        }
-      })
-      .catch((error) => {
-        console.error("Erreur:", error);
-        setErrorMessage("Une erreur est survenue. Veuillez réessayer.");
-      });
- 
+   
     }, [user.token]);
 
 
@@ -66,7 +41,7 @@ function Profil() {
           </div>
 
           <div className={styles.profilDetails}>
-            <h2 className={styles.username}>{profil.username}</h2>
+            <h2 className={styles.username}>{user.username}</h2>
             <p className={styles.email}>{profil.email}</p>
             <p className={styles.role}>{profil.role}</p>
             <p className={styles.location}>{profil.location}</p>
@@ -82,7 +57,7 @@ function Profil() {
 
          
           
-            {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+            {/* {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>} */}
           
           </div>
         </div>
