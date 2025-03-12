@@ -25,8 +25,6 @@ function Pageannuaire() {
         // setProfilDev(data.profils)
         const shuffled = data.profils.sort(() => 0.5 - Math.random());
         setProfilDev(shuffled.slice(0, 10)); 
-      
-        
       })
         
       .catch((error) => {

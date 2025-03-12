@@ -15,7 +15,6 @@ function SingIN() {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expression régulière pour valider l'email
   const router = useRouter();
 
-  const dispatch = useDispatch();
   // Fonction appelée lors du clic sur le bouton de soumission
   const handleClick = (e) => {
     e.preventDefault(); // Empêche le rechargement de la page par défaut lié à l'envoi du formulaire
