@@ -77,11 +77,7 @@ function Home() {
 
           <div className={styles.cardcontainer}>
             <div className={styles.card}>
-<<<<<<< HEAD
-              <CardProfile />
-=======
      {homecards}
->>>>>>> ef7ff6c50dcfb4883bd1dcace80465985d715db4
             </div>
 
             <button className={styles.btncardprofil}>
