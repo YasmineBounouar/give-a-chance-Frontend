@@ -11,7 +11,7 @@ import {
   faPlus,
   faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons"
-import Image from 'next/Image';
+import Image from 'next/image';
 import Link from 'next/Link';
 
 function DashboardDev() {
