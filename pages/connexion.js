@@ -43,8 +43,8 @@ function connexion() {
         <Image
           className={styles.logoheader}
           src="/unnamed.jpg"
-          height={80}
-          width={80}
+          height={70}
+          width={70}
         />
         {/* </Link> */}
         <button type="submit" className={styles.buttongoogle}>
@@ -57,7 +57,7 @@ function connexion() {
       {connexiontype ? <Singin /> : <Signup />}
       {connexiontype ? SigninText : signuptext}
 
-      <footer></footer>
+
     </div>
   );
 }

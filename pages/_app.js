@@ -9,7 +9,7 @@ import user from '../reducers/user'
 import likes from '../reducers/likes';
 import profils from '../reducers/profils';
 
-
+import '../styles/globals.css';
 const reducers = combineReducers({ user,likes,profils });
 const persistConfig = { key: 'giveachance', storage };
 

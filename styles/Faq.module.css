@@ -17,3 +17,26 @@
     border-radius: 50%;
     padding: 2px;
 }
+
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.faqsection{
+    width: 50%;
+    text-align: start;
+
+}
+
+.faqHeading{
+    text-align: center;
+    font-weight: 900;
+    font-size: 26px;
+
+}

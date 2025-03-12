@@ -13,9 +13,15 @@ import { useSelector, useDispatch } from "react-redux";
 import Likes from "./Likes";
 import { removeLikes, addLikes  } from "../reducers/likes";
 
+import { useRouter } from "next/router";
+
+
+
 function CardDev(props) {
+
+  let router=useRouter()
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user.value);
   const [isLiked, setIsLiked] = useState(props.isliked);
   const [iconLike, setIconLike] = useState({ color: "red" });
 
@@ -54,15 +60,34 @@ function CardDev(props) {
       });
     }
 
+
+
+console.log(user);
+
+
+    function handleClick(e) {
+
+  console.log(e);
+  
+      router.push(`/profil?id=${e.id}`);
+    }
+
+
+
+    let style={
+      color:'#e7ef06'
+    }
+
   return (
-    <section className={styles.card}>
+    <section className={styles.card} >
       <div className={styles.cardImage}>
-        <Image
-          src="/profildev.jpg"
+        <img
+          style={{objectFit:'cover'}}
+          src={props.info.profilpicture}
           alt="profil"
-          height={120}
+          height={150}
           width={250}
-        ></Image>
+        ></img>
 
         <Link href="/">
           <span className={styles.iconpartage}>
@@ -80,9 +105,9 @@ function CardDev(props) {
       </div>
 
       <div className={styles.cardDescription}>
-        <h5 className={styles.name}>{props.firstname}</h5>
-        <h6 className={styles.specialities}>{props.hardskillstechnologies}</h6>
-        <p className={styles.description}>{props.presentation}</p>
+        <h5 className={styles.name}>{props.firstname} {props.lastname}</h5>
+        <h6 className={styles.specialities}>{props.info.hardskillstechnologies}</h6>
+        <p className={styles.description}>{props.info.presentation}</p>
 
         <div className={styles.locationcard}>
           <span>
@@ -91,28 +116,32 @@ function CardDev(props) {
               className={styles.LocationIconStyle}
             />
           </span>
-          <span className={styles.locationname}>{props.location}</span>
+          <span className={styles.locationname}>{props.info.location}</span>
+
         </div>
+
       </div>
+      {user.token &&       <button className={styles.btnconnexion} onClick={()=>{handleClick(props)}} >See more</button>
+ }
 
       <div className={styles.cardRating}>
         {/* j'ai rajouter les icone stars, mais il faudra faire un .map pour les rendre dynamique */}
         <span>
-          <FontAwesomeIcon icon={faStar} className={styles.starsIconStyle} />
+          <FontAwesomeIcon icon={faStar} style={style} className={styles.starsIconStyle} />
+        </span>
+        <span>
+          <FontAwesomeIcon icon={faStar} style={style} className={styles.starsIconStyle} />
+        </span>
+        <span>
+          <FontAwesomeIcon icon={faStar} style={style} className={styles.starsIconStyle} />
+        </span>
+        <span>
+          <FontAwesomeIcon icon={faStar} style={style} className={styles.starsIconStyle} />
         </span>
         <span>
           <FontAwesomeIcon icon={faStar} className={styles.starsIconStyle} />
         </span>
-        <span>
-          <FontAwesomeIcon icon={faStar} className={styles.starsIconStyle} />
-        </span>
-        <span>
-          <FontAwesomeIcon icon={faStar} className={styles.starsIconStyle} />
-        </span>
-        <span>
-          <FontAwesomeIcon icon={faStar} className={styles.starsIconStyle} />
-        </span>
-        <span className={styles.stylecounter}>(count)</span>
+        <span className={styles.stylecounter}>(4/5)</span>
         {/* quand on arrive pas a dissocier entre un titre ou un paragraphe , et pour l'icone */}
       </div>
     </section>

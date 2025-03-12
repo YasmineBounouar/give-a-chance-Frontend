@@ -13,7 +13,8 @@ const Faq = () => {
   function FaqElement(props) {
   
     return (
-      <section id='FAQ'>
+      <section  className={styles.faqsection} id='FAQ'>
+    
       <div >  
           <h4> {props.question} <span onClick={()=>{ setOpen(props.index)}}><span ><FontAwesomeIcon icon={faPlus} className={styles.addIconPlus}/></span></span> </h4>
           {open === props.index && <p> {props.reponse}</p> }
@@ -54,7 +55,18 @@ const Faq = () => {
 
     return (
       // Conteneur qui affiche la liste de toutes les questions-réponses
-       <div > {myFaq} </div>
+       <div className={styles.container} >
+        
+ <div>
+ <h2 className={styles.faqHeading}>FAQ</h2>
+          <div>
+            <h3 className={styles.faqHeading}>
+              Questions principales que se posent les recruteurs pour recruter
+              un développeur junior en alternance, <br/> en CDI ou en CDD ?
+            </h3>
+
+            
+          </div></div>     {myFaq} </div>
 
     );
 };

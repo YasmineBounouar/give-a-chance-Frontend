@@ -7,8 +7,8 @@
   padding: 2rem;
   border-radius: 8px;
   margin: 0rem ;
-  width: 500px; /* Ajustement pour un bon équilibre largeur/hauteur */
-  height: 450px; /* Hauteur ajustée automatiquement */
+  width: 800px; /* Ajustement pour un bon équilibre largeur/hauteur */
+  height: 650px; /* Hauteur ajustée automatiquement */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
