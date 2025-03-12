@@ -15,7 +15,24 @@ function Home() {
     fetch("http://localhost:3000/profil/All/")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.updatedProfil);
+
+  console.log("hi");
+
+  const homecards = profiles.map((data, index) => {
+    // pas de () dans le return car nous allons renvoyer que le compsant enfants.
+    return (
+      <CardDev
+        key={index}
+        username={data.username}
+        firstname={data.firstname}
+        hardskillstechnologies={data.hardskillstechnologies}
+        presentation={data.presentation}
+        location={data.location}
+      />
+    );
+  });
+
+        console.log(data.profils);
         // Ajout d'une logique pour mélanger aléatoirement les profils si nécessaire
         const shuffled = data.profils.sort(() => 0.5 - Math.random());
         setProfiles(shuffled.slice(0, 4)); // Prend les 4 premiers profils mélangés
@@ -34,9 +51,9 @@ function Home() {
         key={index}
         username={data.username}
         firstname={data.firstname}
-        hardskillstechnologies={data.hardskillstechnologies}
-        presentation={data.presentation}
-        location={data.location}
+        lastname={data.lastname}
+        info={data.info}
+
       />
     );
   });
@@ -60,7 +77,11 @@ function Home() {
 
           <div className={styles.cardcontainer}>
             <div className={styles.card}>
+<<<<<<< HEAD
               <CardProfile />
+=======
+     {homecards}
+>>>>>>> ef7ff6c50dcfb4883bd1dcace80465985d715db4
             </div>
 
             <button className={styles.btncardprofil}>
@@ -74,13 +95,7 @@ function Home() {
         </section>
 
         <section id="FAQ" className={styles.faqcontainer}>
-          <h2>FAQ</h2>
-          <div>
-            <h3>
-              Questions principales que se posent les recruteurs pour recruter
-              un développeur junior en alternance, en CDI ou en CDD ?
-            </h3>
-          </div>
+   
           <Faq />
         </section>
 

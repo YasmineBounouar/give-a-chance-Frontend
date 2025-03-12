@@ -1,13 +1,14 @@
 .card {
     display: flex;
     flex-direction: column;
-    height: 400px;
+    height: 500px;
     width: 250px;
     border-radius: 8px;
     overflow: hidden;
     border: none;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     background-color: rgba(48, 47, 47, 0.349);
+    color: rgb(207, 207, 207);
     
 }
 
@@ -113,3 +114,19 @@
 
     color: rgb(54, 54, 54);
 }
+.btnconnexion{
+    background-color: #8e7949;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 28px;
+    size: bold;
+    text-align: center;   
+    text-decoration: none;  
+    border-radius: 8px;
+    display: inline-block;
+    font-size: 16px;    
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-bottom: 10px;
+  }

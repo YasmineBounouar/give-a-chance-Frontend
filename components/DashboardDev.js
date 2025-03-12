@@ -27,7 +27,7 @@ function DashboardDev() {
               
               <li className={styles.navItem}>
                 <FontAwesomeIcon icon={faHome} className={styles.navIcon} />
-               <Link href='/'><span className={styles.navText}>Home</span></Link> 
+               {/* <Link href='/'><span className={styles.navText}>Home</span></Link>  */}
               </li>
              
               <li className={styles.navItem}>
@@ -37,12 +37,12 @@ function DashboardDev() {
               
               <li className={styles.navItem}>
                 <FontAwesomeIcon icon={faCompass} className={styles.navIcon} />
-                <Link href='/Pageannuaire'><span className={styles.navText}>Explore</span></Link> 
+                {/* <Link href='/Pageannuaire'><span className={styles.navText}>Explore</span></Link>  */}
               </li>
              
               <li className={styles.navItem}>
                 <FontAwesomeIcon icon={faThumbsUp} className={styles.navIcon} />
-                <Link href='/Onboarding'> <span className={styles.navText}>Modification</span></Link> 
+                {/* <Link href='/Onboarding'> <span className={styles.navText}>Modification</span></Link>  */}
               </li>
            
             </ul>

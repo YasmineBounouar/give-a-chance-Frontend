@@ -14,7 +14,7 @@ function SingIN() {
   const [usernotfound, setUsernotfound] = useState(false); // Erreur si l'utilisateur n'est pas trouvé
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expression régulière pour valider l'email
   const router = useRouter();
-
+const dispatch=useDispatch()
   // Fonction appelée lors du clic sur le bouton de soumission
   const handleClick = (e) => {
     e.preventDefault(); // Empêche le rechargement de la page par défaut lié à l'envoi du formulaire
@@ -46,7 +46,7 @@ function SingIN() {
     })
       .then((response) => response.json()) // Attente de la réponse de l'API
       .then((data) => {
-        console.log(data.role); // Affichage des informations utilisateur et rôle dans la console
+        console.log(data); // Affichage des informations utilisateur et rôle dans la console
         // Si l'authentification est réussie, réinitialiser les champs
         if (data.result) {
           setPassword("");
@@ -61,7 +61,7 @@ function SingIN() {
               email: data.user.email,
               token: data.user.token,
               username: data.user.username,
-              id: data.Infos._id,
+              id: data.user._id,
             })
           ); //qu'est ce que je doit renvoyer a mon store
 

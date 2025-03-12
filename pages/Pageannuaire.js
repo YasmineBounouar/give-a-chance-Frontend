@@ -7,14 +7,15 @@ import { faMagnifyingGlass, faUser } from "@fortawesome/free-solid-svg-icons"
 import styles from "../styles/Pageannuaire.module.css"
 import Image from "next/image"
 import CardDev from "../components/CardDev"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import  {getprofils} from '../reducers/profils.js'
 
 export default function Pageannuaire() {
   const [profilDev, setProfilDev] = useState([])
   const [searchprofil, setSearchprofil] = useState("")
   const user =useSelector(state=>state.user.value)
 
-  console.log(user)
+const dispatch=useDispatch()
   
   const limit=10
   const handleSubmit = (e) => {
@@ -35,11 +36,12 @@ export default function Pageannuaire() {
         // const shuffled = data.profils.sort(() => 0.5 - Math.random())
         // setProfilDev(data.profils?.slice(0, 10))
         setProfilDev(data.profils)
+        dispatch(getprofils(data.profils))
       })
       .catch((error) => {
         console.error("Error:", error)
       })
-  }, [profilDev])
+  }, [])
 
   const pageannuaireCard = profilDev?.map((data, i) => {
     return (
@@ -47,9 +49,9 @@ export default function Pageannuaire() {
         key={i}
         username={data.username}
         firstname={data.firstname}
-        hardskillstechnologies={data.hardskillstechnologies}
-        presentation={data.presentation}
-        location={data.location}
+        lastname={data.lastname}
+        info={data.info}
+        id={data._id}
       />
     )
   })
@@ -61,35 +63,62 @@ export default function Pageannuaire() {
         <FontAwesomeIcon icon={faUser} className={styles.customIcon} />
       </header>
 
-      <h4 className={styles.titleAnnuaire}>Hire developers</h4>
+<div className={styles.formContainer}>
+   
 
-      <aside className={styles.colonne}></aside>
+<aside className={styles.colonne}>
+  <ul>
+  <li>fullstack</li>
+  <li>frontend</li>   
+  <li>backend</li>    
+  </ul>
 
-      <div className={styles.contentArea}>
-        <div className={styles.boxInitial}>
-          <div className={styles.boxSearch}>
-            <p className={styles.filterPhrase}>Filter by city, profession, or technology</p>
-          </div>
+  <ul>
+  <li>marseille</li>
+  <li>Paris</li>   
+  <li>Lille</li>    
+  </ul>
 
-          <div className={styles.box2}>
-            <input
-              className={styles.inputSearch}
-              type="text"
-              name="Search"
-              placeholder="Search"
-              value={searchprofil}
-              onChange={handleSearch}
-            />
-            <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.fontawesome} />
-          </div>
 
-          <div className={styles.cardContainer}>{pageannuaireCard}</div>
+  <ul>
+  <li>cdi</li>
+  <li>cdd</li>   
+  <li>internship</li>    
+  <li>apprenticeship</li>    
+  </ul>
 
-          <button onClick={handleSubmit} type="button" className={styles.buttonAnnuaire}>
-            More profiles
-          </button>
-        </div>
-      </div>
+
+
+
+</aside>
+
+<div className={styles.contentArea}>
+<h4 className={styles.titleAnnuaire}>Hire developers</h4>
+  <div className={styles.boxInitial}>
+    <div className={styles.boxSearch}>
+      <p className={styles.filterPhrase}>Filter by city, profession, or technology</p>
+    </div>
+
+    <div className={styles.box2}>
+      <input
+        className={styles.inputSearch}
+        type="text"
+        name="Search"
+        placeholder="Search"
+        value={searchprofil}
+        onChange={handleSearch}
+      />
+      <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.fontawesome} />
+    </div>
+
+    <div className={styles.cardContainer}>{pageannuaireCard}</div>
+
+    <button onClick={handleSubmit} type="button" className={styles.buttonAnnuaire}>
+      More profiles
+    </button>
+  </div>
+</div>
+</div>
     </div>
   )
 }

@@ -3,14 +3,16 @@
     height: 100vh;
     overflow: hidden;
     background-color: #353a3f;
-
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
     
     
 }
 .SigninText{
     color:white;
     text-align: center ;
-    margin-top: 490px;
     
 
 }
@@ -18,12 +20,13 @@
     display: flex;
     justify-content:space-between;
     align-items: center;
-    width: 100%;
+    width: 80vw;
     height: 80px;
-    background-color:#353a3f;
     font-size: medium;
     color: white;
     border-bottom: 2px solid #ffffff;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 .logoheader{
     
@@ -130,7 +133,7 @@
   }
 
   .formsignup{
-    max-width: 400px; 
+    width: 400px; 
     margin: 0 auto; 
     padding: 2rem; 
     background-color: #fff; 
