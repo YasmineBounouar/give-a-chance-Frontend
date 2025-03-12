@@ -32,15 +32,9 @@ export default function Pageannuaire() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data)
-<<<<<<< HEAD
-        // setProfilDev(data.profils)
-        const shuffled = data.profils.sort(() => 0.5 - Math.random());
-        setProfilDev(shuffled.slice(0, 10)); 
-=======
         // const shuffled = data.profils.sort(() => 0.5 - Math.random())
         // setProfilDev(data.profils?.slice(0, 10))
         setProfilDev(data.profils)
->>>>>>> caa5ff5c2143f625bf7e412ee866f9c88dcd41af
       })
       .catch((error) => {
         console.error("Error:", error)
