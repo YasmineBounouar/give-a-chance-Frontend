@@ -24,22 +24,27 @@ function DashboardDev() {
         <aside className={styles.sidebar}>
           <nav className={styles.sidebarNav}>
             <ul className={styles.navList}>
+              
               <li className={styles.navItem}>
                 <FontAwesomeIcon icon={faHome} className={styles.navIcon} />
                <Link href='/'><span className={styles.navText}>Home</span></Link> 
               </li>
+             
               <li className={styles.navItem}>
                 <FontAwesomeIcon icon={faStar} className={styles.navIcon} />
                 <span className={styles.navText}>Favorites</span>
               </li>
+              
               <li className={styles.navItem}>
                 <FontAwesomeIcon icon={faCompass} className={styles.navIcon} />
-                <span className={styles.navText}>Explore</span>
+                <Link href='/Pageannuaire'><span className={styles.navText}>Explore</span></Link> 
               </li>
+             
               <li className={styles.navItem}>
                 <FontAwesomeIcon icon={faThumbsUp} className={styles.navIcon} />
-                <span className={styles.navText}>Recommended</span>
+                <Link href='/Onboarding'> <span className={styles.navText}>Modification</span></Link> 
               </li>
+           
             </ul>
           </nav>
           <button className={styles.addNewButton}>
