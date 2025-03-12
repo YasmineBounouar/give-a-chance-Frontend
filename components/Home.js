@@ -7,35 +7,26 @@ import CardDev from "./CardDev.js";
 import styles from "../styles/Home.module.css";
 import Ccm from "./Ccm.js";
 import React, { useState, useEffect } from "react";
+import { getprofils } from "../reducers/profils.js";
+import { useDispatch } from "react-redux";
 
 function Home() {
   const [profiles, setProfiles] = useState([]);
+  const dispatch=useDispatch()
 
   useEffect(() => {
     fetch("http://localhost:3000/profil/All/")
       .then((response) => response.json())
       .then((data) => {
 
-  console.log("hi");
 
-  const homecards = profiles.map((data, index) => {
-    // pas de () dans le return car nous allons renvoyer que le compsant enfants.
-    return (
-      <CardDev
-        key={index}
-        username={data.username}
-        firstname={data.firstname}
-        hardskillstechnologies={data.hardskillstechnologies}
-        presentation={data.presentation}
-        location={data.location}
-      />
-    );
-  });
 
         console.log(data.profils);
         // Ajout d'une logique pour mélanger aléatoirement les profils si nécessaire
         const shuffled = data.profils.sort(() => 0.5 - Math.random());
         setProfiles(shuffled.slice(0, 4)); // Prend les 4 premiers profils mélangés
+        dispatch(getprofils(profiles))
+
       })
       .catch((error) => {
         console.error("Error:", error); // Affiche une erreur dans la console si l'API échoue

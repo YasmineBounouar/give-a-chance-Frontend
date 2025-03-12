@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import DashboardHeader from '../components/DashboardHeader';
 import DashboardDev from '../components/DashboardDev';
 import { useRouter } from 'next/router';
+import Profil from '../components/Profil'
 
 function dashboardDeveloper() {
 
@@ -14,7 +15,7 @@ const router=useRouter()
     
 
 
-  
+
 
 
     return (
@@ -22,13 +23,15 @@ const router=useRouter()
             <div className={style.main}>
                 
                 <div className={style.header}>
-                    {/* <DashboardHeader/> */}
+                    <DashboardHeader/>
+
                 </div>
 
                 <div className={style.menuContainer}>
                     
                     <div className={style.content}>
-                        <DashboardDev/>
+                    <Profil/>
+                 
                     </div>
                 </div>
                 <Footer/>

@@ -83,7 +83,7 @@ console.log(user);
       <div className={styles.cardImage}>
         <img
           style={{objectFit:'cover'}}
-          src={props.info.profilpicture}
+          src={props.info?.profilpicture}
           alt="profil"
           height={150}
           width={250}
@@ -106,8 +106,8 @@ console.log(user);
 
       <div className={styles.cardDescription}>
         <h5 className={styles.name}>{props.firstname} {props.lastname}</h5>
-        <h6 className={styles.specialities}>{props.info.hardskillstechnologies}</h6>
-        <p className={styles.description}>{props.info.presentation}</p>
+        <h6 className={styles.specialities}>{props.info?.hardskillstechnologies}</h6>
+        <p className={styles.description}>{props.info?.presentation}</p>
 
         <div className={styles.locationcard}>
           <span>
@@ -116,7 +116,7 @@ console.log(user);
               className={styles.LocationIconStyle}
             />
           </span>
-          <span className={styles.locationname}>{props.info.location}</span>
+          <span className={styles.locationname}>{props.info?.location}</span>
 
         </div>
 

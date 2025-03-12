@@ -1,0 +1,90 @@
+.profilContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    padding: 20px;
+  }
+  
+  .profilCard {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 400px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .profilCard:hover {
+    transform: scale(1.02);
+  }
+  
+  .profilImage {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  
+  .profilAvatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #6a11cb;
+  }
+  
+  .profilDetails h2 {
+    color: #333;
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+  }
+  
+  .profilDetails p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  
+  .username {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #6a11cb;
+  }
+  
+  .email, .role, .location {
+    font-style: italic;
+    color: #777;
+  }
+  
+  .description {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.4;
+    background: #f8f8f8;
+    padding: 8px;
+    border-radius: 6px;
+  }
+  
+  @media (max-width: 500px) {
+    .profilCard {
+      max-width: 90%;
+      padding: 20px;
+    }
+    
+    .profilAvatar {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .profilDetails h2 {
+      font-size: 1.3rem;
+    }
+  
+    .profilDetails p {
+      font-size: 0.9rem;
+    }
+  }
+  
