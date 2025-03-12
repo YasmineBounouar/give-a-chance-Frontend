@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHeart,
   faStar,
@@ -11,78 +11,61 @@ import Link from "next/Link";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Likes from "./Likes";
-import { removeLikes, addLikes  } from "../reducers/likes";
+import { removeLikes, addLikes } from "../reducers/likes";
 
 import { useRouter } from "next/router";
 
-
-
 function CardDev(props) {
-
-  let router=useRouter()
+  let router = useRouter();
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.value);
   const [isLiked, setIsLiked] = useState(props.isliked);
   const [iconLike, setIconLike] = useState({ color: "red" });
 
-  useEffect(() => {
-    if (props.isliked !== isLiked) {
-      setIsLiked(props.isliked);
-      setIconLike(props.isliked ? { color: "red" } : { color: "grey" });
-    }
-  }, [props.isliked]);
+  const likes = useSelector((state) => state.likes.value);
 
-  const handlelikesClick = () => {
+  const handlelikesClick = (infolike) => {
     if (!user.token) {
       return;
     }
 
-    fetch(`http://localhost:3000/create/Recruteur/${user.token}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data)
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.result) {
-          if (props.isliked) {
-            dispatch(addLikes(props));
-            setIsLiked(false);
-            setIconLike({ color: "#E9BE59" });
-          } else {
-            dispatch(removeLikes(props));
-            setIsLiked(true);
-            setIconLike({ color: "#E9BE59" });
+    if (user.role === "developer") {
+      return;
+    }
+
+    if (!likes.includes(user.token)) {
+      fetch(`http://localhost:3000/create/Addlikes`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id: infolike.id, token: user.token }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.result) {
+            dispatch(addLikes(user.token));
           }
-        }
-      });
+        });
+    } else {
+      dispatch(removeLikes(user.token));
     }
+  };
 
+  function handleClick(e) {
+    console.log(e);
 
+    router.push(`/profil?id=${e.id}`);
+  }
 
-console.log(user);
-
-
-    function handleClick(e) {
-
-  console.log(e);
-  
-      router.push(`/profil?id=${e.id}`);
-    }
-
-
-
-    let style={
-      color:'#e7ef06'
-    }
+  let style = {
+    color: "#e7ef06",
+  };
 
   return (
-    <section className={styles.card} >
+    <section className={styles.card}>
       <div className={styles.cardImage}>
         <img
-          style={{objectFit:'cover'}}
+          style={{ objectFit: "cover" }}
           src={props.info?.profilpicture}
           alt="profil"
           height={150}
@@ -97,16 +80,25 @@ console.log(user);
             />
           </span>
         </Link>
-       
+
         <span className={styles.iconlike}>
-          <FontAwesomeIcon icon={faHeart} className={styles.heartIconStyle} />
+          <FontAwesomeIcon
+            icon={faHeart}
+            onClick={() => {
+              handlelikesClick(props);
+            }}
+            className={styles.heartIconStyle}
+          />
         </span>
-        
       </div>
 
       <div className={styles.cardDescription}>
-        <h5 className={styles.name}>{props.firstname} {props.lastname}</h5>
-        <h6 className={styles.specialities}>{props.info?.hardskillstechnologies}</h6>
+        <h5 className={styles.name}>
+          {props.firstname} {props.lastname}
+        </h5>
+        <h6 className={styles.specialities}>
+          {props.info?.hardskillstechnologies}
+        </h6>
         <p className={styles.description}>{props.info?.presentation}</p>
 
         <div className={styles.locationcard}>
@@ -117,26 +109,48 @@ console.log(user);
             />
           </span>
           <span className={styles.locationname}>{props.info?.location}</span>
-
         </div>
-
       </div>
-      {user.token &&       <button className={styles.btnconnexion} onClick={()=>{handleClick(props)}} >See more</button>
- }
+      {user.token && (
+        <button
+          className={styles.btnconnexion}
+          onClick={() => {
+            handleClick(props);
+          }}
+        >
+          See more
+        </button>
+      )}
 
       <div className={styles.cardRating}>
         {/* j'ai rajouter les icone stars, mais il faudra faire un .map pour les rendre dynamique */}
         <span>
-          <FontAwesomeIcon icon={faStar} style={style} className={styles.starsIconStyle} />
+          <FontAwesomeIcon
+            icon={faStar}
+            style={style}
+            className={styles.starsIconStyle}
+          />
         </span>
         <span>
-          <FontAwesomeIcon icon={faStar} style={style} className={styles.starsIconStyle} />
+          <FontAwesomeIcon
+            icon={faStar}
+            style={style}
+            className={styles.starsIconStyle}
+          />
         </span>
         <span>
-          <FontAwesomeIcon icon={faStar} style={style} className={styles.starsIconStyle} />
+          <FontAwesomeIcon
+            icon={faStar}
+            style={style}
+            className={styles.starsIconStyle}
+          />
         </span>
         <span>
-          <FontAwesomeIcon icon={faStar} style={style} className={styles.starsIconStyle} />
+          <FontAwesomeIcon
+            icon={faStar}
+            style={style}
+            className={styles.starsIconStyle}
+          />
         </span>
         <span>
           <FontAwesomeIcon icon={faStar} className={styles.starsIconStyle} />
