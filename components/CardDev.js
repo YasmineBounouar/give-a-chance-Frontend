@@ -8,10 +8,52 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "../styles/CardDev.module.css";
 import Link from "next/Link";
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import Likes from "./Likes";
+import { removeLikes, addLikes  } from "../reducers/likes";
 
 function CardDev(props) {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+  const [isLiked, setIsLiked] = useState(props.isliked);
+  const [iconLike, setIconLike] = useState({ color: "red" });
+
+  useEffect(() => {
+    if (props.isliked !== isLiked) {
+      setIsLiked(props.isliked);
+      setIconLike(props.isliked ? { color: "red" } : { color: "grey" });
+    }
+  }, [props.isliked]);
+
+  const handlelikesClick = () => {
+    if (!user.token) {
+      return;
+    }
+
+    fetch(`http://localhost:3000/create/Recruteur/${user.token}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.result) {
+          if (props.isliked) {
+            dispatch(addLikes(props));
+            setIsLiked(false);
+            setIconLike({ color: "#E9BE59" });
+          } else {
+            dispatch(removeLikes(props));
+            setIsLiked(true);
+            setIconLike({ color: "#E9BE59" });
+          }
+        }
+      });
+    }
+
   return (
     <section className={styles.card}>
       <div className={styles.cardImage}>
