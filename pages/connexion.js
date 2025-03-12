@@ -3,7 +3,7 @@ import Singin from "../components/Singin";
 import Signup from "../components/Signup";
 import { useState } from "react";
 import styles from "../styles/Connexion.module.css";
-import Image from "next/Image";
+import Image from "next/image";
 import Link from "next/Link";
 
 function connexion() {
@@ -31,7 +31,7 @@ function connexion() {
           setConnexiontype(!connexiontype);
         }}
       >
-        Sign in
+        Sign in 
       </span>
     </p>
   );

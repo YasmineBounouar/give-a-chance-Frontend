@@ -15,12 +15,11 @@ function Home() {
     fetch("http://localhost:3000/profil/All/")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        console.log(data.updatedProfil);
         // Ajout d'une logique pour mélanger aléatoirement les profils si nécessaire
         const shuffled = data.profils.sort(() => 0.5 - Math.random());
         setProfiles(shuffled.slice(0, 4)); // Prend les 4 premiers profils mélangés
       })
-
       .catch((error) => {
         console.error("Error:", error); // Affiche une erreur dans la console si l'API échoue
       });
@@ -60,7 +59,9 @@ function Home() {
           </p>
 
           <div className={styles.cardcontainer}>
-            <div className={styles.card}>{homecards}</div>
+            <div className={styles.card}>
+              <CardProfile />
+            </div>
 
             <button className={styles.btncardprofil}>
               Parcourir les profiles
