@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/Link";
-import Image from "next/Image";
+import Image from "next/image";
 import styles from "../styles/Header.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // j'ai rajouter
 import { faQuestion, faBars } from "@fortawesome/free-solid-svg-icons";

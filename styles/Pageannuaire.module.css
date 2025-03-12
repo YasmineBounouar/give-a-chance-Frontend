@@ -1,4 +1,4 @@
-.mainAnnuaire {
+/* .mainAnnuaire {
     width: 100vw;
     height: 100vh;
     background-color: #353a3f;
@@ -90,7 +90,7 @@
     align-items: center;
     background-color: #9CA3A9;
     padding: 1rem; /* Réduit la taille de la box */
-    border-radius: 8px;
+    /* border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -175,7 +175,7 @@
     margin-top: 30px;
     text-align: center;
     font-weight: bold;
-}
+} */
 
 
   
@@ -193,4 +193,203 @@
 
 
 
+ /* */ 
+ .mainAnnuaire {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #353a3f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  .headerAnnuaire {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    padding-inline: 20px;
+    background-color: #353a3f;
+    font-size: medium;
+    color: white;
+    border-bottom: 2px solid #ffffff;
+    z-index: 10;
+  }
+  
+  .logoheader {
 
+  margin-left: 100px;
+  }
+  
+  .customIcon {
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-inline: 50px;
+  }
+  
+  .customTextDashboard {
+    color: white;
+    font-size: 1rem;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .colonne {
+    position: absolute;
+    left: 0;
+    top: 80px;
+    width: 250px;
+    height: 100%;
+    background-color: #2a2e32;
+    border-right: 1px solid #ffffff33;
+    padding-top: 20px;
+    z-index: 5;
+  }
+  
+  .contentArea {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .titleAnnuaire {
+    color: white;
+    font-size: 2.5rem;
+    margin-top: 30px;
+    text-align: center;
+    font-weight: bold;
+    z-index: 1;
+  }
+  
+  .boxInitial {
+    margin-top: 5px;
+    width: 80%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #9ca3a9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    min-height: 500px;
+  }
+  
+  .boxSearch {
+    background-color: #f5f5f5;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .filterPhrase {
+    color: #333;
+    font-size: 1rem;
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .box2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .inputSearch {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #f5f5f5;
+    color: #333;
+    outline: none;
+    padding: 10px;
+    width: 80%;
+    margin-right: 10px;
+  }
+  
+  .fontawesome {
+    font-size: 1.5rem;
+    color: #8e7949;
+    cursor: pointer;
+  }
+  
+  .cardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  
+  .buttonAnnuaire {
+    width: 200px;
+    background-color: #8e7949;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 12px 30px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: background-color 0.3s;
+  }
+  
+  .buttonAnnuaire:hover {
+    background-color: #7a6839;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 1024px) {
+    .contentArea {
+      margin-left: 0;
+      width: 100%;
+    }
+  
+    .colonne {
+      display: none;
+    }
+  
+    .boxInitial {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .cardContainer {
+      grid-template-columns: 1fr;
+    }
+  
+    .titleAnnuaire {
+      font-size: 2rem;
+    }
+  }
+  
+  

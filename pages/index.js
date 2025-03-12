@@ -4,7 +4,7 @@ import DashboardDev from "../components/DashboardDev"
 import Pageannuaire from "./Pageannuaire";
 
 function Index() {
-  return <Pageannuaire />;
+  return <Home />;
 }
 
 export default Index;

@@ -1,5 +1,5 @@
-import Image from "next/Image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // j'ai rajouter
+import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
 import {
   faHeart,
   faStar,
@@ -31,6 +31,7 @@ function CardDev() {
           height={120}
           width={250}
         ></Image>
+
         <Link href="/">
           <span className={styles.iconpartage}>
             <FontAwesomeIcon
@@ -39,10 +40,11 @@ function CardDev() {
             />
           </span>
         </Link>
-        {/* J'ai rajouter l'icone pour le partage et le like, il faut changer le className de Incone de partage. */}
+       
         <span className={styles.iconlike}>
           <FontAwesomeIcon icon={faHeart} className={styles.heartIconStyle} />
         </span>
+        
       </div>
 
       <div className={styles.cardDescription}>
