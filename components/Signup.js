@@ -124,7 +124,8 @@ function SingUP() {
             setLastname("");
             setEmail("");
             setPassword("");
-
+            if (selectedOption === "Recruteur") {
+              router.push("/Pageannuaire");}
             dispatch(
               login({
                 username: data.Infos.username,
@@ -136,10 +137,8 @@ function SingUP() {
               // action.payload du reducers = data.Infos.username,
             ); // element vide à remplir du store.
 
-            if (selectedOption === "Developer") {
-              router.push("/Pageannuaire");
-            } else if (selectedOption === "Developer") {
-            }
+            
+           
           } else if (data.result === false) {
             // Si l'utilisateur existe déjà, on active l'état detectdoublon à true
             setDetectdoublon(true); // Comme pour le cas "Developer", cette erreur sera affichée si l'email est déjà pris

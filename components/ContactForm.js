@@ -1,6 +1,10 @@
 import React from "react";
 import styles from "../styles/ContactForm.module.css";
+<<<<<<< HEAD
 import { useState } from "react";
+=======
+import {useState} from 'react'
+>>>>>>> sebai
 function ContactForm() {
 
 

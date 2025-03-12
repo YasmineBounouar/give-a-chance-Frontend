@@ -10,7 +10,7 @@ import {
   faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons"
 import styles from "../styles/DashboardRecruteur.module.css"
-import Image from 'next/Image';
+import Image from 'next/image';
 import Link from 'next/Link';
 
 function DashboardRecruiter() {
