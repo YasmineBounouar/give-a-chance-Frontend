@@ -13,7 +13,7 @@ function SingUP() {
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [selectedOption, setSelectedOption] = useState("Developer");
+  const [selectedOption, setSelectedOption] = useState("developer");
   const [error, setError] = useState(false); // Erreur pour les champs vides
   const [errorEmail, setErrorEmail] = useState(false); // Erreur pour l'email invalide
   const [detectdoublon, setDetectdoublon] = useState(false); // Erreur si l'email existe déjà dans la base de données
@@ -47,7 +47,7 @@ function SingUP() {
     }
 
     // Si tout est valide, on passe à la soumission des données
-    if (selectedOption === "Developer") {
+    if (selectedOption === "developer") {
       fetch("http://localhost:3000/create/signup/dev", {
         // Envoi des données à l'API pour un développeur
         method: "POST",
@@ -84,9 +84,9 @@ function SingUP() {
               })
             ); // element vide à remplir du store.
 
-            if (selectedOption === "Developer") {
+            if (selectedOption === "developer") {
               router.push("/Onboarding");
-            } else if (selectedOption === "Developer") {
+            } else if (selectedOption === "recruteur") {
               router.push("/Pageannuaire");
             }
 
@@ -124,8 +124,10 @@ function SingUP() {
             setLastname("");
             setEmail("");
             setPassword("");
-            if (selectedOption === "Recruteur") {
-              router.push("/Pageannuaire");}
+            if (selectedOption === "recruteur") {
+              router.push("/Pageannuaire");
+            }
+
             dispatch(
               login({
                 username: data.Infos.username,
@@ -136,9 +138,6 @@ function SingUP() {
               })
               // action.payload du reducers = data.Infos.username,
             ); // element vide à remplir du store.
-
-            
-           
           } else if (data.result === false) {
             // Si l'utilisateur existe déjà, on active l'état detectdoublon à true
             setDetectdoublon(true); // Comme pour le cas "Developer", cette erreur sera affichée si l'email est déjà pris
@@ -226,11 +225,11 @@ function SingUP() {
             }}
             className={styles.listederoulante}
           >
-            <option value="Developer" className={styles.type}>
+            <option value="developer" className={styles.type}>
               Developer
             </option>
-            <option value="Recruter" className={styles.type}>
-            Recruiter
+            <option value="recruteur" className={styles.type}>
+              Recruiter
             </option>
           </select>
         </div>

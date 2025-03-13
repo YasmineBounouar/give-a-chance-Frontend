@@ -19,6 +19,9 @@ body {
   font-family:'Poppins', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     background-color:#353a3f;
+    scroll-behavior: smooth;
+
+    
 
 }
 

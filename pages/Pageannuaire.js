@@ -64,7 +64,13 @@ export default function Pageannuaire() {
           height={75}
           alt="Logo"
         />
-        <FontAwesomeIcon icon={faUser} className={styles.customIcon} />
+        <FontAwesomeIcon
+          icon={faUser}
+          className={styles.customIcon}
+          onClick={() => {
+            Router.push("/DashboardRecruteur");
+          }}
+        />
       </header>
 
       <div className={styles.formContainer}>

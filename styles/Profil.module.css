@@ -1,166 +1,85 @@
-/* .profilContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 
-100%;
-background-color: #6a11cb;
+.profilContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items: flex-start;
+  height: 100vh;
+  width: 100%;
+  color: white;
+  margin: 0 auto;
+}
+
+.profilCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+
+}
+
+.profilImage {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 30px;
+  height: 100%;
+  
+}
+
+.profilAvatar {
+  width: 300px;
+  height: 300px;
+  border-radius: 500%;
+  object-fit: cover;
+  border: 5px solid #353a3f;
+}
+
+.profilDetails {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+}
+
+.profilDetails .description {
+  margin-bottom: 12px;
+  font-size: 20px;
+  color: white;
+}
+
+.profilDetails h2.description {
+  margin-bottom: 15px;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+}
+
+
+@media (max-width: 500px) {
+  .profilCard {
+    max-width: 90%;
     padding: 20px;
   }
   
-  .profilCard {
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    max-width: 400px;
-    text-align: center;
+  .profilAvatar {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
   }
 
-  
-  .profilImage {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 15px;
-  }
-  
-  .profilAvatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #6a11cb;
-  }
-  
   .profilDetails h2 {
-    color: #333;
-    font-size: 1.6rem;
-    margin-bottom: 5px;
+    font-size: 1.3rem;
   }
-  
+
   .profilDetails p {
-    color: #555;
-    font-size: 1rem;
-    margin-bottom: 10px;
-    font-weight: 500;
+    font-size: 0.9rem;
   }
-  
-  .username {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #6a11cb;
-  }
-  
-  .email, .role, .location {
-    font-style: italic;
-    color: #777;
-  }
-  
-  .description {
-    font-size: 0.95rem;
-    color: #444;
-    line-height: 1.4;
-    background: #f8f8f8;
-    padding: 8px;
-    border-radius: 6px;
-  }
-  
-  @media (max-width: 500px) {
-    .profilCard {
-      max-width: 90%;
-      padding: 20px;
-    }
-    
-    .profilAvatar {
-      width: 100px;
-      height: 100px;
-    }
-  
-    .profilDetails h2 {
-      font-size: 1.3rem;
-    }
-  
-    .profilDetails p {
-      font-size: 0.9rem;
-    }
-  }
-   */
-
-
-   .profilContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    background-color:  #353a3f;
-    color: white;
-  }
-  
-  .profilCard {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    max-width: 1000px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: none;
-    backdrop-filter: none;
-    background: none;
-    overflow-y: auto;
-  }
-  
-  .profilImage {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-  }
-  
-  .profilAvatar {
-    width: 300px;
-    height: 300px;
-    border-radius: 500%;
-    object-fit: cover;
-    border: 5px solid #353a3f;
-  }
-  
-  .profilDetails {
-    width: 100%;
-    padding: 20px;
-  }
-  
-  .profilDetails .description {
-    margin-bottom: 12px;
-    font-size: 20px;
-    color: white;
-  }
-  
-  .profilDetails h2.description {
-    margin-bottom: 15px;
-    font-size: 32px;
-    font-weight: bold;
-    color: white;
-  }
-  
-
-  @media (max-width: 500px) {
-    .profilCard {
-      max-width: 90%;
-      padding: 20px;
-    }
-    
-    .profilAvatar {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-    }
-  
-    .profilDetails h2 {
-      font-size: 1.3rem;
-    }
-  
-    .profilDetails p {
-      font-size: 0.9rem;
-    }
-  }
-   
+}
+ 

@@ -24,21 +24,31 @@ function Header() {
     }
   }
 
+  let link;
+  user.role === "developer"
+    ? (link = "/dashboardDeveloper")
+    : (link = "/DashboardRecruteur");
+
   return (
     <header className={styles.header}>
-     <Link href="/"><Image
-        src="/GIVE A CHANCE.png"
-        width={150}
-        height={75}
-        alt="logo"
-        className={styles.logo}
-      ></Image></Link> 
+      <Link href="/">
+        <Image
+          src="/GIVE A CHANCE.png"
+          width={150}
+          height={75}
+          alt="logo"
+          className={styles.logo}
+        ></Image>
+      </Link>
 
       <div className={styles.navLinks}>
-        <Link href="/">
-          <span className={styles.profil}>Profile</span>
+        <Link href={link}>
+          <span className={styles.profil}>
+            {user.role === "recruteur" ? "Dashboard " : " Profils"}
+          </span>
         </Link>
-        <Link href="#HOWITWORKS">
+
+        <Link href="#COMMENT">
           <span className={styles.commentcamarche}>How it works</span>
         </Link>
         <Link href="#CONTACT">

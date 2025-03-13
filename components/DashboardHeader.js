@@ -19,6 +19,9 @@ function DashboardHeader() {
     dispatch(logout());
     router.push("/");
   }
+let link 
+user.role==="developer" ? link = "/dashboardDeveloper" : link = "/DashboardRecruteur";
+
 
   return (
     <header className={styles.header}>
@@ -29,16 +32,21 @@ function DashboardHeader() {
         height={75}
         alt="logo"
         className={styles.logo}
-      ></Image></Link>
-   
+      ></Image>
 
       <div className={styles.navLinks}>
-        <Link href="/CardProfile">
+        <Link href={link}>
           <span className={styles.profil}>Profil</span>
         </Link>
 
-        <Link href="Pageannuaire">
+        <Link href="/#CONTACT">
           <span className={styles.profil}>Contact</span>
+        </Link>
+        <Link href="/Pageannuaire">
+          <span className={styles.contact}>Explore</span>
+        </Link>
+        <Link href="/Onboarding">
+          <span className={styles.contact}>Edit profil</span>
         </Link>
 
         <button
@@ -58,7 +66,7 @@ function DashboardHeader() {
           </Link>
 
           <Link href="/">
-            <span className={styles.contact}>Explore vvvvv</span>
+            <span className={styles.contact}>Explore</span>
           </Link>
           <Link href="/">
             <span className={styles.contact}>Contact</span>

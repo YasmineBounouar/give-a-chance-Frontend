@@ -4,7 +4,8 @@
   align-items: center;
     flex-direction: row;
     width: 100%;
-   gap: 50px;
+   gap: 300px;
+   color: aliceblue;
   }
 .commentCaMarcheCardONE,
 .commentCaMarcheCardTWO,
@@ -36,7 +37,8 @@
 
 
   .text{
-    text-align: justify;
+    text-align:start;
+    font-size: 16px;
 
   }
   .fa{ 
@@ -55,6 +57,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 40px;
+  color: aliceblue;
  }
  .linkcommentCaMarche{
   display: flex;

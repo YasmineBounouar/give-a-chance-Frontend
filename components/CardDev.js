@@ -18,10 +18,14 @@ function CardDev(props) {
   let router = useRouter();
   const dispatch = useDispatch();
   const [isLiked, setIsLiked] = useState(props.isliked);
-  const [iconLike, setIconLike] = useState({ color: "red" });
+  const [iconLike, setIconLike] = useState({ color: "grey" });
 
   const likes = useSelector((state) => state.likes.value);
   const user = useSelector((state) => state.user.value);
+
+  let style = {
+    color: "white",
+  };
 
   const handlelikesClick = (infolike) => {
     if (!user.token) {
@@ -32,49 +36,37 @@ function CardDev(props) {
       return;
     }
 
-    if (!likes.includes(user.token)) {
+    if (!likes.includes(infolike)) {
       fetch(`http://localhost:3000/create/Addlikes`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ id: infolike.id, token: user.token }),
+        body: JSON.stringify({ id: infolike, token: user.token }),
       })
         .then((response) => response.json())
         .then((data) => {
           if (data.result) {
-            dispatch(addLikes(user.token));
-            console.log('dev liked');
-            
+            dispatch(addLikes(infolike));
           }
         });
     } else {
-      dispatch(removeLikes(user.token));
-      console.log('dev not liked');
-
+      dispatch(removeLikes(infolike));
+      setIconLike({ color: "grey" });
     }
   };
-console.log(user);
 
   function handleClick(e) {
     console.log(e);
 
-if(user.token){
+    if (user.token) {
+      console.log(e);
 
-  console.log(e);
-  
-  router.push(`/profil?id=${e.id}`);
-  
-}
-else{router.push('/connexion') }
-
-
-    
+      router.push(`/profil?id=${e.id}`);
+    } else {
+      router.push("/connexion");
+    }
   }
-
-  let style = {
-    color: "#e7ef06",
-  };
 
   return (
     <section className={styles.card}>
@@ -96,12 +88,16 @@ else{router.push('/connexion') }
           </span>
         </Link>
 
-        <span className={styles.iconlike}>
+        <span
+          className={styles.iconlike}
+          onClick={() => {
+            handlelikesClick(props.id);
+          }}
+        >
           <FontAwesomeIcon
             icon={faHeart}
-            onClick={() => {
-              handlelikesClick(props);
-            }}
+            size="2x"
+            style={iconLike}
             className={styles.heartIconStyle}
           />
         </span>
@@ -112,9 +108,11 @@ else{router.push('/connexion') }
           {props.firstname} {props.lastname}
         </h5>
         <h6 className={styles.specialities}>
-          {props.info?.hardskillstechnologies.slice(0,20) + " ..."}
+          {props.info?.hardskillstechnologies.slice(0, 20) + " ..."}
         </h6>
-        <p className={styles.description}>{props.info?.presentation.slice(0,70)+ " ..."}</p>
+        <p className={styles.description}>
+          {props.info?.presentation.slice(0, 70) + " ..."}
+        </p>
 
         <div className={styles.locationcard}>
           <span>
@@ -126,13 +124,13 @@ else{router.push('/connexion') }
           <span className={styles.locationname}>{props.info?.location}</span>
         </div>
       </div>
-     {user.token && (
+      {user.token && (
         <button
           className={styles.btnconnexion}
           onClick={() => {
             handleClick(props);
           }}
-        > 
+        >
           See more
         </button>
       )}
