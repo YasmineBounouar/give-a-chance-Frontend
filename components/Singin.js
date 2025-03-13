@@ -109,7 +109,7 @@ const dispatch=useDispatch()
             setPassword(e.target.value);
           }}
           value={password}
-          type={showPassword ? 'text' : 'password'}
+          type={showPassword ? "text" : "password"}
           name="password"
           placeholder="password"
           className={styles.inputpassword}
