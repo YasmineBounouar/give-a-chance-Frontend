@@ -48,26 +48,40 @@ console.log(profildata.info?.location);
   return (
 <div className={styles.profilContainer}>
         <div className={styles.profilCard}>
-          <div className={styles.profilImage}>
-          <img
+          
+           <div className={styles.profilImage}>
+          
+            <img
               src={profildata.info?.profilpicture}
               alt="Profil"
               className={styles.profilAvatar}
             />
           </div>
-          <p className={styles.description}>{profildata.info?.location}</p>
-
-          <div className={styles.profilDetails}>
-            <h2 className={styles.username}>{profildata.username}</h2>
-            <p className={styles.email}>{profildata.email}</p>
-            <p className={styles.role}>{profildata.info?.role}</p>
-            <p className={styles.location}>{profildata.info?.location}</p>
+          
+     <div className={styles.profilDetails}>
+            <h2 className={styles.description}>{profildata.username}</h2>
+            <p className={styles.description}>{profildata.email}</p>
+            <p className={styles.description}>{profildata.firstname}</p>
+            <p className={styles.description}>{profildata.lastname}</p>
+            <p className={styles.description}>{profildata.info?.role}</p>
+            
+            <p className={styles.description}>{profildata.info?.presentation}</p>
             <p className={styles.description}>{profildata.info?.description}</p>
             <p className={styles.description}>{profildata.info?.firstname}</p>
             <p className={styles.description}>{profildata.info?.hardskillstechnologies}</p>
-            {/* <p className={styles.description}>{profildata.info?.info.presentation}</p> */}
-            <p className={styles.description}>{profildata.info?.description}</p>
-            <p className={styles.description}>{profildata.info?.description}</p>
+             
+            <p className={styles.description}>{profildata.info?.qualification}</p>
+            <p className={styles.description}>{profildata.info?.disponibilities}</p>
+            <p className={styles.description}>{profildata.info?.location}</p>
+            <p className={styles.description}>{profildata.info?.speciality}</p>
+            <p className={styles.description}>{profildata.typecontrat}</p>
+
+            
+            <p className={styles.description}>{profildata.info?.linkedin}</p>
+            <p className={styles.description}>{profildata.info?.github}</p>
+            <p className={styles.description}>{profildata.info?.twitter}</p>
+
+
 
           </div>
 

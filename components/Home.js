@@ -19,8 +19,6 @@ function Home() {
       .then((response) => response.json())
       .then((data) => {
 
-
-
         console.log(data.profils);
         // Ajout d'une logique pour mélanger aléatoirement les profils si nécessaire
         const shuffled = data.profils.sort(() => 0.5 - Math.random());
@@ -44,6 +42,7 @@ function Home() {
         firstname={data.firstname}
         lastname={data.lastname}
         info={data.info}
+        id={data._id}
 
       />
     );

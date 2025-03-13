@@ -1,19 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: [], 
+  value: [],
 };
 
 export const likesSlice = createSlice({
   name: "likes",
   initialState,
   reducers: {
-      addLikes:(state,actions)=>{
-        state.value.push(actions.payload)
-      },
-      removeLikes: (state, action) => {
-        state.value = state.value.filter(like => like.id !== action.payload.id);
-      },//dans la clé etrangere du schema   on stocke l'id du recruteur qui a liker
+    addLikes: (state, actions) => {
+      state.value.push(actions.payload);
+    },
+    removeLikes: (state, action) => {
+      state.value = state.value.filter((like) => like !== action.payload);
+    }, //dans la clé etrangere du schema   on stocke l'id du recruteur qui a liker
   },
 });
 
