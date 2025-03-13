@@ -44,6 +44,7 @@ function Home() {
         firstname={data.firstname}
         lastname={data.lastname}
         info={data.info}
+        id={data._id}
 
       />
     );

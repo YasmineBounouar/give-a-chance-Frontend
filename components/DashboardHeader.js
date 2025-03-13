@@ -52,7 +52,10 @@ function DashboardHeader() {
             <span className={styles.profil}>Profil</span>
           </Link>
 
-          <Link href="#CONTACT">
+          <Link href="/">
+            <span className={styles.contact}>Explore vvvvv</span>
+          </Link>
+          <Link href="/">
             <span className={styles.contact}>Contact</span>
           </Link>
 

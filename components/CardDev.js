@@ -22,6 +22,7 @@ function CardDev(props) {
   const [iconLike, setIconLike] = useState({ color: "red" });
 
   const likes = useSelector((state) => state.likes.value);
+  const user = useSelector((state) => state.user.value);
 
   const handlelikesClick = (infolike) => {
     if (!user.token) {
@@ -50,11 +51,22 @@ function CardDev(props) {
       dispatch(removeLikes(user.token));
     }
   };
+console.log(user);
 
   function handleClick(e) {
     console.log(e);
 
-    router.push(`/profil?id=${e.id}`);
+if(user.token){
+
+  console.log(e);
+  
+  router.push(`/profil?id=${e.id}`);
+  
+}
+else{router.push('/connexion') }
+
+
+    
   }
 
   let style = {
@@ -97,9 +109,9 @@ function CardDev(props) {
           {props.firstname} {props.lastname}
         </h5>
         <h6 className={styles.specialities}>
-          {props.info?.hardskillstechnologies}
+          {props.info?.hardskillstechnologies.slice(0,20) + " ..."}
         </h6>
-        <p className={styles.description}>{props.info?.presentation}</p>
+        <p className={styles.description}>{props.info?.presentation.slice(0,70)+ " ..."}</p>
 
         <div className={styles.locationcard}>
           <span>
@@ -111,13 +123,13 @@ function CardDev(props) {
           <span className={styles.locationname}>{props.info?.location}</span>
         </div>
       </div>
-      {user.token && (
+     {user.token && (
         <button
           className={styles.btnconnexion}
           onClick={() => {
             handleClick(props);
           }}
-        >
+        > 
           See more
         </button>
       )}
