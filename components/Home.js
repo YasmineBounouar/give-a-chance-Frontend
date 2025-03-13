@@ -55,7 +55,7 @@ function Home() {
 
         <section className={styles.maincontent}>
           <h2 className={styles.titleemain}>
-            Trouver des dévoppeurs juniors qualifié et motivé
+          Find qualified and motivated junior developers
           </h2>
 
           <p className={styles.textpresentation}>
@@ -69,7 +69,7 @@ function Home() {
             </div>
 
             <button className={styles.btncardprofil}>
-              Parcourir les profiles
+            Browse profiles
             </button>
           </div>
         </section>

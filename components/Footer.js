@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/Link";
+import Link from "next/link";
 
 import styles from "../styles/Footer.module.css";
 import Image from "next/image";
@@ -7,12 +7,12 @@ import Image from "next/image";
 function Footer() {
   return (
     <footer className={styles.footer}>
-      <Image
+      <link href="/"><Image
         src="/GIVE A CHANCE.png"
         width={250}
         height={150}
         alt="logo"
-      />
+      /></link>
       <Link href="#Home">
         <span className={styles.cgv}>Terms and Conditions</span>
       </Link>

@@ -109,15 +109,19 @@ const dispatch=useDispatch()
             setPassword(e.target.value);
           }}
           value={password}
-          type="password"
+          type={showPassword ? 'text' : 'password'}
           name="password"
           placeholder="password"
           className={styles.inputpassword}
           
         />
-        <FontAwesomeIcon className={styles.faye} icon={faEye} onClick={() => setShowPassword(!showPassword)}
+      
+            
+            
+            <FontAwesomeIcon className={styles.faye} icon={faEye} onClick={() => setShowPassword(!showPassword)}
           />
-       
+          
+        
 
 
         {usernotfound && <p style={{ color: "red" }}>Utilisateur not found</p>}

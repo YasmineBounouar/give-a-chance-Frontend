@@ -7,7 +7,7 @@ import {
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "../styles/CardDev.module.css";
-import Link from "next/Link";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Likes from "./Likes";
