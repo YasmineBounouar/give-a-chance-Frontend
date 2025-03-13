@@ -82,11 +82,11 @@ function DevForm() {
     // Formulaire de création de profil pour les développeurs
     <form className={styles.form}>
       {/* Début du formulaire */}
-      <h2 className={styles.Title}>Complétez votre profil</h2>
+      <h2 className={styles.Title}>Complete your profile</h2>
 
       {/* Champ de saisie pour la présentation */}
       <div className={styles.presentation}>
-        <label className={styles.textPresentation}>Présentation:</label>
+        <label className={styles.textPresentation}>Presentation:</label>
 
         <textarea
           className={styles.inputPresentation}
@@ -159,7 +159,7 @@ function DevForm() {
 
       {/* Champ de saisie pour les disponibilités */}
       <div className={styles.disponibilities}>
-        <label className={styles.textDisponibilities}>Disponibilités:</label>
+        <label className={styles.textDisponibilities}>Availability:</label>
         <input
           className={styles.inputDisponibilities}
           onChange={(e) => setDisponibilities(e.target.value)}
@@ -173,7 +173,7 @@ function DevForm() {
 
       {/* Champ de saisie pour la localisation */}
       <div className={styles.Location}>
-        <label className={styles.textLocation}>Localisation:</label>
+        <label className={styles.textLocation}>Location:</label>
         <input
           className={styles.inputLocation}
           onChange={(e) => setLocation(e.target.value)}
@@ -187,7 +187,7 @@ function DevForm() {
 
       {/* Champ de saisie pour le type de contrat souhaité */}
       <div className={styles.typecontrat}>
-        <label className={styles.textTypecontrat}>Type de Contrat:</label>
+        <label className={styles.textTypecontrat}>Contract Type:</label>
         <input
           className={styles.inputTypecontrat}
           onChange={(e) => setTypecontrat(e.target.value)}
@@ -201,7 +201,7 @@ function DevForm() {
 
       {/* Champ de saisie pour la spécialité */}
       <div className={styles.Speciality}>
-        <label className={styles.textSpeciality}>Spécialité:</label>
+        <label className={styles.textSpeciality}>Specialty:</label>
         <input
           className={styles.inputSpeciality}
           onChange={(e) => setSpeciality(e.target.value)}
@@ -215,7 +215,7 @@ function DevForm() {
 
       {/* Champs pour les liens vers les réseaux sociaux */}
       <div className={styles.reseaux}>
-        <label className={styles.textReseaux}>Réseaux Sociaux:</label>
+        <label className={styles.textReseaux}>Social Media:</label>
         <input
           className={styles.inputLinkedin}
           onChange={(e) => setLinkedin(e.target.value)}
@@ -244,7 +244,7 @@ function DevForm() {
 
       {/* Message d'erreur si un champ est manquant */}
       {error && (
-        <p style={{ color: "red" }}>Veuillez remplir tous les champs</p>
+        <p style={{ color: "red" }}>Please fill in all fields.</p>
       )}
 
       {/* Bouton de soumission du formulaire */}
@@ -253,7 +253,7 @@ function DevForm() {
         onClick={(e) => handleSubmit(e)}
         type="button"
       >
-        Enregistrer
+       Save
       </button>
     </form>
   );

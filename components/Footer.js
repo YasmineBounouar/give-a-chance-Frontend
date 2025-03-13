@@ -14,10 +14,10 @@ function Footer() {
         alt="logo"
       />
       <Link href="#Home">
-        <span className={styles.cgv}>Conditions générales</span>
+        <span className={styles.cgv}>Terms and Conditions</span>
       </Link>
       <Link href="">
-        <span className={styles.mentions}>mentions légales</span>
+        <span className={styles.mentions}>Legal Notice</span>
       </Link>
       <Link href="#CONTACT">
         <span className={styles.contact}>Contact</span>

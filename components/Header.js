@@ -21,17 +21,17 @@ function Header() {
 
       <div className={styles.navLinks}>
         <Link href="/">
-          <span className={styles.profil}>Profil</span>
+          <span className={styles.profil}>Profile</span>
         </Link>
-        <Link href="#COMMENT">
-          <span className={styles.commentcamarche}>Comment ça marche</span>
+        <Link href="#HOWITWORKS">
+          <span className={styles.commentcamarche}>How it works</span>
         </Link>
         <Link href="#CONTACT">
           <span className={styles.contact}>Contact</span>
         </Link>
 
-        <Link href="/connexion">
-          <button className={styles.btnconnexion}>CONNEXION</button>
+        <Link href="/Login">
+          <button className={styles.btnconnexion}>LOGIN</button>
         </Link>
 
         <Link href="#FAQ">
@@ -44,17 +44,17 @@ function Header() {
       {navmobile && (
         <div className={styles.navLinksForMobile}>
           <Link href="/">
-            <span className={styles.profil}>Profil</span>
+            <span className={styles.profil}>Profile</span>
           </Link>
           <Link href="#COMMENT">
-            <span className={styles.commentcamarche}>Comment ça marche</span>
+            <span className={styles.commentcamarche}>How it works</span>
           </Link>
           <Link href="#CONTACT">
-            <span className={styles.contact}>Contact</span>
+            <span className={styles.contact}></span>
           </Link>
 
           <Link href="/connexion">
-            <button className={styles.btnconnexion}>CONNEXION</button>
+            <button className={styles.btnconnexion}>LOGIN</button>
           </Link>
         </div>
       )}

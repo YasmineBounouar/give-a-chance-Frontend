@@ -60,10 +60,8 @@ function Home() {
           </h2>
 
           <p className={styles.textpresentation}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
-            blanditiis. Facilis ad itaque magni saepe repellendus quos dolorem
-            neque voluptas odio, inventore, hic similique. Cum voluptatum
-            perspiciatis quidem eveniet commodi.
+          Connect to the future: the ultimate junior tech recruitment platform! Welcome to GIVE A CHANCE, your means of connection between junior developers and recruiters in the tech sector. Create your profile, explore our directory, and establish direct contacts through our integrated messaging system. Get started today and shape the future of your career or your company!
+
           </p>
 
           <div className={styles.cardcontainer}>
