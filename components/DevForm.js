@@ -159,7 +159,7 @@ function DevForm() {
 
       {/* Champ de saisie pour les disponibilités */}
       <div className={styles.disponibilities}>
-        <label className={styles.textDisponibilities}>Disponibilités:</label>
+        <label className={styles.textDisponibilities}>Disponibilities:</label>
         <input
           className={styles.inputDisponibilities}
           onChange={(e) => setDisponibilities(e.target.value)}
@@ -187,7 +187,7 @@ function DevForm() {
 
       {/* Champ de saisie pour le type de contrat souhaité */}
       <div className={styles.typecontrat}>
-        <label className={styles.textTypecontrat}>Type de Contrat:</label>
+        <label className={styles.textTypecontrat}>Type of Contrat:</label>
         <input
           className={styles.inputTypecontrat}
           onChange={(e) => setTypecontrat(e.target.value)}
@@ -201,7 +201,7 @@ function DevForm() {
 
       {/* Champ de saisie pour la spécialité */}
       <div className={styles.Speciality}>
-        <label className={styles.textSpeciality}>Spécialité:</label>
+        <label className={styles.textSpeciality}>Spéciality:</label>
         <input
           className={styles.inputSpeciality}
           onChange={(e) => setSpeciality(e.target.value)}
@@ -215,7 +215,7 @@ function DevForm() {
 
       {/* Champs pour les liens vers les réseaux sociaux */}
       <div className={styles.reseaux}>
-        <label className={styles.textReseaux}>Réseaux Sociaux:</label>
+        <label className={styles.textReseaux}>Social media:</label>
         <input
           className={styles.inputLinkedin}
           onChange={(e) => setLinkedin(e.target.value)}

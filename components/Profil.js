@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../reducers/user";
 import { useRouter } from "next/router";
 import styles from "../styles/Profil.module.css"
+import DashboardHeader from "./DashboardHeader";
 
 
 
@@ -47,6 +48,7 @@ console.log(profildata.info?.location);
   
   return (
 <div className={styles.profilContainer}>
+  
         <div className={styles.profilCard}>
           
            <div className={styles.profilImage}>
