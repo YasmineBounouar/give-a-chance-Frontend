@@ -31,7 +31,7 @@ function connexion() {
           setConnexiontype(!connexiontype);
         }}
       >
-        Sign in 
+        Sign in
       </span>
     </p>
   );
@@ -42,9 +42,9 @@ function connexion() {
         {/* <Link href={"/"}> */}{" "}
         <Image
           className={styles.logoheader}
-          src="/unnamed.jpg"
-          height={70}
-          width={70}
+          src="/GIVE A CHANCE.png"
+          width={150}
+          height={75}
         />
         {/* </Link> */}
         <button type="submit" className={styles.buttongoogle}>
@@ -56,8 +56,6 @@ function connexion() {
       {/* affichage conditionnel */}
       {connexiontype ? <Singin /> : <Signup />}
       {connexiontype ? SigninText : signuptext}
-
-
     </div>
   );
 }
