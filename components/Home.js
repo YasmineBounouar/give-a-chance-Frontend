@@ -12,21 +12,17 @@ import { useDispatch } from "react-redux";
 
 function Home() {
   const [profiles, setProfiles] = useState([]);
-  const dispatch=useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetch("http://localhost:3000/profil/All/")
       .then((response) => response.json())
       .then((data) => {
-
-
-
         console.log(data.profils);
         // Ajout d'une logique pour mélanger aléatoirement les profils si nécessaire
         const shuffled = data.profils.sort(() => 0.5 - Math.random());
         setProfiles(shuffled.slice(0, 4)); // Prend les 4 premiers profils mélangés
-        dispatch(getprofils(profiles))
-
+        dispatch(getprofils(profiles));
       })
       .catch((error) => {
         console.error("Error:", error); // Affiche une erreur dans la console si l'API échoue
@@ -45,7 +41,6 @@ function Home() {
         lastname={data.lastname}
         info={data.info}
         id={data._id}
-
       />
     );
   });
@@ -57,20 +52,20 @@ function Home() {
 
         <section className={styles.maincontent}>
           <h2 className={styles.titleemain}>
-            Trouver des dévoppeurs juniors qualifié et motivé
+            Find qualified and motivated junior developers
           </h2>
 
           <p className={styles.textpresentation}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
-            blanditiis. Facilis ad itaque magni saepe repellendus quos dolorem
-            neque voluptas odio, inventore, hic similique. Cum voluptatum
-            perspiciatis quidem eveniet commodi.
+            Connect to the future: the ultimate junior tech recruitment
+            platform! Welcome to GIVE A CHANCE, your means of connection between
+            junior developers and recruiters in the tech sector. Create your
+            profile, explore our directory, and establish direct contacts
+            through our integrated messaging system. Get started today and shape
+            the future of your career or your company!
           </p>
 
           <div className={styles.cardcontainer}>
-            <div className={styles.card}>
-     {homecards}
-            </div>
+            <div className={styles.card}>{homecards}</div>
 
             <button className={styles.btncardprofil}>
               Parcourir les profiles
@@ -83,7 +78,6 @@ function Home() {
         </section>
 
         <section id="FAQ" className={styles.faqcontainer}>
-   
           <Faq />
         </section>
 

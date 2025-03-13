@@ -19,17 +19,28 @@
   text-align: center;
  
  
+ 
 }
 .linkcommentCaMarche{
     color: #353a3f;
     text-decoration: underline;
     font-size: 20px; 
+    
    
   
     
   }
+
+
+
+
+
+  .text{
+    text-align: justify;
+
+  }
   .fa{ 
-    background-color: rgb(91, 86, 86);
+    background-color: #8e7949;
     border-radius: 50%;
     height: 80px;
     width: 80px;

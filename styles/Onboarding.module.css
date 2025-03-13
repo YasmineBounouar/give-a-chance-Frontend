@@ -68,12 +68,12 @@ align-items: center;
   }
   .Title {
     text-align: center; /* Centrer le titre */
-      font-family: "Times New Roman", serif; /* Police de type livre */
       font-size: 60px; /* Taille du texte */
+
       text-transform: uppercase; /* Mettre le texte en majuscule */
       letter-spacing: 5px; /* Espacement des lettres */
       color: #8e7949; /* Couleur du texte */
-      border-bottom: 3px solid #bac043 ; /* Bordure sous le titre */
+      border-bottom: 2px solid #f2de04;; /* Bordure sous le titre */
       padding-bottom: 10px; /* Espacement sous le titre */
   }
 

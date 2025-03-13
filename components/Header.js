@@ -5,9 +5,24 @@ import styles from "../styles/Header.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // j'ai rajouter
 import { faQuestion, faBars } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../reducers/user";
+import { useRouter } from "next/router";
 
 function Header() {
   const [navmobile, Setnavmobile] = useState(false);
+  const user = useSelector((state) => state.user.value);
+  const dispatch = useDispatch();
+  const router = useRouter();
+  console.log(user);
+
+  function hundleConnet() {
+    if (!user.token) {
+      router.push("/connexion");
+    } else {
+      dispatch(logout());
+    }
+  }
 
   return (
     <header className={styles.header}>
@@ -21,18 +36,18 @@ function Header() {
 
       <div className={styles.navLinks}>
         <Link href="/">
-          <span className={styles.profil}>Profil</span>
+          <span className={styles.profil}>Profile</span>
         </Link>
-        <Link href="#COMMENT">
-          <span className={styles.commentcamarche}>Comment ça marche</span>
+        <Link href="#HOWITWORKS">
+          <span className={styles.commentcamarche}>How it works</span>
         </Link>
         <Link href="#CONTACT">
           <span className={styles.contact}>Contact</span>
         </Link>
 
-        <Link href="/connexion">
-          <button className={styles.btnconnexion}>CONNEXION</button>
-        </Link>
+        <button className={styles.btnconnexion} onClick={() => hundleConnet()}>
+          {!user.token ? "CONNEXION" : "LOGOUT"}
+        </button>
 
         <Link href="#FAQ">
           <span className={styles.IconQuestion}>
@@ -44,17 +59,17 @@ function Header() {
       {navmobile && (
         <div className={styles.navLinksForMobile}>
           <Link href="/">
-            <span className={styles.profil}>Profil</span>
+            <span className={styles.profil}>Profile</span>
           </Link>
           <Link href="#COMMENT">
-            <span className={styles.commentcamarche}>Comment ça marche</span>
+            <span className={styles.commentcamarche}>How it works</span>
           </Link>
           <Link href="#CONTACT">
-            <span className={styles.contact}>Contact</span>
+            <span className={styles.contact}></span>
           </Link>
 
           <Link href="/connexion">
-            <button className={styles.btnconnexion}>CONNEXION</button>
+            <button className={styles.btnconnexion}>LOGIN</button>
           </Link>
         </div>
       )}

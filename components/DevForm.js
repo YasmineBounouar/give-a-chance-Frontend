@@ -82,11 +82,11 @@ function DevForm() {
     // Formulaire de création de profil pour les développeurs
     <form className={styles.form}>
       {/* Début du formulaire */}
-      <h2 className={styles.Title}>Complétez votre profil</h2>
+      <h2 className={styles.Title}>Complete your profile</h2>
 
       {/* Champ de saisie pour la présentation */}
       <div className={styles.presentation}>
-        <label className={styles.textPresentation}>Présentation:</label>
+        <label className={styles.textPresentation}>Presentation:</label>
 
         <textarea
           className={styles.inputPresentation}
@@ -173,7 +173,7 @@ function DevForm() {
 
       {/* Champ de saisie pour la localisation */}
       <div className={styles.Location}>
-        <label className={styles.textLocation}>Localisation:</label>
+        <label className={styles.textLocation}>Location:</label>
         <input
           className={styles.inputLocation}
           onChange={(e) => setLocation(e.target.value)}
@@ -244,7 +244,7 @@ function DevForm() {
 
       {/* Message d'erreur si un champ est manquant */}
       {error && (
-        <p style={{ color: "red" }}>Veuillez remplir tous les champs</p>
+        <p style={{ color: "red" }}>Please fill in all fields.</p>
       )}
 
       {/* Bouton de soumission du formulaire */}
@@ -253,7 +253,7 @@ function DevForm() {
         onClick={(e) => handleSubmit(e)}
         type="button"
       >
-        Enregistrer
+       Save
       </button>
     </form>
   );
