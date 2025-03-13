@@ -35,6 +35,16 @@ align-items: center;
     
 }
 
+
+.faye {
+  position: absolute;
+  top: 67%;
+  right: 40px; 
+  transform: translateY(-50%); 
+  cursor: pointer; 
+  z-index: 1; /* S'assurer que l'icône se superpose à l'input */
+}
+
   .formsignin {
     max-width: 400px;
     width: 100%;
