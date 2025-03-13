@@ -11,13 +11,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import styles from "../styles/DashboardRecruteur.module.css"
 import Image from 'next/image';
-import Link from 'next/Link';
+import Link from 'next/link';
 
 function DashboardRecruiter() {
   return (
     <div className={styles.mainDashboard}>
       <header className={styles.headerDashboard}>
-        <Image className={styles.logoHeader} src="/unnamed.jpg" height={80} width={80} alt="Logo" />
+       <Link href="/"><Image className={styles.logoHeader} src="/unnamed.jpg" height={80} width={80} alt="Logo" /></Link> 
         <div className={styles.headerIcons}>
           <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.customIcon} />
           <FontAwesomeIcon icon={faUser} className={styles.customIcon} />

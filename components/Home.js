@@ -68,7 +68,7 @@ function Home() {
             <div className={styles.card}>{homecards}</div>
 
             <button className={styles.btncardprofil}>
-              Parcourir les profiles
+            Browse profiles
             </button>
           </div>
         </section>

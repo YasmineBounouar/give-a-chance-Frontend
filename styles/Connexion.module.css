@@ -82,14 +82,14 @@ align-items: center;
     transition: border-color 0.3s ease; /* Animation douce pour la couleur de la bordure au focus */
   }
   .inputpassword {
-    width: 100%; /* Les champs prennent toute la largeur de leur conteneur */
-    padding: 0.8rem; /* Un peu de remplissage à l'intérieur des champs */
-    margin-bottom: 0.5rem; /* Espacement sous chaque champ */
-    border: 1px solid #ddd; /* Bordure grise claire autour des champs */
-    border-radius: 5px; /* Coins arrondis pour les champs */
-    font-size: 1rem; /* Taille de la police dans les champs */
-    outline: none; /* Retirer l'effet de contour par défaut lorsqu'un champ est sélectionné */
-    transition: border-color 0.3s ease; /* Animation douce pour la couleur de la bordure au focus */
+    width: 100%; 
+    padding: 0.8rem; 
+    margin-bottom: 0.5rem; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    font-size: 1rem; 
+    outline: none; 
+    transition: border-color 0.3s ease; 
   }
   .buttonSubmmit {
     width: 140px;
@@ -207,5 +207,12 @@ align-items: center;
       .type{
         color:  #ddd; 
       }
-  
+      .faye {
+        position: absolute;
+        top: 66%;
+        right: 40px; 
+        transform: translateY(-50%); 
+        cursor: pointer; 
+        z-index: 1; /* S'assurer que l'icône se superpose à l'input */
+      }
       

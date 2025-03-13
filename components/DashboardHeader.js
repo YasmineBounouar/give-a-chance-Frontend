@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/Link";
+import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/Header.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // j'ai rajouter
@@ -29,7 +29,8 @@ function DashboardHeader() {
         height={75}
         alt="logo"
         className={styles.logo}
-      ></Image>
+      ></Image></Link>
+   
 
       <div className={styles.navLinks}>
         <Link href="/CardProfile">

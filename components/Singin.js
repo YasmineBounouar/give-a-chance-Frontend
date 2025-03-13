@@ -115,9 +115,13 @@ const dispatch=useDispatch()
           className={styles.inputpassword}
           
         />
-        <FontAwesomeIcon className={styles.faye} icon={faEye} onClick={() => setShowPassword(!showPassword)}
+      
+            
+            
+            <FontAwesomeIcon className={styles.faye} icon={faEye} onClick={() => setShowPassword(!showPassword)}
           />
-       
+          
+        
 
 
         {usernotfound && <p style={{ color: "red" }}>Utilisateur not found</p>}
