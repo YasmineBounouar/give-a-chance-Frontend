@@ -5,21 +5,25 @@ import styles from "../styles/Header.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // j'ai rajouter
 import { faQuestion, faBars } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../reducers/user";
+import Router, { useRouter } from "next/router";
 
 function DashboardHeader() {
   const [navmobile, Setnavmobile] = useState(false);
-
+  const user = useSelector((state) => state.user.value);
   const dispatch = useDispatch();
+  const router = useRouter();
 
   function handleLogOut() {
     dispatch(logout());
+    router.push("/");
   }
 
   return (
     <header className={styles.header}>
-      <Link href="/">   <Image
+      <Image
+        onClick={() => Router.push("/")}
         src="/GIVE A CHANCE.png"
         width={150}
         height={75}
@@ -37,14 +41,14 @@ function DashboardHeader() {
           <span className={styles.profil}>Contact</span>
         </Link>
 
-        <Link
-          href="/"
+        <button
           onClick={() => {
             handleLogOut();
           }}
+          className={styles.btnconnexion}
         >
-          <button className={styles.btnconnexion}>LOGOUT</button>
-        </Link>
+          LOGOUT
+        </button>
       </div>
 
       {navmobile && (

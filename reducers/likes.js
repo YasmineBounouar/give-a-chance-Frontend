@@ -17,5 +17,5 @@ export const likesSlice = createSlice({
   },
 });
 
-export const { addlikes, removelikes } = likesSlice.actions;
+export const {  addLikes, removeLikes } = likesSlice.actions;
 export default likesSlice.reducer;

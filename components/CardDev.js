@@ -12,7 +12,6 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Likes from "./Likes";
 import { removeLikes, addLikes } from "../reducers/likes";
-
 import { useRouter } from "next/router";
 
 function CardDev(props) {
@@ -45,10 +44,14 @@ function CardDev(props) {
         .then((data) => {
           if (data.result) {
             dispatch(addLikes(user.token));
+            console.log('dev liked');
+            
           }
         });
     } else {
       dispatch(removeLikes(user.token));
+      console.log('dev not liked');
+
     }
   };
 console.log(user);
