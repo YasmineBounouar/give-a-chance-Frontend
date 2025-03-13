@@ -52,7 +52,7 @@ const handleSubmit = (e) => {
 
   return (
     <div className={styles.contactform}>
-      <h2 className={styles.contactformtitle}>Contactez-nous</h2>
+      <h2 className={styles.contactformtitle}>Contact us</h2>
       <form className={styles.form}>
         <div className={styles.inputContainer}>
           <div className={styles.inputform}>
@@ -101,14 +101,14 @@ const handleSubmit = (e) => {
         </div>
 
         {/* Message d'erreur si un champ est manquant */}
-        {error && <p style={{ color: "red" }}>Veuillez remplir tous les champs</p>}
+        {error && <p style={{ color: "red" }}>Please fill in all fields.</p>}
 
         <button
           onClick={(e) => handleSubmit(e)}
           className={styles.button}
           type="submit"
         >
-          Envoyer
+          Send
         </button>
       </form>
     </div>

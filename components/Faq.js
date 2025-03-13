@@ -28,20 +28,26 @@ const Faq = () => {
     const faqData = [
       {
         // Première question avec sa réponse et son index
-        question: 'Comment créer un wrap pour une section de questions-réponses ?',
-        answer: 'Pour créer un wrap pour une section de questions-réponses, vous devez créer un composant React qui enveloppe chaque question-réponse et réutiliser ce composant dans votre application.',
+        question: 'How can I update my developer profile?',
+        answer: 'Go to your dashboard, click on "My Profile," then on "Edit." You will then be able to update your skills, experiences, and work preferences.',
+
         index :0 //(position)
       },
       {
         // Deuxième question avec sa réponse et son index
-        question: 'Quels sont les avantages d\'utiliser React ?',
-        answer: 'React permet de créer des interfaces utilisateur interactives et réactives. Il facilite également la gestion de l\'état et la réutilisation des composants.',  
+        question: 'As a recruiter, how can I contact a developer that interests me?',
+
+        answer: 'Search for the developer via our directory, then use the "Contact" button on their profile to send a message directly from our platform.',
+  
+
         index: 1 //(position)
       },
       {
         // Troisième question avec sa réponse et son index
-        question: 'Quels sont les avantages d\'utiliser React ?',
-        answer: 'React permet de créer des interfaces utilisateur interactives et réactives. Il facilite également la gestion de l\'état et la réutilisation des composants.',
+        question: 'What are the search criteria available in the directory?',
+
+        answer: 'You can filter profiles or job offers by technology, experience level, location, and contract type to quickly find the ideal candidate or position.',
+
         index: 2 //(position)
       },
     ];
@@ -61,8 +67,7 @@ const Faq = () => {
  <h2 className={styles.faqHeading}>FAQ</h2>
           <div>
             <h3 className={styles.faqHeading}>
-              Questions principales que se posent les recruteurs pour recruter
-              un développeur junior en alternance, <br/> en CDI ou en CDD ?
+            Key questions recruiters ask when hiring a junior developer for an apprenticeship,  <br/> CDI or CDD
             </h3>
 
             

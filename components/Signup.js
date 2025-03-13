@@ -230,7 +230,7 @@ function SingUP() {
               Developer
             </option>
             <option value="Recruter" className={styles.type}>
-              Recruteur
+            Recruiter
             </option>
           </select>
         </div>

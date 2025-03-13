@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../reducers/user";
 import { useRouter } from "next/router";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
+import {faEye} from "@fortawesome/free-solid-svg-icons";
 
 function SingIN() {
   // Déclaration des états locaux pour gérer les valeurs du formulaire et les erreurs
@@ -12,12 +14,15 @@ function SingIN() {
   const [error, setError] = useState(false); // Erreur si les champs sont vides
   const [errorEmail, setErrorEmail] = useState(false); // Erreur pour un email invalide
   const [usernotfound, setUsernotfound] = useState(false); // Erreur si l'utilisateur n'est pas trouvé
+  const [showPassword, setShowPassword] = useState(false);
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expression régulière pour valider l'email
   const router = useRouter();
 const dispatch=useDispatch()
   // Fonction appelée lors du clic sur le bouton de soumission
+
   const handleClick = (e) => {
     e.preventDefault(); // Empêche le rechargement de la page par défaut lié à l'envoi du formulaire
+   
 
     // Vérification si les champs email et mot de passe sont remplis
     if (email === "" || password === "") {
@@ -99,7 +104,6 @@ const dispatch=useDispatch()
         {errorEmail && (
           <p style={{ color: "red" }}>Please enter a valid email.</p>
         )}
-
         <input
           onChange={(e) => {
             setPassword(e.target.value);
@@ -109,7 +113,12 @@ const dispatch=useDispatch()
           name="password"
           placeholder="password"
           className={styles.inputpassword}
+          
         />
+        <FontAwesomeIcon className={styles.faye} icon={faEye} onClick={() => setShowPassword(!showPassword)}
+          />
+       
+
 
         {usernotfound && <p style={{ color: "red" }}>Utilisateur not found</p>}
 

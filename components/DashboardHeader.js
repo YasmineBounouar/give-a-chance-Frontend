@@ -53,7 +53,7 @@ function DashboardHeader() {
       {navmobile && (
         <div className={styles.navLinksForMobile}>
           <Link href="/CardProfile">
-            <span className={styles.profil}>Profil</span>
+            <span className={styles.profil}>Profile</span>
           </Link>
 
           <Link href="/">
