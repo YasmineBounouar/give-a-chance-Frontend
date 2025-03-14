@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getprofils } from "../reducers/profils.js";
 import { useRouter } from "next/router.js";
 import Footer from "../components/Footer.js";
+import DashboardRecruteur from "./DashboardRecruteur.js";
+import dashboardDeveloper from "./dashboardDeveloper.js";
 
 export default function Pageannuaire() {
   const [profilDev, setProfilDev] = useState([]);
@@ -19,7 +21,9 @@ export default function Pageannuaire() {
   const dispatch = useDispatch();
   const Router = useRouter();
 
-
+const handleClick = () => {
+  {user.role === "developer" ? Router.push('/dashboardDeveloper') : Router.push('/DashboardRecruteur') }
+}
 
 
   const handleSubmit = () => {
@@ -87,9 +91,7 @@ export default function Pageannuaire() {
         <FontAwesomeIcon
           icon={faUser}
           className={styles.customIcon}
-          onClick={() => {
-            Router.push("/DashboardRecruteur");
-          }}
+          onClick={() => {  handleClick()}}
         />
       </header>
 
