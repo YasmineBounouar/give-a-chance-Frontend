@@ -7,38 +7,58 @@ import CardDev from "../components/CardDev";
 import { useDispatch, useSelector } from "react-redux";
 import { getprofils } from "../reducers/profils.js";
 import { useRouter } from "next/router.js";
+import Footer from "../components/Footer.js";
 
 export default function Pageannuaire() {
   const [profilDev, setProfilDev] = useState([]);
   const [searchprofil, setSearchprofil] = useState("");
   const user = useSelector((state) => state.user.value);
+  const [limit, setLimit] = useState(10);
+
 
   const dispatch = useDispatch();
   const Router = useRouter();
-  const limit = 10;
-  const handleSubmit = (e) => {
-    e.preventDefault();
+
+
+
+
+  const handleSubmit = () => {
+   
+    setLimit((prevLimit) => prevLimit + 10);
+
+
+
   };
+
+
+
+
+
 
   const handleSearch = (e) => {
     setSearchprofil(e.target.value);
+
   };
+
+
 
   useEffect(() => {
     fetch("http://localhost:3000/profil/All")
       .then((response) => response.json())
       .then((data) => {
+
         console.log(data, "fetch");
+
         // const shuffled = data.profils.sort(() => 0.5 - Math.random())
-        // setProfilDev(data.profils?.slice(0, 10))
-        setProfilDev(data.profils);
+         setProfilDev(data.profils?.slice(0, limit));
+        // setProfilDev(data.profils);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
-  }, [user.token]);
+  }, [user.token, limit]);
 
-  profilDev;
+
 
   const pageannuaireCard = profilDev?.map((data, i) => {
     return (
@@ -130,7 +150,9 @@ export default function Pageannuaire() {
             </button>
           </div>
         </div>
+       
       </div>
+      <Footer />
     </div>
   );
 }

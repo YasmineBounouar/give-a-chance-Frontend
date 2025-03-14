@@ -5,6 +5,7 @@ import { useState } from "react";
 import styles from "../styles/Connexion.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import Footer from "../components/Footer";
 
 function connexion() {
   const [connexiontype, setConnexiontype] = useState(true);
@@ -54,7 +55,14 @@ function connexion() {
 
       {connexiontype ? <Singin /> : <Signup />}
       {connexiontype ? SigninText : signuptext}
-    </div>
+     
+     
+    
+      </div>
+      
+      
+     
+  
   );
 }
 export default connexion;

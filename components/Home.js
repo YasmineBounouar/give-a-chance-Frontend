@@ -59,16 +59,13 @@ function Home() {
 
         <section className={styles.maincontent}>
           <h2 className={styles.titleemain}>
-            Find qualified and motivated junior developers
+         
+            <span className={styles.title}> Ship talent junior developer in 2 clic !  </span>
           </h2>
 
           <p className={styles.textpresentation}>
-            Connect to the future: the ultimate junior tech recruitment
-            platform! Welcome to GIVE A CHANCE, your means of connection between
-            junior developers and recruiters in the tech sector. Create your
-            profile, explore our directory, and establish direct contacts
-            through our integrated messaging system. Get started today and shape
-            the future of your career or your company!
+          
+The platform where recruiters find junior talent, and developers are valued for their skills, not just experience!
           </p>
 
           <div className={styles.cardcontainer}>

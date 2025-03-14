@@ -17,7 +17,6 @@ import { useRouter } from "next/router";
 function CardDev(props) {
   let router = useRouter();
   const dispatch = useDispatch();
-  const [isLiked, setIsLiked] = useState(props.isliked);
   const [iconLike, setIconLike] = useState({ color: "grey" });
 
   const likes = useSelector((state) => state.likes.value);
@@ -48,6 +47,7 @@ function CardDev(props) {
         .then((data) => {
           if (data.result) {
             dispatch(addLikes(infolike));
+            setIconLike({ color: "red" });
           }
         });
     } else {

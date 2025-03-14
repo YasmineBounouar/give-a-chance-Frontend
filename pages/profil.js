@@ -9,6 +9,7 @@ import { faMagnifyingGlass, faUser } from "@fortawesome/free-solid-svg-icons";
 import Profil from "../components/Profil";
 import DashboardHeader from "../components/DashboardHeader";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 function profil() {
   const router = useRouter();
@@ -71,7 +72,7 @@ function profil() {
             TYPECONTRAT: {profildata.info?.typecontrat}
           </p>
 
-          <p>SOCIAL MÉDIA: </p>
+          <p className={styles.description}>SOCIAL MÉDIA: </p>
           <p className={styles.description}>
             {profildata.info?.reseaux.linkedin}
           </p>
@@ -82,7 +83,9 @@ function profil() {
             {profildata.info?.reseaux.twitter}
           </p>
         </div>
+      
       </div>
+      <Footer />
     </div>
   );
 }

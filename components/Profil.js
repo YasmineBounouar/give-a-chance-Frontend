@@ -34,31 +34,45 @@ function Profil() {
 
         <div className={styles.profilDetails}>
           <h2 className={styles.description}>{profildata.username}</h2>
-          <p className={styles.description}>Email: {profildata.email}</p>
+          <p className={styles.description}>EMAIL: {profildata.email}</p>
           <p className={styles.description}>
-            Full Name : {profildata.firstname} {profildata.lastname}
+            FIRSTNAME: {profildata.firstname}
+          </p>
+          <p className={styles.description}>LASTNAME: {profildata.lastname}</p>
+
+          <p className={styles.description}>
+            PRÉSENTATION: {profildata.info?.presentation}
+          </p>
+          <p className={styles.description}>
+            HARDSKILLSTECHNOLOGIES: {profildata.info?.hardskillstechnologies}
           </p>
 
-          <p className={styles.description}>{profildata.info?.role}</p>
-
-          <p className={styles.description}>{profildata.info?.presentation}</p>
-          <p className={styles.description}>{profildata.info?.description}</p>
-          <p className={styles.description}>{profildata.info?.firstname}</p>
           <p className={styles.description}>
-            {profildata.info?.hardskillstechnologies}
+            QUALIFICATION: {profildata.info?.qualification}
+          </p>
+          <p className={styles.description}>
+            DISPONIBILITIES: {profildata.info?.disponibilities}
+          </p>
+          <p className={styles.description}>
+            LOCATION: {profildata.info?.location}
+          </p>
+          <p className={styles.description}>
+            SPÉCIALITY: {profildata.info?.speciality}
+          </p>
+          <p className={styles.description}>
+            TYPECONTRAT: {profildata.info?.typecontrat}
           </p>
 
-          <p className={styles.description}>{profildata.info?.qualification}</p>
+          <p className={styles.description}>SOCIAL MÉDIA: </p>
           <p className={styles.description}>
-            {profildata.info?.disponibilities}
+            {profildata.info?.reseaux.linkedin}
           </p>
-          <p className={styles.description}>{profildata.info?.location}</p>
-          <p className={styles.description}>{profildata.info?.speciality}</p>
-          <p className={styles.description}>{profildata.info?.typecontrat}</p>
-
-          <p className={styles.description}>{profildata.info?.linkedin}</p>
-          <p className={styles.description}>{profildata.info?.github}</p>
-          <p className={styles.description}>{profildata.info?.twitter}</p>
+          <p className={styles.description}>
+            {profildata.info?.reseaux.github}
+          </p>
+          <p className={styles.description}>
+            {profildata.info?.reseaux.twitter}
+          </p>
         </div>
 
         {/* {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>} */}

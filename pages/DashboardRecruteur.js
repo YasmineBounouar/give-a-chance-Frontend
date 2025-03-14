@@ -16,6 +16,7 @@ import Link from "next/link";
 import Likes from "../components/Likes";
 import Chat from "../components/Chat";
 import { useState } from "react";
+import Footer from "../components/Footer";
 
 function DashboardRecruiter() {
   const [chat, setChat] = useState(false);
@@ -94,7 +95,9 @@ function DashboardRecruiter() {
             {chat ? <Chat /> : <Likes />}
           </div>
         </main>
+   
       </div>
+      <Footer />
     </div>
   );
 }
