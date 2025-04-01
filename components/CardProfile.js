@@ -68,7 +68,7 @@ useEffect(() => {
             />
           </span>
         </Link>
-        {/* J'ai rajouter l'icone pour le partage et le like, il faut changer le className de Incone de partage. */}
+      
         <span className={styles.iconlike}>
           <FontAwesomeIcon icon={faHeart} className={styles.heartIconStyle} />
         </span>

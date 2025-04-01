@@ -7,7 +7,7 @@ import { login } from "../reducers/user";
 import { useRouter } from "next/router";
 
 function SingUP() {
-  // Déclaration des états locaux pour gérer les valeurs des champs du formulaire
+  
   const [Username, setUsername] = useState("");
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -90,7 +90,6 @@ function SingUP() {
               router.push("/Pageannuaire");
             }
 
-            // if userooter +
           } else if (data.result === false) {
             // Si l'utilisateur existe déjà, on active l'état detectdoublon à true
             setDetectdoublon(true); // Ce message sera affiché si l'email existe déjà dans la base de données

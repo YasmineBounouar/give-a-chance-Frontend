@@ -28,7 +28,7 @@ const handleSubmit = (e) => {
       return;
     }
 
-    // Envoi des données au backend via une requête PUT
+    
     fetch("http://localhost:3000/update/Dev/:id", {
       method: "POST",
       headers: {
@@ -100,7 +100,7 @@ const handleSubmit = (e) => {
           </div>
         </div>
 
-        {/* Message d'erreur si un champ est manquant */}
+       
         {error && <p style={{ color: "red" }}>Please fill in all fields.</p>}
 
         <button

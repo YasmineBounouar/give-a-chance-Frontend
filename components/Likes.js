@@ -20,12 +20,7 @@ function Likes() {
       });
   }, [user.token]);
 
-  // let cards = <h1>Developper you liked</h1>;
-  // if (likes.length > 0) {
-
-  // }
-
-  // return <section className={styles.iconlike}>{CardDev}</section>;
+  
 
   const homecards = profiles.map((data, index) => {
     // pas de () dans le return car nous allons renvoyer que le compsant enfants.

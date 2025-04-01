@@ -4,8 +4,7 @@ import Signup from "../components/Signup";
 import { useState } from "react";
 import styles from "../styles/Connexion.module.css";
 import Image from "next/image";
-import Link from "next/link";
-import Footer from "../components/Footer";
+
 
 function connexion() {
   const [connexiontype, setConnexiontype] = useState(true);
@@ -46,7 +45,7 @@ function connexion() {
           width={150}
           height={75}
         />
-        {/* </Link> */}
+       
         <button type="submit" className={styles.buttongoogle}>
           SIGN WITH GOOGLE{" "}
           <Image src="/icon.svg" height={20} width={30}></Image>

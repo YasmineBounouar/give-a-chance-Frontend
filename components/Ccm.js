@@ -14,7 +14,7 @@ function CCM() {
           </span>
           <div className={styles.text}>
             <p>
-              {" "}
+             
               For developers: Create your profile with your skills, experience,
               and work preferences. Add your portfolio to showcase your
               projects. For recruiters: Sign up to browse profiles of interest.
@@ -28,7 +28,7 @@ function CCM() {
           </span>
           <div className={styles.text}>
             <p>
-              {" "}
+              
               Use the directory to filter and search for candidates or positions
               by technology, experience, and location. Quickly view matching
               profiles or positions.
@@ -42,7 +42,7 @@ function CCM() {
           </span>
           <div className={styles.text}>
             <p>
-              {" "}
+              
               Use the directory to search candidates or positions by technology,
               experience, and location, with a quick view of matching profiles.
             </p>

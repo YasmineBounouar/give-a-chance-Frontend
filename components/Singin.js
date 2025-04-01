@@ -59,7 +59,7 @@ const dispatch=useDispatch()
 
           data.role === "developer" ? router.push("/dashboardDeveloper") : router.push("/Pageannuaire");
 
-
+          //on fait le dispatch dans le then aprer avoir recu la reponse du backend, pour stocker les informations de l'utilisateur dans le store
           dispatch(
             login({
               role: data.role,
@@ -125,7 +125,7 @@ const dispatch=useDispatch()
 
 
         {usernotfound && <p style={{ color: "red" }}>Utilisateur not found</p>}
-
+    
         {error && (
           <p style={{ color: "red" }}>Please fill in all the fields.</p>
         )}
