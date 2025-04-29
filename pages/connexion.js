@@ -3,7 +3,7 @@ import Singin from "../components/Singin";
 import Signup from "../components/Signup";
 import { useState } from "react";
 import styles from "../styles/Connexion.module.css";
-import Image from "next/image";
+import Image from "next/Image";
 
 
 function connexion() {

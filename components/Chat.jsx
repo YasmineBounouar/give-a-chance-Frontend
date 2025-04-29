@@ -1,15 +1,8 @@
 import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faMagnifyingGlass,
   faUser,
-  faHome,
-  faStar,
-  faCompass,
-  faThumbsUp,
-  faPlus,
   faPaperPlane,
-  faMessage,
 } from "@fortawesome/free-solid-svg-icons";
 import styles from '../styles/DashboardRecruteur.module.css'
 

@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "../styles/Faq.module.css";
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // j'ai rajouter
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const Faq = () => {
-  // Création d'un état local "open" qui stocke l'index de la question actuellement ouverte
+
   const [open, setOpen] = useState(null);
 
   // Définition du composant FaqElement qui représente une seule question-réponse
@@ -14,8 +14,8 @@ const Faq = () => {
       <section className={styles.faqsection} id="FAQ">
         <div>
           <h4>
-            {" "}
-            {props.question}{" "}
+           
+            {props.question}
             <span
               onClick={() => {
                 setOpen(props.index);
@@ -24,8 +24,9 @@ const Faq = () => {
               <span>
                 <FontAwesomeIcon icon={faPlus} className={styles.addIconPlus} />
               </span>
-            </span>{" "}
+            </span>
           </h4>
+          
           {open === props.index && <p> {props.reponse}</p>}
         </div>
       </section>
@@ -96,8 +97,8 @@ const Faq = () => {
             apprenticeship, <br /> CDI or CDD
           </h3>
         </div>
-      </div>{" "}
-      {myFaq}{" "}
+      </div>
+      {myFaq}
     </div>
   );
 };

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHeart,
@@ -8,9 +7,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "../styles/CardDev.module.css";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Likes from "./Likes";
 import { removeLikes, addLikes } from "../reducers/likes";
 import { useRouter } from "next/router";
 
@@ -34,7 +32,7 @@ function CardDev(props) {
     if (user.role === "developer") {
       return;
     }
-
+   
     if (!likes.includes(infolike)) {
       fetch(`http://localhost:3000/create/Addlikes`, {
         method: "PUT",
@@ -61,6 +59,7 @@ function CardDev(props) {
 
     if (user.token) {
       console.log(e);
+
 
       router.push(`/profil?id=${e.id}`);
     } else {
@@ -136,7 +135,7 @@ function CardDev(props) {
       )}
 
       <div className={styles.cardRating}>
-        {/* j'ai rajouter les icone stars, mais il faudra faire un .map pour les rendre dynamique */}
+        {/* j'ai rajouter les icones stars, mais il faudra faire un .map pour les rendre dynamique */}
         <span>
           <FontAwesomeIcon
             icon={faStar}
@@ -169,7 +168,7 @@ function CardDev(props) {
           <FontAwesomeIcon icon={faStar} className={styles.starsIconStyle} />
         </span>
         <span className={styles.stylecounter}>(4/5)</span>
-        {/* quand on arrive pas a dissocier entre un titre ou un paragraphe , et pour l'icone */}
+        
       </div>
     </section>
   );

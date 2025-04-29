@@ -2,14 +2,12 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faUser } from "@fortawesome/free-solid-svg-icons";
 import styles from "../styles/Pageannuaire.module.css";
-import Image from "next/image";
+import Image from "next/Image";
 import CardDev from "../components/CardDev";
-import { useDispatch, useSelector } from "react-redux";
-import { getprofils } from "../reducers/profils.js";
+import {  useSelector } from "react-redux";
 import { useRouter } from "next/router.js";
 import Footer from "../components/Footer.js";
-import DashboardRecruteur from "./DashboardRecruteur.js";
-import dashboardDeveloper from "./dashboardDeveloper.js";
+
 
 export default function Pageannuaire() {
   const [profilDev, setProfilDev] = useState([]);
@@ -18,7 +16,7 @@ export default function Pageannuaire() {
   const [limit, setLimit] = useState(10);
 
 
-  const dispatch = useDispatch();
+
   const Router = useRouter();
 
 const handleClick = () => {
@@ -53,9 +51,9 @@ const handleClick = () => {
 
         console.log(data, "fetch");
 
-        // const shuffled = data.profils.sort(() => 0.5 - Math.random())
+     
          setProfilDev(data.profils?.slice(0, limit));
-        // setProfilDev(data.profils);
+        
       })
       .catch((error) => {
         console.error("Error:", error);

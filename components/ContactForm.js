@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "../styles/ContactForm.module.css";
 import {useState} from 'react'
+
+
 function ContactForm() {
 
 
@@ -29,7 +31,7 @@ const handleSubmit = (e) => {
     }
 
     
-    fetch("http://localhost:3000/update/Dev/:id", {
+    fetch("http://localhost:3000/users/addmessgae", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -109,7 +111,7 @@ const handleSubmit = (e) => {
           type="submit"
         >
           Send
-        </button>
+        </button> 
       </form>
     </div>
   );

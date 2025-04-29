@@ -81,10 +81,10 @@ function DevForm() {
   return (
     // Formulaire de création de profil pour les développeurs
     <form className={styles.form}>
-      {/* Début du formulaire */}
+    
       <h2 className={styles.Title}>Complete your profile</h2>
 
-      {/* Champ de saisie pour la présentation */}
+      
       <div className={styles.presentation}>
         <label className={styles.textPresentation}>Presentation:</label>
 
@@ -100,7 +100,7 @@ function DevForm() {
         />
       </div>
 
-      {/* Champ de saisie pour les soft skills */}
+      
       <div className={styles.softskills}>
         <label className={styles.textSoftskills}>Profils Pictures</label>
         <input
@@ -113,7 +113,7 @@ function DevForm() {
         />
       </div>
 
-      {/* Champ de saisie pour les soft skills */}
+      
       <div className={styles.softskills}>
         <label className={styles.textSoftskills}>Soft Skills:</label>
         <input
@@ -127,7 +127,7 @@ function DevForm() {
         />
       </div>
 
-      {/* Champ de saisie pour les hard skills et technologies */}
+      
       <div className={styles.hardskillstechnologies}>
         <label className={styles.textHardskillstechnologies}>
           Hard Skills / Technologies:
@@ -143,7 +143,7 @@ function DevForm() {
         />
       </div>
 
-      {/* Champ de saisie pour la qualification */}
+      
       <div className={styles.qualification}>
         <label className={styles.textQualification}>Qualification:</label>
         <input
@@ -157,7 +157,7 @@ function DevForm() {
         />
       </div>
 
-      {/* Champ de saisie pour les disponibilités */}
+      
       <div className={styles.disponibilities}>
         <label className={styles.textDisponibilities}>Disponibilities:</label>
         <input
@@ -171,7 +171,7 @@ function DevForm() {
         />
       </div>
 
-      {/* Champ de saisie pour la localisation */}
+    
       <div className={styles.Location}>
         <label className={styles.textLocation}>Location:</label>
         <input
@@ -185,7 +185,7 @@ function DevForm() {
         />
       </div>
 
-      {/* Champ de saisie pour le type de contrat souhaité */}
+      
       <div className={styles.typecontrat}>
         <label className={styles.textTypecontrat}>Type of Contrat:</label>
         <input
@@ -199,7 +199,7 @@ function DevForm() {
         />
       </div>
 
-      {/* Champ de saisie pour la spécialité */}
+      
       <div className={styles.Speciality}>
         <label className={styles.textSpeciality}>Spéciality:</label>
         <input
@@ -213,7 +213,7 @@ function DevForm() {
         />
       </div>
 
-      {/* Champs pour les liens vers les réseaux sociaux */}
+      
       <div className={styles.reseaux}>
         <label className={styles.textReseaux}>Social media:</label>
         <input

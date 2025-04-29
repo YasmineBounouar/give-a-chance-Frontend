@@ -23,7 +23,7 @@ function Likes() {
   
 
   const homecards = profiles.map((data, index) => {
-    // pas de () dans le return car nous allons renvoyer que le compsant enfants.
+    //pas de () dans le return car on renvoie au composant enfant
     return (
       <CardDev
         key={index}

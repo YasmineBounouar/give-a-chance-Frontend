@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import styles from "../styles/Connexion.module.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { login } from "../reducers/user";
 
 import { useRouter } from "next/router";
@@ -20,7 +20,7 @@ function SingUP() {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expression régulière pour valider l'email
 
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.value);
+
 
   const router = useRouter();
 

@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/Image";
 import styles from "../styles/Header.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // j'ai rajouter
-import { faQuestion, faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
+import {  faBars } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../reducers/user";

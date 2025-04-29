@@ -9,7 +9,7 @@ function Profil() {
   const router = useRouter();
 
   const [profildata, setProfildata] = useState([]);
-  // const [errorMessage, setErrorMessage] = useState("");
+
 
   const user = useSelector((state) => state.user.value);
 
@@ -75,7 +75,7 @@ function Profil() {
           </p>
         </div>
 
-        {/* {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>} */}
+   
       </div>
     </div>
   );
